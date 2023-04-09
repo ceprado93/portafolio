@@ -1,0 +1,287 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+#top{
+    padding: 10px;
+}
+.animated {
+    animation: font-animation infinite;
+    animation-duration: 3.5s;
+    animation-direction: alternate;
+    transition-timing-function: ease-in-out
+}
+
+@keyframes font-animation {
+    0% {
+        font-variation-settings: "wght" 300, "wdth" 60
+    }
+
+    25% {
+        font-variation-settings: "wght" 400, "wdth" 60
+    }
+
+    50% {
+        font-variation-settings: "wght" 400, "wdth" 80
+    }
+
+    75% {
+        font-variation-settings: "wght" 600, "wdth" 80
+    }
+
+    100% {
+        font-variation-settings: "wght" 600, "wdth" 100
+    }
+}
+
+h1 {
+    font-size: 21vw;
+    line-height: 79%;
+    letter-spacing: -.08em;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: KumbhSans-variable, Arial, Helvetica, sans-serif;
+    font-variation-settings: "wght" 400, "wdth" 50;
+    margin: 0;
+    cursor: default
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-family: KumbhSans, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: -.02em;
+    margin: 0
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-family: KumbhSans, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 0
+}
+
+.h3-reg {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-family: KumbhSans, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-left: 14px
+}
+
+p {
+    font-family: KumbhSans, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin: 0
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    margin: 0
+}
+
+.link-hover {
+    transition: 300ms;
+}
+
+.link-hover:hover {
+    opacity: 45%;
+}
+
+header {
+    // margin-bottom: 120px;
+    &.initial{
+        color: white !important;
+        a{
+            color: white !important;
+        }
+    }
+   
+    .header-top {
+        margin-bottom: 60px;
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .header-main{
+        height: calc(100vh - 20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.small-text-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.animated-name-wrap {
+    margin-bottom: 30px
+}
+
+.bio-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    p {
+        width: 60%;
+    }
+    .colorToggle {
+        width: 12px;
+        height: 12px;
+        display: block;
+        cursor: pointer;
+        border-radius: 12.5px;
+        border: 1px solid white;
+        background-color: transparent;
+        margin-right: 6px;
+        transition: transform 1s cubic-bezier(0.25, 0.1, 0, 0.98);
+        &.initial{
+            transform: translate(48vw, -48vh) scale(3) rotate(180deg);
+            &.rotate {
+                    transform: translate(48vw, -48vh) scale(3) rotate(360deg);
+                }
+        }
+            
+        span{
+
+            width: 10px;
+            height: 12px;
+            display: block;
+            border-radius: 12.5px;
+            position: relative;
+            border: 1px solid;
+            border-width: 6px;
+            border-top-color: transparent;
+            border-right-color: white;
+            border-bottom-color: white;
+            border-left-color: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(135deg);
+            transition: all .35s ease-in-out;
+        }
+        &.light{
+            border: 1px solid #000;
+            span{
+                transform: translate(-50%, -50%) rotate(-45deg);
+                transition: all .35s ease-in-out;
+                border-right-color: #000;
+                border-bottom-color: #000;
+            }
+        }
+    }
+}
+
+@media(min-width: 200px) {
+
+    h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    .h3-reg {
+        font-size: 1.2rem;
+        line-height: 1.2rem
+    }
+
+    p {
+        font-size: 1.6rem;
+        line-height: 2rem
+    }
+
+    .small-text-wrap {
+        margin-bottom: 4px
+    }
+
+    .bio-wrap p {
+        width: 100%
+    }
+
+}
+
+@media(min-width: 600px) {
+    .bio-wrap p {
+        width: 70%
+    }
+
+}
+
+@media(min-width: 750px) {
+    .bio-wrap p {
+        width: 60%
+    }
+
+}
+
+@media(min-width: 900px) {
+    .small-text-wrap {
+        margin-bottom: 0
+    }
+
+    .cursor {
+        display: block
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 4rem
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        line-height: 1.3rem
+    }
+
+    .h3-reg {
+        font-size: 1.3rem;
+        line-height: 1.3rem
+    }
+
+    p {
+        font-size: 1.8rem;
+        line-height: 2.2rem
+    }
+}
+
+@media(min-width: 1620px) {
+    .bio-wrap{
+        p {
+            width: 38%
+        }
+    } 
+
+}
+
+@media(max-width: 768px) {
+    h1{
+        margin-top: 30px;
+    }
+    .bio-wrap {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        .bio_wrap__text{
+            margin-bottom: 30px;
+            width: 80%;
+        }
+    }
+
+}

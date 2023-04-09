@@ -1,0 +1,15 @@
+{
+  "name": "carlos-prado-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass --include-path scss assets/scss/app.scss assets/style.css",
+    "watch": "nodemon -e scss -x 'npm run css'"
+  },
+  "author": "Carlos Prado",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}

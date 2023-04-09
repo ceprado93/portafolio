@@ -1,0 +1,620 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+/// Linear gradient
+/// @param {String} $from, {String} $to
+@mixin linear-gradient($from, $to) {
+    background: $to;
+    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $from), color-stop(100%, $to));
+    background: -webkit-linear-gradient(top, $from 0%, $to 100%);
+    background: -o-linear-gradient(top, $from 0%, $to 100%);
+    background: linear-gradient(to bottom, $from 0%, $to 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=ie-hex-str($from), endColorstr=ie-hex-str($to));
+}
+
+@mixin linear-gradient-complex($angle, $color-stops...) {
+    $_angle-with-vendor-prefix: "";
+    $_angle: "";
+
+    @if $angle == "to top" or $angle == "bottom" {
+        $_angle-with-vendor-prefix: bottom;
+        $_angle: to top;
+    } @else if $angle == "to right" or $angle == "left" {
+        $_angle-with-vendor-prefix: left;
+        $_angle: to right;
+    } @else if $angle == "to bottom" or $angle == "top" {
+        $_angle-with-vendor-prefix: top;
+        $_angle: to bottom;
+    } @else if $angle == "to left" or $angle == "right" {
+        $_angle-with-vendor-prefix: right;
+        $_angle: to left;
+    } @else if $angle == "to top right" or $angle == "bottom left" {
+        $_angle-with-vendor-prefix: bottom left;
+        $_angle: to top right;
+    } @else if $angle == "to bottom right" or $angle == "top left" {
+        $_angle-with-vendor-prefix: top left;
+        $_angle: to bottom right;
+    } @else if $angle == "to bottom left" or $angle == "top right" {
+        $_angle-with-vendor-prefix: top right;
+        $_angle: to bottom left;
+    } @else if $angle == "to top left" or $angle == "bottom right" {
+        $_angle-with-vendor-prefix: bottom right;
+        $_angle: to top left;
+    } @else {
+        //$_angle-with-vendor-prefix: $angle % 360;
+        //$_angle: (90 - $angle) % 360;
+        $_angle-with-vendor-prefix: (90 - $angle) % 360;
+        $_angle: $angle;
+    }
+
+    background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: linear-gradient($_angle, $color-stops);
+}
+
+@mixin scrimGradient($startColor: "black", $direction: "to bottom") {
+    $scrimCoordinates: (
+        0: 1,
+        19: 0.738,
+        34: 0.541,
+        47: 0.382,
+        56.5: 0.278,
+        65: 0.194,
+        73: 0.126,
+        80.2: 0.075,
+        86.1: 0.042,
+        91: 0.021,
+        95.2: 0.008,
+        98.2: 0.002,
+        100: 0,
+    );
+
+    $hue: hue($startColor);
+    $saturation: saturation($startColor);
+    $lightness: lightness($startColor);
+    $stops: ();
+
+    @each $colorStop, $alphaValue in $scrimCoordinates {
+        $stop: hsla($hue, $saturation, $lightness, $alphaValue) percentage($colorStop/100);
+        $stops: append($stops, $stop, comma);
+    }
+
+    background: linear-gradient(unquote($direction), $stops);
+}
+
+/// Transition
+/// @param {String} $args
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/// Transform
+/// @param {String} $args
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+/// Transition Transform
+/// @param {String} $args
+@mixin transition-transform($args, $preface: webkit moz ms o spec) {
+    @each $browser in $preface {
+        @if ($browser == spec) {
+            transition: transform $args;
+        } @else {
+            //@include prefixer( transition, -#{$browser}-transform $args, $browser);
+            -#{$browser}-transition: -#{$browser}-transform $args;
+        }
+    }
+}
+
+/// Linear gradient
+/// @param {String} $from, {String} $to
+@mixin multiline-ellipsis($line-clamp: null) {
+    @if $line-clamp != null {
+        -webkit-line-clamp: $line-clamp;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+    }
+}
+
+//@mixin input-shape($color: null, $border: false) {
+@mixin input-shape($color: null, $bgcolor: null, $border: false) {
+    @if ($color != null) {
+        color: $color;
+    }
+	@if ($bgcolor != null) {
+		background-color: $bgcolor;
+	}
+    padding: rem-calc(14px) rem-calc(16px);
+    border-radius: $radius;
+    border: none;
+    @if ($border) {
+        border-bottom: 1px solid $input-border;
+    } @else {
+        box-shadow: inset 0 0 0 1px $input-border;
+    }
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+}
+
+@mixin input-shape-focus($color, $bgcolor: null, $border: false) {
+	@if ($bgcolor != null) {
+		background-color: $bgcolor;
+	}
+    @if ($border) {
+        border-color: $color;
+    } @else {
+        box-shadow: inset 0 0 0 1px $color;
+    }
+    outline: none;
+}
+
+
+
+@mixin card() {
+    background-color: $ui-01;
+    padding: rem-calc(16);
+    border-radius: $radius-big;
+    box-shadow: 0px 4px 16px rgba($ui-06, 0.16);
+    margin: 8px 0;
+}
+
+
+/// TEXT Styles
+
+
+// NUMBERS
+
+/// Number XXLarge
+/// @param {String} $color
+@mixin number_xxl($color: null) {
+    font-family: $heading-font-stack;
+    //font-weight: 200;
+    font-weight: 100;
+    font-size: rem-calc(72);
+    line-height: rem-calc(80);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Number XLarge
+/// @param {String} $color
+@mixin number_xl($color: null) {
+    font-family: $heading-font-stack;
+    //font-weight: 200;
+    font-weight: 100;
+    font-size: rem-calc(56);
+    //line-height: rem-calc(68);
+    line-height: rem-calc(64);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Number Large
+/// @param {String} $color
+@mixin number_l($color: null) {
+    font-family: $heading-font-stack;
+    //font-weight: 200;
+    font-weight: 300;
+    font-size: rem-calc(40);
+    line-height: rem-calc(48);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Number Medium
+/// @param {String} $color
+@mixin number_m($weight: 300, $color: null) {
+    @if not in_list($text-valid-weights, $weight) {
+        @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+    }
+    font-family: $heading-font-stack;
+    font-weight: $weight;
+    font-size: rem-calc(32);
+    line-height: rem-calc(40);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Number Small
+/// @param {String} $color
+@mixin number_s($color: null) {
+    font-family: $heading-font-stack;
+    font-weight: 300;
+    font-size: rem-calc(24);
+    line-height: rem-calc(32);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+// HEADINGS
+
+/// Headline Large
+/// @param {String} $color
+@mixin headline_l($color: null) {
+    font-family: $heading-font-stack;
+    font-weight: 400;
+    font-size: rem-calc(36);
+    //line-height: rem-calc(44);
+    line-height: rem-calc(46);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Headline Medium
+/// @param {String} $color
+@mixin headline_m($color: null) {
+    font-family: $heading-font-stack;
+    font-weight: 300;
+    //font-size: rem-calc(26);
+    font-size: rem-calc(28);
+    //line-height: rem-calc(32);
+    line-height: rem-calc(38);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Headline Small
+/// @param {String} $color
+@mixin headline_s($color: null) {
+    font-family: $heading-font-stack;
+    //font-weight: 400;
+    font-weight: 300;
+    //font-size: rem-calc(24);
+    font-size: rem-calc(26);
+    //line-height: rem-calc(32);
+    line-height: rem-calc(34);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+// TITLES
+
+/// Title
+/// @param {String} $color
+@mixin title($color: null) {
+    font-family: $heading-font-stack;
+    //font-weight: 600;
+    font-weight: 500;
+    font-size: rem-calc(20);
+    //line-height: rem-calc(32);
+    line-height: rem-calc(30);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+// SUBTITLES
+
+/// Subtitle
+/// @param {String} $weight
+/// @param {String} $color
+@mixin subtitle($weight: 500, $color: null) {
+    @if not in_list($text-valid-weights, $weight) {
+        @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+    }
+    font-family: $heading-font-stack;
+    font-weight: $weight;
+    font-size: rem-calc(18);
+    //line-height: rem-calc(24);
+    line-height: rem-calc(26);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+// BODY
+
+/// Body Large
+/// @param {String} $weight
+/// @param {String} $color
+@mixin body_l($weight: normal, $color: null) {
+    @if not in_list($text-valid-weights, $weight) {
+        @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+    }
+    font-family: $text-font-stack;
+    font-weight: $weight;
+    font-size: rem-calc(16);
+    //line-height: rem-calc(24);
+    line-height: rem-calc(26);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Body Medium
+/// @param {String} $weight
+/// @param {String} $color
+@mixin body_m($weight: normal, $color: null) {
+    @if not in_list($text-valid-weights, $weight) {
+        @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+    }
+    font-family: $text-font-stack;
+    font-weight: $weight;
+    font-size: rem-calc(14);
+    //line-height: rem-calc(22);
+    line-height: rem-calc(24);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+/// Body Small
+/// @param {String} $color
+@mixin body_s($weight: normal, $color: null) {
+    @if not in_list($text-valid-weights, $weight) {
+        @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+    }
+    font-family: $text-font-stack;
+    font-weight: $weight;
+    font-size: rem-calc(12);
+    line-height: rem-calc(20);
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+// BUTTONS
+
+/// Button
+/// @param {String} $color
+@mixin button($color: null) {
+    @include body_l(700, $color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+// LABELS
+
+/// Label
+/// @param {String} $color
+@mixin label($color: null) {
+    font-family: $text-font-stack;
+    font-weight: normal;
+    font-size: rem-calc(14);
+    //line-height: rem-calc(18);
+    line-height: rem-calc(22);
+    text-transform: uppercase;
+    @if ($color != null) {
+        color: $color;
+    }
+}
+
+
+
+
+
+/// Title XXLarge
+/// @param {String} $color
+// @mixin title_xxl($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: bold;
+//     font-size: rem-calc(72);
+//     line-height: rem-calc(72);
+//     letter-spacing: -1px;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Title XLarge
+/// @param {String} $color
+// @mixin title_xl($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: bold;
+//     font-size: rem-calc(36);
+//     line-height: rem-calc(44);
+//     letter-spacing: -1px;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Title Large
+/// @param {String} $color
+// @mixin title_l($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: bold;
+//     font-size: rem-calc(22);
+//     line-height: rem-calc(30);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Title Medium
+/// @param {String} $color
+// @mixin title_m($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: bold;
+//     font-size: rem-calc(18);
+//     line-height: rem-calc(24);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Title Small
+/// @param {String} $color
+// @mixin title_s($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: bold;
+//     font-size: rem-calc(12);
+//     line-height: rem-calc(22);
+//     text-transform: uppercase;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Pretitle
+/// @param {String} $color
+// @mixin pretitle($color: null) {
+//     font-family: $heading-font-stack;
+//     font-weight: normal;
+//     font-size: rem-calc(10);
+//     line-height: rem-calc(16);
+//     letter-spacing: 0.6px;
+//     text-transform: uppercase;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Body XLarge
+/// @param {String} $color
+// @mixin body_xl($weight: bold, $color: null) {
+//     font-family: $text-font-stack;
+//     font-weight: $weight;
+//     font-size: rem-calc(22);
+//     line-height: rem-calc(32);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Body Large
+/// @param {String} $weight
+/// @param {String} $color
+// @mixin body_l($weight: bold, $color: null) {
+//     @if not in_list($text-valid-weights, $weight) {
+//         @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+//     }
+//     font-family: $text-font-stack;
+//     font-weight: $weight;
+//     font-size: rem-calc(18);
+//     line-height: rem-calc(28);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Body Medium
+/// @param {String} $weight
+/// @param {String} $color
+// @mixin body_m($weight: bold, $color: null) {
+//     @if not in_list($text-valid-weights, $weight) {
+//         @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+//     }
+//     font-family: $text-font-stack;
+//     font-weight: $weight;
+//     font-size: rem-calc(16);
+//     line-height: rem-calc(22);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Body Small
+/// @param {String} $weight
+/// @param {String} $color
+// @mixin body_s($weight: normal, $color: null) {
+//     @if not in_list($text-valid-weights, $weight) {
+//         @error "#{$weight} is not a valid side. Expected one of #{$text-valid-weights}.";
+//     }
+//     font-family: $text-font-stack;
+//     font-weight: $weight;
+//     font-size: rem-calc(14);
+//     line-height: rem-calc(22);
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Body XSmall
+/// @param {String} $color
+// @mixin body_xs($color: null) {
+//     font-family: $text-font-stack;
+//     font-weight: normal;
+//     font-size: rem-calc(11);
+//     line-height: rem-calc(22);
+//     letter-spacing: 0.1em;
+//     text-transform: uppercase;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Link
+/// @param {String} $color
+// @mixin link($color: null) {
+//     font-family: $text-font-stack;
+//     font-weight: 500;
+//     font-size: rem-calc(13);
+//     line-height: rem-calc(16);
+//     letter-spacing: 0.1em;
+//     text-transform: uppercase;
+//     @if ($color != null) {
+//         color: $color;
+//     }
+// }
+
+/// Cover text
+/// @param {String} $color
+// @mixin cover_text($color: null) {
+// 	//font-family: $extra-font-stack;
+//     font-family: $heading-font-stack;
+// 	font-weight: 900;
+// 	font-size: rem-calc(48);
+// 	line-height: rem-calc(52);
+// 	text-transform: uppercase;
+// 	@if ($color != null) {
+// 		color: $color;
+// 	}
+// }

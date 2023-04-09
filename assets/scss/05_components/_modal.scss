@@ -1,0 +1,149 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the modal component.
+// -----------------------------------------------------------------------------
+
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    transform: translateY(100vh);
+    transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98);
+    &.show{
+        display: block;
+        &.fadeIn{
+            transform: translateY(0px);
+        }
+                
+    }
+    a{
+        color: white;
+    }
+    &.ligth{
+        background-color: white;
+        color: black;
+        a{
+            color: black;
+        }
+    }
+
+    .modal__container{
+        display: flex;
+        margin-top: 30px;
+        padding: 10px;
+        opacity:0;
+        transition: opacity 0.5s cubic-bezier(0.58, 0.02, 0.21, 0.98);
+        &.display {
+                opacity: 1;
+            }
+        .modal__col-first{
+            width: 33.33%;
+        }
+        .modal__col-second{
+            width: 66.66%;
+            .modal__description{
+                margin-bottom: 30px;
+            }
+            a{
+                pointer-events: none;
+                .modal__img{
+                    width: 100%;
+                    max-height: 70vh;
+                    min-height: 70vh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .modal_footer{
+        width: 100%;
+        padding: 10px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .modal_footer-content-left{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+        .modal_footer-content-right {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media(min-width: 200px) {
+
+    .modal_footer-content-left {
+        width: 100%;
+        margin-bottom: 20px
+    }
+
+    .modal_footer-left-first {
+        margin-right: 0
+    }
+
+    .modal_footer-content-right {
+        width: 100%
+    }
+
+}
+
+@media(min-width: 600px) {
+
+    .modal_footer-content-left {
+        width: 80%;
+        margin-bottom: 0
+    }
+
+    .modal_footer-left-first {
+        margin-right: 20px
+    }
+
+    .modal_footer-content-right {
+        width: 20%
+    }
+
+}
+
+@media(min-width: 750px) {
+
+    .modal_footer-content-left {
+        width: 70%
+    }
+
+    .modal_footer-content-right {
+        width: 30%
+    }
+}
+
+@media(min-width: 1200px) {
+    .modal_footer-content-left {
+        width: 60%
+    }
+
+    .modal_footer-content-right {
+        width: 40%
+    }
+}
+
+@media(min-width: 1620px) {
+
+    .modal_footer-content-left {
+        width: 50%
+    }
+
+    .modal_footer-content-right {
+        width: 50%
+    }
+}

@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$font-family-sans: "Helvetica", "Arial", sans-serif !default;
+$font-family-serif: "Times New Roman", Times, serif !default;
+$font-family-mono: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", monospace !default;
+
+/// Text font family
+/// @type List
+$text-font-stack: $font-secondary, $font-family-sans !default;
+$text-valid-weights: 300, normal, 500, 700, bold;
+$headings-valid-weights: 300, 400;
+
+/// Navigation font family
+/// @type List
+$navigation-font-stack: $font-secondary, $font-family-sans !default;
+
+/// Heading font family
+/// @type List
+$heading-font-stack: $font-primary, $font-family-sans !default;
+$heading-valid-weights: normal, bold;
+
+/// Inputs font family
+/// @type List
+$input-font-stack: $font-secondary, $font-family-sans !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: $font-tertiary, $font-family-mono !default;
+
+/// Extra font family
+/// @type List
+$extra-font-stack: $font-tertiary, $font-family-serif !default;
+
+// Design based colors
+
+// Border Radius
+$small-radius: 2px;
+$radius: 8px;
+$big-radius: 16px;
+$radius-small: $small-radius;
+$radius-big: $big-radius;
+
+$input-border: $ui-03 !default;
+
+/// Transitions
+$move-animation: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+$fade-animation: 0.32s cubic-bezier(0.52, 0.16, 0.24, 1);
+$color-transition: color $fade-animation;
+$bordercolor-transition: border-color $fade-animation;
+$bgcolor-transition: background-color $fade-animation;
+$stroke-transition: stroke $fade-animation;
+
+/// Paths
+$assets-path: "../" !default;
+$core-font-path: $assets-path + "../fonts" !default;
+$core-img-path: $assets-path + "../img" !default;
+
+
+/// Container's maximum width
+/// @type Length
+/*
+$max-width: 1140px !default;
+$max-width-tablet: 960px !default;
+$max-width-mobile: 720px !default;
+$max-width-small-mobile: 540px !default;
+*/
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$grid-breakpoints: (
+    "zero": 0px,
+    "xsmall": 320px,
+    "small": 480px,
+    "medium": 768px,
+    "large": 1024px,
+    "xlarge": 1280px,
+    "xxlarge": 1440px,
+    "xxxlarge": 1600px,
+) !default;
+
+/// Breakpoints sides map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$grid-sides-breakpoints: (
+    "zero": 16px,
+    "xsmall": 16px,
+    "small": 24px,
+    "medium": 32px,
+    "large": 32px,
+    "xlarge": 32px,
+    "xxlarge": 64px,
+    "xxxlarge": 64px,
+) !default;
+
+/// Column Gutter map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual column gutter expressed in pixels
+$column-gutter: (
+    "zero": 16px,
+    "xsmall": 16px,
+    "small": 16px,
+    "medium": 16px,
+    "large": 24px,
+    "xlarge": 24px,
+    "xxlarge": 24px,
+    "xxxlarge": 24px,
+) !default;
+
+/// Padding Small map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual padding-small expressed in pixels
+$padding-small: (
+    "xsmall": 40px,
+    "small": 40px,
+    "medium": 80px,
+    "large": 48px,
+    "xlarge": 80px,
+    "xxlarge": 120px,
+) !default;
+
+/// Padding Medium map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual padding-medium expressed in pixels
+$padding-medium: (
+    "xsmall": 96px,
+    "small": 120px,
+    "medium": 56px,
+    "large": 102px,
+    "xlarge": 160px,
+    "xxlarge": 200px,
+) !default;
+
+/// Padding Large map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual padding-large expressed in pixels
+$padding-large: (
+    "xsmall": 80px,
+    "small": 80px,
+    "medium": 180px,
+    "large": 200px,
+    "xlarge": 220px,
+    "xxlarge": 240px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: "/assets/" !default;

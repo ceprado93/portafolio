@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="assets/img/cp.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description"
+            content="Soy un desarrollador con sede en Bilbao. Me encanta el diseño minimalista y brutalista. Creo sitios web a medida, buscando el equilibrio adecuado entre funcionalidad e impacto visual." />
+        <meta name="keywords" content="Carlos, Prado, Developer, Web, Design, CSS, JavaScript">
+        <link rel="apple-touch-icon" href="assets/img/cp192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="stylesheet" href="assets/style.css" />
+        <title>Carlos Prado</title>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJPZFQGMT2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-JJPZFQGMT2');
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <header id="top" class="initial">
+                <!-- <section class="header-top"
+                    style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                    <div class="header-top-content">
+                        <div class="small-text-wrap">
+                            <h3>Front end developer</h3>
+                            <h3 class="h3-reg">
+                                <a href="https://zorraquino.com/" target="_blank" rel="noopener noreferrer"
+                                    class="link-hover">@zorraquino</a>
+                            </h3>
+                        </div>
+                        <div class="small-text-wrap">
+                            <h3>Bilbao, Spain</h3>
+                            <p class="current-time h3-reg" id="time">2023</p>
+                        </div>
+                    </div>
+                </section> -->
+                <section class="header-main">
+                    <div class="animated-name-wrap">
+                        <h1 id="title" class="animated"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            Carlos <br> Prado
+                        </h1>
+                    </div>
+                    <div id="bio" class="bio-wrap"
+                        style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        <div class="small-text-wrap header__info">
+                            <p class="colorToggle light initial rotate"><span></span></p>
+                            <h3>Front end developer</h3>
+                            <h3 class="h3-reg">
+                                <a href="https://zorraquino.com/" target="_blank" rel="noopener noreferrer"
+                                    class="link-hover">@zorraquino</a>
+                            </h3>
+                        </div>
+                        <p class="bio_wrap__text">Soy un desarrollador con sede en Bilbao con más de tres años de
+                            experiencia en el desarrollo
+                            web
+                            y
+                            móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas
+                            multinacionales. Me encanta crear
+                            interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente
+                            impactantes.
+                            Siempre busco el equilibrio perfecto entre funcionalidad y estética para crear una
+                            experiencia
+                            de usuario excepcional.
+                        </p>
+                    </div>
+                </section>
+            </header>
+            <section class="sec_separata initial"></section>
+            <section id="portfolio__grid" class="portfolio__grid initial">
+                <div class="grid__wrap">
+                    <div class="grid__row">
+
+                        <article id="0" data-type="parallax" data-depth="24">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg"
+                                alt="aps" />
+                            <h3>APS Racing</h3>
+                        </article>
+                        <article id="1">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256885/portfolio/5-the-playground_dscgga.jpg"
+                                alt="wave maps" />
+                            <h3>Wave maps</h3>
+                        </article>
+                        <article id="2" data-type="parallax" data-depth="8">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png"
+                                alt="la bamba" />
+                            <h3>La bamba</h3>
+                        </article>
+                    </div>
+                    <div class="grid__row">
+
+                        <article id="3" data-type="parallax" data-depth="24">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256895/portfolio/cpzfondo_llaxtv.png"
+                                alt="Celia Perez art" />
+                            <h3>Celia Perez Art</h3>
+                        </article>
+                        <article id="4">
+                            <img src="./assets/img/procor.png" alt="Procorlab" />
+                            <h3>Procorlab</h3>
+                        </article>
+                        <article id="5" data-type="parallax" data-depth="8">
+                            <img class="img--nemeson" src="./assets/img/manos.png" alt="Nemeson one" />
+                            <h3>Nemeson One</h3>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="sec_separata initial"></section>
+            <section id="portfolio__horizontal" class="portfolio__horizontal initial">
+                <div class="grid__wrap--horizontal">
+                    <article id="6">
+                        <div class="article_wrap centered">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257868/portfolio/zq_jyruz9.webp"
+                                alt="zorraquino" />
+                            <h3>Zorraquino</h3>
+                        </div>
+                    </article>
+                    <article id="7">
+                        <div class="article_wrap article__wrap--app">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670260847/portfolio/sdiq_pjfair.png"
+                                alt="Mi Saunier Duval" />
+                            <h3>Mi Saunier Duval</h3>
+                        </div>
+                    </article>
+                    <article id="8">
+                        <div class="article_wrap">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1680446394/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.19.59-min_fthgby.png"
+                                alt="Whitehole" />
+                            <h3>Whitehole</h3>
+                        </div>
+                    </article>
+                    <article id="9">
+                        <div class="article_wrap">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257867/portfolio/kutxabank-kvvG-U7026419564jqG-624x385_El_Correo-kv4C-U701178451438THE-624x385_El_Correo_yru5q7.jpg"
+                                alt="Clientes Kutxabank" />
+                            <h3>Clientes Kutxabank</h3>
+                        </div>
+                    </article>
+                    <article id="10">
+                        <div class="article_wrap">
+                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257869/portfolio/sistema-genia-air-l_2x_datewo.jpg"
+                                alt="InstalExpert" />
+                            <h3>Saunier Duval InstalExpert</h3>
+                        </div>
+                    </article>
+                    <article id="11">
+                        <div class="article_wrap">
+                            <img src="./assets/img/Enkarterri.png" alt="Enkartur" />
+                            <h3>Enkartur</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <footer class="initial">
+                <section class="footer-content">
+                    <div class="footer__title-wrap">
+                        <h2 class="footer__title">Colaboremos juntos</h2>
+                    </div>
+                    <div class="footer__text-wrap">
+                        <p>ceprado93@gmail.com</p>
+                    </div>
+                </section>
+                <section class="footer-end">
+                    <div class="footer-content-left">
+                        <div class="small-text-wrap footer-left-first">
+                            <h3>© Carlos Prado</h3>
+                            <h3 class="h3-reg">2023.</h3>
+                        </div>
+
+                        <div class="small-text-wrap">
+                            <h3>social</h3>
+                            <h3 class="h3-reg">
+                                <a class="link-hover" href="https://github.com/ceprado93" target="_blank"
+                                    rel="noopener noreferrer">Github</a>,
+                                <a class="link-hover" href="https://www.linkedin.com/in/carlos-prado-buesa/"
+                                    target="_blank" rel="noopener noreferrer">Linkedin</a>,
+                                <a class="link-hover" href="https://codepen.io/ceprado93" target="_blank"
+                                    rel="noopener noreferrer">Codepen</a>
+                            </h3>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-content-right">
+
+                        <div class="small-text-wrap">
+                            <h3>
+                                <a class="link-hover" href="#top" target="_self" rel="noopener noreferrer">Arriba</a>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </section>
+            </footer>
+
+            <div class="modal">
+                <!-- <p class="close_button">
+                    x
+                </p> -->
+                <div class="modal__container">
+                    <div class="modal__col-first">
+                        <h2 class="modal__title">APS Racing</h2>
+                    </div>
+                    <div class="modal__col-second">
+                        <p class="modal__description">Página web de media de rallys hecha con React, Node.js, Express
+                            y
+                            MongoDB.
+                            Incluye noticias, resultados, calendario,
+                            perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable,
+                            robusta y
+                            eficiente.
+                        </p>
+                        <div class="modal__img_wrp">
+                            <a href='' target="_blank" class="">
+                                <img class="modal__img"
+                                    src=https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg
+                                    alt={project?.title} />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <section class="modal_footer">
+                    <div class="modal_footer-content-left">
+                        <div class="small-text-wrap modal_footer-left-first">
+                            <h3>© Carlos Prado</h3>
+                            <h3 class="h3-reg">2023.</h3>
+                        </div>
+
+                        <div class="small-text-wrap">
+                            <h3>social</h3>
+                            <h3 class="h3-reg">
+                                <a class="link-hover" href="https://github.com/ceprado93" target="_blank"
+                                    rel="noopener noreferrer">Github</a>,
+                                <a class="link-hover" href="https://www.linkedin.com/in/carlos-prado-buesa/"
+                                    target="_blank" rel="noopener noreferrer">Linkedin</a>,
+                                <a class="link-hover" href="https://codepen.io/ceprado93" target="_blank"
+                                    rel="noopener noreferrer">Codepen</a>
+                            </h3>
+                        </div>
+                    </div>
+
+
+                    <div class="modal_footer-content-right">
+                        <div class="small-text-wrap">
+                            <h3>
+                                <a class="link-hover close_button">Cerrar</a>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>

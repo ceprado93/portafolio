@@ -1,0 +1,756 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.pdk-header {
+	background-color: rgba($podkast-01, .85);
+	width: 100%;
+	//height: 96px;
+	//position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+	top: 0;
+	z-index: 90;
+    //display: inline-block;
+
+	.wrp {
+		height: 100%;
+		display: flex;
+	}
+}
+
+    .pdk-header__eitb {
+        background-color: $ui-01;
+        width: 100%;
+        height: 48px;
+        position: absolute;
+        top: 0;
+        z-index: 20;
+
+        // + .pdk-header__main {
+        //     margin-top: 48px;
+        // }
+    }
+
+	.pdk-header__main,
+	.pdk-header__extra {
+		height: 48px;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: "";
+            width: 40px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            right: 0;
+        }
+	}
+
+	.pdk-header__main {
+		background-color: $podkast-01;
+
+        &:before {
+            @include linear-gradient-complex(90deg, $podkast-01 0%, rgba($podkast-01, 0) 100%);
+        }
+
+        &:after {
+            @include linear-gradient-complex(270deg, $podkast-01 0%, rgba($podkast-01, 0) 100%);
+        }
+	}
+
+		.pdk-header__logo {
+			width: 102px;
+			height: 100%;
+			margin-left: 0;
+			display: table;
+
+			.logo {
+				width: 100%;
+				height: auto;
+			}
+
+			+ .pdk-header__nav {
+
+				.nav {
+					margin-left: 32px;
+				}
+			}
+		}
+
+			.main-logo {
+				font: 0/0 a;
+				color: transparent;
+				text-decoration: none;
+				width: 100%;
+				height: auto;
+				display: table-cell;
+				vertical-align: middle;
+
+				.logo__letter { fill: $icon-01; }
+			}
+
+
+		.pdk-header__nav {
+            width: 100%;
+			height: 100%;
+            position: relative;
+
+			.nav {
+				//display: table;
+				display: flex;
+				align-items: center;
+				height: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+				.nav__item {
+					@include body_l(500);
+					vertical-align: middle;
+					margin: 0;
+				}
+
+					.nav__link {
+						color: $text-01;
+						padding: 10px 16px;
+						display: block;
+						white-space: nowrap;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+
+					.nav__sub {
+						position: absolute;
+						left: 0;
+						top: 48px;
+
+						.nav__item {
+							@include body_m(500);
+
+							&:first-child { margin-top: 0; }
+						}
+
+							.nav__link {
+								color: $text-02;
+								margin-left: 0;
+								display: block;
+								white-space: pre;
+							}
+					}
+
+				.nav__item--active {
+					background-color: $podkast-03;
+				}
+
+
+                .nav__item--hidden {
+                    display: none;
+                }
+
+                .nav__item--invisible {
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+
+				.nav__item--onfocus {
+
+					.nav__sub {
+						transform: translateX(-50%) translateY(0);
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+
+				.icon--filled__glyph { fill: $icon-01; }
+		}
+
+		//.pdk-header__nav--mobile { display: none; }
+
+
+	.pdk-header__extra {
+		background-color: $ui-01;
+        border-bottom: 1px solid $ui-03;
+
+        &:before {
+            @include linear-gradient-complex(90deg, $ui-01 0%, rgba($ui-01, 0) 100%);
+        }
+
+        &:after {
+            @include linear-gradient-complex(270deg, $ui-01 0%, rgba($ui-01, 0) 100%);
+        }
+
+		.nav__item {
+			@include body_m(500);
+			margin-left: 24px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+			.nav__link {
+				color: $text-02;
+				padding: 0;
+				position: relative;
+			}
+
+		.nav__item--active {
+			background: none;
+
+			.nav__link {
+				color: $text-01;
+
+				&:after {
+					content: "";
+					background-color: $podkast-03;
+					width: 100%;
+					height: 1px;
+					position: absolute;
+					left: 0;
+					bottom: -12px;
+				}
+			}
+		}
+
+        .pdk-header__more {
+            background-color: $ui-01;
+        }
+	}
+
+        .pdk-header__more {
+            height: 100%;
+            padding-left: 24px;
+            //padding-right: 24px;
+            display: flex;
+            align-items: center;
+
+            position: absolute;
+            top: 0;
+            //right: 0;
+            right: -8px;
+
+            .nav__link {
+                position: relative;
+                padding-right: 24px;
+
+                &:before {
+                    content: "";
+                    background-color: $ui-03;
+                    width: 1px;
+                    height: 100%;
+
+                    position: absolute;
+                    left: -16px;
+                }
+
+                &:after {
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    margin-left: -4px;
+                    pointer-events: none;
+                    border: 4px solid rgba(255, 255, 255, 0);
+                    border-top-color: $text-02;
+                    position: absolute;
+                    top: calc(50% - 2px);
+                    right: 8px;
+                }
+            }
+
+            &:before {
+                content: "";
+                @include linear-gradient-complex(270deg, $ui-01 0%, rgba($ui-01, 0) 100%);
+                width: 16px;
+                height: 100%;
+
+                position: absolute;
+                left: -16px;
+            }
+
+            &:after {
+                content: "";
+                background-color: $ui-01;
+                width: 50vw;
+                height: 100%;
+
+                position: absolute;
+                left: 100%;
+            }
+        }
+
+
+
+        .pdk-header__nav--aux {
+            background-color: $ui-02;
+            //width: 50%;
+            width: 344px;
+            height: 100%;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            right: -344px;
+            //right: 0%;
+            transition: transform $move-animation;
+            transform: translateX(0%);
+            overflow-x: hidden;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+
+            .nav {
+                display: block;
+                height: auto;
+                padding: 61px 0 32px 56px;
+            }
+
+                .nav__item {
+                    height: auto;
+                    margin-bottom: 20px;
+                    margin-left: 0;
+                    display: block;
+                }
+
+                    .nav__link {
+                        display: initial;
+                    }
+
+                .nav__item--active {
+
+                    .nav__link {
+
+                        &:after {
+                            bottom: -8px;
+                        }
+                    }
+                }
+
+                .nav__close {
+                    height: 24px;
+                    width: 24px;
+                    background:url('#{$core-img-path}/clear.svg') 50% 50%;
+                    display: block;
+                    position: absolute;
+                    top: 12px;
+                    right: 24px;
+                }
+        }
+
+
+
+
+.body--onmenu {
+
+    .pdk-header {
+        z-index: 110;
+    }
+
+    .pdk-header__nav--aux {
+        //overflow-y: scroll;
+        //-webkit-overflow-scrolling: touch;
+        //transform: translateX(-100%);
+    }
+}
+
+
+.body--onmenuclose {
+
+    .pdk-header {
+        z-index: 110;
+    }
+}
+
+
+// UI Dark
+.body--dark {
+
+    .pdk-header__eitb {
+        background-color: $ui-dark-01;
+    }
+
+	.main-logo {
+
+		.logo__letter { fill: $icon-dark-01; }
+	}
+
+
+		.nav__link {
+			color: $text-dark-01;
+		}
+
+	.pdk-header__extra {
+		background-color: $ui-dark-01;
+        border-color: $ui-dark-03;
+
+        &:before {
+            @include linear-gradient-complex(90deg, $ui-dark-01 0%, rgba($ui-dark-01, 0) 100%);
+        }
+
+        &:after {
+            @include linear-gradient-complex(270deg, $ui-dark-01 0%, rgba($ui-dark-01, 0) 100%);
+        }
+
+		.nav__link {
+			color: $text-dark-02;
+		}
+
+		.nav__item--active {
+
+			.nav__link {
+				color: $text-dark-01;
+			}
+		}
+
+        .pdk-header__more {
+            background-color: $ui-dark-01;
+
+            &:before {
+                @include linear-gradient-complex(270deg, $ui-dark-01 0%, rgba($ui-dark-01, 0) 100%);
+            }
+
+            &:after {
+                background-color: $ui-dark-01;
+            }
+
+            .nav__link {
+
+                &:before {
+                    background-color: $ui-dark-03;
+                }
+
+                &:after {
+                    border-top-color: $text-dark-02;
+                }
+            }
+        }
+
+            .pdk-header__nav--aux {
+                background-color: $ui-dark-02;
+            }
+	}
+}
+
+
+
+
+/* ==========================================================================
+   $MEDIA-QUERIES
+   ========================================================================== */
+
+/* TABLET LAYOUT DOWN
+----------------------------------------------- */
+@include media-breakpoint-down(large) {
+
+    .pdk-header {
+        top: -48px;
+    }
+
+        .pdk-header__eitb {
+
+            + .pdk-header__main {
+                height: 96px;
+                padding-top: 48px;
+            }
+        }
+
+    	.pdk-header__main,
+    	.pdk-header__extra {
+
+    		.wrp {
+    			padding: 0;
+    			overflow: hidden;
+    		}
+    	}
+
+    	.pdk-header__main {
+            //height: 96px;
+
+    		.nav__link {
+    			padding: 13px 16px;
+    		}
+
+            .pdk-header__logo {
+                display: none;
+
+                + .pdk-header__nav .nav {
+                    margin-left: 0;
+                }
+            }
+    	}
+
+    		.pdk-header__nav {
+    			width: 100%;
+
+    			.nav {
+    				height: 56px;
+    				padding-bottom: 8px;
+    				overflow-x: scroll;
+    				overflow-y: hidden;
+    				-webkit-overflow-scrolling: touch;
+    				-ms-scroll-snap-type: x mandatory;
+    				scroll-snap-type: x mandatory;
+    			}
+
+    			.nav__item {
+    				@include body_m(500);
+
+    				scroll-snap-align: start;
+    				scroll-snap-stop: normal;
+    			}
+    		}
+
+    	.pdk-header__extra {
+
+    		.nav__item {
+    			scroll-margin-left: 16px;
+    			scroll-snap-margin-left: 16px;
+
+    			&:first-child {
+    				margin-left: 16px;
+    			}
+
+    			&:last-child {
+
+    				.nav__link  {
+    					margin-right: 16px;
+    				}
+    			}
+    		}
+    	}
+
+            .pdk-header__more {
+                display: none;
+            }
+
+            .pdk-header__nav--aux {
+                display: none;
+            }
+
+	@supports (padding-top: env(safe-area-inset-top)) {
+
+		.pdk-header {
+			//backdrop-filter: blur(50px);
+			//-webkit-backdrop-filter: blur(50px);
+			//padding-top: env(safe-area-inset-top);
+		}
+
+            .pdk-header__eitb {
+                //height: calc(48px + env(safe-area-inset-top));
+                //padding-top: env(safe-area-inset-top);
+            }
+
+		.pdk-header__nav {
+
+			.nav {
+				padding-left: calc(env(safe-area-inset-left) - 16px);
+			}
+		}
+
+		@supports(padding: max(0px)) {
+
+			.pdk-header {
+
+				.nav__item {
+					scroll-margin-left: m#{a}x(16px, env(safe-area-inset-left));
+					scroll-snap-margin-left: m#{a}x(16px, env(safe-area-inset-left));
+				}
+			}
+		}
+	}
+
+    @media (display-mode: standalone) {
+
+        .pdk-header {
+            //top: 0;
+            top: -1px;
+
+            &:before,
+            &:after {
+                content: "";
+                width: 100%;
+                //height: calc( 2px + env(safe-area-inset-top));
+                height: env(safe-area-inset-top);
+                position: fixed;
+                //top: -1px;
+                top: 0;
+                left: 0;
+                z-index: 190;
+            }
+
+            &:before {
+                background-color: rgba($podkast-01, .85);
+                z-index: 200;
+            }
+
+            &:after {
+                background-color: $ui-dark-01;
+            }
+        }
+
+        .eitb-header {
+
+            + .pdk-header {
+
+                &:before,
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+
+    // Ajustes Producción
+    #app_podkast {
+
+        // .pdk-header {
+        //     top: 0;
+        // }
+    }
+
+}
+
+
+
+/* MOBILE LAYOUT DOWN
+----------------------------------------------- */
+@include media-breakpoint-down(medium) {
+
+    .pdk-header__main,
+    .pdk-header__extra {
+
+        &:before {
+            width: 16px;
+        }
+    }
+}
+
+
+
+/* SMALL MOBILE LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-down(small) {
+
+}
+
+
+
+/* SMALLER MOBILE LAYOUT
+----------------------------------------------- */
+@include media-breakpoint-down(xsmall) {
+
+}
+
+
+
+/* TABLET LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-up(medium) {
+
+	// .pdk-header {
+	// 	height: 112px;
+	// }
+}
+
+
+
+/* TABLET LAYOUT
+----------------------------------------------- */
+@include media-breakpoint-between(medium, large) {
+
+	// .pdk-header__navtrigger {
+	//     top: 18px;
+	//     left: auto;
+	//     right: 24px;
+	// }
+
+}
+
+
+
+/* DESKTOP LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-up(large) {
+
+    .pdk-header__eitb {
+        display: none;
+    }
+
+    .pdk-header__main,
+    .pdk-header__extra {
+        overflow: hidden;
+    }
+}
+
+
+
+/* DESKTOP LAYOUT
+----------------------------------------------- */
+@include media-breakpoint-between(large, xlarge) {
+
+
+}
+
+
+
+/* BIG DESKTOP LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-up(xlarge) {
+
+}
+
+
+
+/* BIGER DESKTOP LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-up(xxlarge) {
+
+}
+
+
+
+/* EXTRA BIGER DESKTOP LAYOUT UP
+----------------------------------------------- */
+@include media-breakpoint-up(xxxlarge) {
+
+
+    // .pdk-header__more {
+    //     right:
+    // }
+
+}
+
+
+
+
+/* ==========================================================================
+   $RETINA@2X
+   ========================================================================== */
+
+@include device-pixel-ratio(2) {
+
+}
+
+
+
+/* ==========================================================================
+   $RETINA@3X
+   ========================================================================== */
+
+@include device-pixel-ratio(3) {
+
+}

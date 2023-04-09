@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$color-red: #f43a3a;
+$color-red-hover: #f20404;
+$color-dark: #3b3931;
+$color-grey: #a6a6a6;
+$white: #dcdcdc;
+$white-background: white;
+$dark-theme: #040404;
+
+/// Text - color
+$text-01: #000000 !default;
+$text-02: #666666 !default;
+$text-03: #8E8E93 !default;
+$text-04: #FFFFFF !default;
+$text-05: #CC0033 !default;
+
+
+/// UI - color
+$ui-01: #FFFFFF !default;
+$ui-02: #F7F7F7 !default;
+$ui-03: #EAEAEA !default;
+$ui-04: #CCCCCC !default;
+$ui-05: #C7C7CC !default;
+// $ui-06: #8E8E93 !default;
+$ui-06: #747474 !default;
+$ui-07: #666666 !default;
+$ui-08: #5E5E61 !default;
+$ui-09: #333333 !default;
+$ui-10: #2C2C2E !default;
+$ui-11: #1D1E1E !default;
+$ui-12: #020305 !default;
+// $ui-12: #0D0E11 !default;
+
+
+// Tipografías
+// $font-primary: "Inter" !default; // Headings
+// $font-secondary: "Inter" !default; // Text
+// $font-tertiary: "Inter" !default; // Mono
+// Tipografías
+$font-primary: "Roboto" !default; // Headings
+$font-secondary: "Roboto" !default; // Text
+$font-tertiary: "Roboto" !default; // Mono

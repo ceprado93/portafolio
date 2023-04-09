@@ -1,0 +1,158 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+    padding: 10px;
+    &.initial {
+        display: none;
+    }
+    .footer-content{
+        margin-top: 120px;
+        h2{
+            &.footer__title{
+                font-size: 6vw;
+                line-height: 79%;
+                letter-spacing: -.08em;
+                font-weight: 400;
+                text-transform: uppercase;
+                font-family: KumbhSans, Arial, Helvetica, sans-serif;
+                margin: 0;
+                cursor: default;
+            }
+        }
+        .footer__text-wrap{
+            p{
+                font-size: 4rem;
+                    line-height: 4rem;
+                    font-family: KumbhSans, Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                    letter-spacing: -.02em;
+                    margin-top: 30px;
+            }
+        }
+    }
+    .footer-end {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .footer-left-first {
+            margin-right: 20px;
+        }
+        .footer-content-left {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-content-right {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+            align-items:flex-end;
+        }
+    }
+}
+
+@media(min-width: 200px) {
+
+    .footer-content-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-left-first {
+        margin-right: 0;
+    }
+
+    .footer-content-right {
+        width: 100%;
+    }
+
+}
+
+@media(min-width: 600px) {
+
+    .footer-content-left {
+        width: 80%;
+        margin-bottom: 0;
+    }
+
+    .footer-left-first {
+        margin-right: 20px;
+    }
+
+    .footer-content-right {
+        width: 20%;
+    }
+
+}
+
+@media(min-width: 750px) {
+
+    .footer-content-left {
+        width: 70%;
+    }
+
+    .footer-content-right {
+        width: 30%;
+    }
+}
+
+@media(min-width: 1200px) {
+    .footer-content-left {
+        width: 60%;
+    }
+
+    .footer-content-right {
+        width: 40%;
+    }
+}
+
+@media(min-width: 1620px) {
+
+    .footer-content-left {
+        width: 50%;
+    }
+
+    .footer-content-right {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+            .footer-content {    
+                h2 {
+                    &.footer__title {
+                        font-size: 8vw;
+                    }
+                }
+                .footer__text-wrap {
+                    p {
+                        font-size: 2rem;
+                        line-height: 2rem;
+                        margin-top: 15px;
+                    }
+                }
+            }
+    
+            .footer-end {
+                
+                .footer-content-left {
+                    width: 90%;
+                    flex-direction: column;
+                }
+    
+                .footer-content-right {
+                    width: 90%;
+                    justify-content: flex-start;
+                }
+            }
+        }
+}

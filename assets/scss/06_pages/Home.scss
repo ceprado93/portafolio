@@ -1,0 +1,42 @@
+
+.sec_separata{
+    height: 50vh;
+    &.initial {
+        display: none;
+    }
+}
+
+.container{
+    background: white;
+    color: black;
+    overflow-x: hidden;
+        max-width: 100%;
+        width: 100%;
+        overscroll-behavior: none;
+    &.dark{
+        background: black;
+        color: white;
+        .portfolio__horizontal{
+            background: white;
+            color: black;
+        }
+        a{
+            color: white;
+        }
+        .modal{
+            background-color: white;
+            color: black;
+            a{
+                color: black;
+            }
+        }
+                // .modal {
+                //     background-color: black;
+                //     color: white;
+        
+                //     a {
+                //         color: white;
+                //     }
+                // }
+    }
+}

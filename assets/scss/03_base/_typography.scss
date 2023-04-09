@@ -1,0 +1,16 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+    color: $text-01;
+    //font: normal 125% / 1.4 $text-font-stack;
+    font: normal 0.625em / 1.231 $text-font-stack;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body.body--dark {
+    //color: $text-dark-01;
+}
