@@ -287,8 +287,9 @@ window.onload = () => {
     //   gsap.from(".header-top", { y: 20, opacity: 0, duration: 0.8 });
     gsap.from("h1", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
     gsap.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.9 });
-    gsap.from(".bio_wrap__text", { y: 30, x: 30, opacity: 0, duration: 0.8, delay: 0.9 });
+    gsap.from(".headerDesc__text", { y: 30, x: 30, opacity: 0, duration: 0.8, delay: 0.9 });
   }, 1500);
+  typewriteEffect();
 };
 
 //MODAL
@@ -304,6 +305,8 @@ articles.forEach((elm) => {
         document.querySelector(".modal__title").innerHTML = project.title;
         document.querySelector(".modal__description").innerHTML = project.description;
         document.querySelector(".modal__img").src = project.img;
+        document.querySelector(".modal__img").id = "modalImg" + project.id;
+
         if (project.id >= 6) modal.classList.add("ligth");
       }
     });
@@ -318,6 +321,11 @@ articles.forEach((elm) => {
         modal.classList.add("fadeIn");
       }, 100);
       setTimeout(() => {
+        modal.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
         modalContainer.classList.add("display");
       }, 1000);
     }
@@ -341,3 +349,10 @@ closeButton.addEventListener("click", () => {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+function typewriteEffect() {
+  $(".heading").html(function (i, html) {
+    var chars = $.trim(html).split("");
+    return "<span>" + chars.join("</span><span>") + "</span>";
+  });
+}
