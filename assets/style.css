@@ -296,7 +296,7 @@ h1 {
   letter-spacing: -.08em;
   font-weight: 400;
   text-transform: uppercase;
-  font-family: RadioCanada-variable, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro-variable, Arial, Helvetica, sans-serif;
   font-variation-settings: "wght" 400, "wdth" 50;
   margin: 0;
   cursor: default; }
@@ -304,7 +304,7 @@ h1 {
 h2 {
   font-size: 4rem;
   line-height: 4rem;
-  font-family: RadioCanada, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: -.02em;
@@ -313,7 +313,7 @@ h2 {
 h3 {
   font-size: 1.3rem;
   line-height: 1.3rem;
-  font-family: RadioCanada, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -322,14 +322,14 @@ h3 {
 .smallHeader--reg {
   font-size: 1.3rem;
   line-height: 1.3rem;
-  font-family: RadioCanada, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .05em;
   margin-left: 14px; }
 
 p {
-  font-family: RadioCanada, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 2.2rem;
@@ -379,37 +379,19 @@ a {
     margin-top: 30px; } }
 
 @font-face {
-  font-family: RadioCanada-variable;
-  src: url(./fonts/RadioCanada-Variable.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: RadioCanada;
-  src: url(./fonts/RadioCanada-Regular.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: RadioCanada;
-  src: url(./fonts/RadioCanada-Bold.ttf) format("truetype");
-  font-weight: 700;
-  font-style: normal; }
-
-@font-face {
-  font-family: RadioCanada-variable;
+  font-family: ReadexPro-variable;
   src: url(./fonts/ReadexPro-Variable.ttf) format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
-  font-family: RadioCanada;
+  font-family: ReadexPro;
   src: url(./fonts/ReadexPro-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
-  font-family: RadioCanada;
+  font-family: ReadexPro;
   src: url(./fonts/ReadexPro-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal; }
@@ -594,7 +576,12 @@ header .header-main {
     align-items: flex-start; }
     .headerDesc-wrap .headerDesc__text {
       margin-bottom: 30px;
-      width: 80%; } }
+      width: 80%; }
+    .headerDesc-wrap .small-text-wrap {
+      align-items: center; }
+    .headerDesc-wrap .colorToggle {
+      height: 14px;
+      width: 14px; } }
 
 footer {
   padding: 10px; }
@@ -608,13 +595,13 @@ footer {
       letter-spacing: -.08em;
       font-weight: 400;
       text-transform: uppercase;
-      font-family: RadioCanada, Arial, Helvetica, sans-serif;
+      font-family: ReadexPro, Arial, Helvetica, sans-serif;
       margin: 0;
       cursor: default; }
     footer .footer-content .footer__text-wrap p {
       font-size: 4rem;
       line-height: 4rem;
-      font-family: RadioCanada, Arial, Helvetica, sans-serif;
+      font-family: ReadexPro, Arial, Helvetica, sans-serif;
       font-weight: 400;
       letter-spacing: -.02em;
       margin-top: 30px; }
@@ -696,7 +683,8 @@ footer {
   background-color: black;
   color: white;
   transform: translateY(100vh);
-  transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98); }
+  transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98);
+  overflow-y: scroll; }
   .modal.show {
     display: block; }
     .modal.show.fadeIn {
@@ -723,20 +711,36 @@ footer {
     .modal .modal__container .modal__col-second {
       width: 66.66%; }
       .modal .modal__container .modal__col-second .modal__description {
-        margin-bottom: 30px; }
+        margin-bottom: 60px; }
       .modal .modal__container .modal__col-second .modal__img_wrp a {
         pointer-events: none; }
         .modal .modal__container .modal__col-second .modal__img_wrp a .modal__img {
           width: 100%;
-          max-height: 70vh;
-          min-height: 70vh;
+          max-height: 60vh;
+          min-height: 60vh;
           object-fit: cover; }
           .modal .modal__container .modal__col-second .modal__img_wrp a .modal__img#modalImg5 {
             background-color: #ededed; }
+          .modal .modal__container .modal__col-second .modal__img_wrp a .modal__img#modalImg8 {
+            object-position: 100% 20%; }
+      .modal .modal__container .modal__col-second .modal__img_wrp.modal__landingImg_wrp {
+        margin-top: 30px; }
+        .modal .modal__container .modal__col-second .modal__img_wrp.modal__landingImg_wrp a {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end; }
+          .modal .modal__container .modal__col-second .modal__img_wrp.modal__landingImg_wrp a .modal__img {
+            max-height: 50vh;
+            min-height: auto;
+            object-fit: contain;
+            object-position: left; }
+          .modal .modal__container .modal__col-second .modal__img_wrp.modal__landingImg_wrp a h3 {
+            width: 100%; }
   .modal .modal_footer {
     width: 100%;
     padding: 10px;
-    position: absolute;
+    position: relative;
+    margin-top: 120px;
     bottom: 0px;
     display: flex;
     flex-wrap: wrap;
@@ -808,6 +812,9 @@ footer {
             width: 100%;
             max-height: 50vh;
             min-height: 50vh; }
+          .modal .modal__container .modal__col-second .modal__img_wrp.modal__landingImg_wrp {
+            margin: auto;
+            margin-top: 20px; }
     .modal .modal_footer {
       position: relative;
       flex-direction: column;
@@ -878,6 +885,18 @@ footer {
         .portfolio__horizontal .grid__wrap--horizontal article .article_wrap h3 {
           margin-top: 10px; }
 
+#cursor {
+  position: fixed;
+  left: 10px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000; }
+
 .sec_separata {
   height: 50vh; }
   .sec_separata.initial {
@@ -905,3 +924,7 @@ footer {
         color: black; }
       .container.dark .modal .modal__container .modal__col-second .modal__img_wrp a .modal__img#modalImg5 {
         background-color: black; }
+
+@media (max-width: 768px) {
+  #cursor {
+    display: none; } }

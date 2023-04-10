@@ -26,6 +26,7 @@
     </head>
 
     <body>
+
         <div class="container">
 
             <header id="top" class="initial">
@@ -66,7 +67,7 @@
                 <div class="grid__wrap">
                     <div class="grid__row">
 
-                        <article id="0" data-type="parallax" data-depth="24">
+                        <article id="0" data-type="parallax" data-depth="12">
                             <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg"
                                 alt="aps" />
                             <h3>APS Racing</h3>
@@ -76,7 +77,7 @@
                                 alt="wave maps" />
                             <h3>Wave maps</h3>
                         </article>
-                        <article id="2" data-type="parallax" data-depth="8">
+                        <article id="2" data-type="parallax" data-depth="18">
                             <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png"
                                 alt="la bamba" />
                             <h3>La bamba</h3>
@@ -84,7 +85,7 @@
                     </div>
                     <div class="grid__row">
 
-                        <article id="3" data-type="parallax" data-depth="24">
+                        <article id="3" data-type="parallax" data-depth="14">
                             <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256895/portfolio/cpzfondo_llaxtv.png"
                                 alt="Celia Perez art" />
                             <h3>Celia Perez Art</h3>
@@ -119,8 +120,7 @@
                     </article>
                     <article id="8">
                         <div class="article_wrap">
-                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1680446394/portfolio/Captura_de_pantalla_2022-12-04_a_las_17.19.59-min_fthgby.png"
-                                alt="Whitehole" />
+                            <img src="./assets/img/whitehole.png" alt="Whitehole" />
                             <h3>Whitehole</h3>
                         </div>
                     </article>
@@ -206,14 +206,30 @@
                         <div class="modal__img_wrp">
                             <a href='' target="_blank" class="">
                                 <img class="modal__img"
-                                    src=https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg
-                                    alt={project?.title} />
+                                    src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg"
+                                    alt="{project?.title}" />
+                            </a>
+                        </div>
+                        <div class="modal__img_wrp modal__landingImg_wrp">
+                            <a href='' target="_blank" class="">
+                                <img class="modal__landingImg modal__img" src="assets/img/wm-home.png" alt="landing" />
+                                <h3>Landing</h3>
+
                             </a>
                         </div>
                     </div>
 
                 </div>
                 <section class="modal_footer">
+                    <div class="modal_footer-content-left">
+                        <div class="small-text-wrap modal_footer-left-first">
+                            <h3>Siguiente projecto</h3>
+                            <h3 class="smallHeader--reg">
+                                <a class="link-hover">Wave maps</a>
+                            </h3>
+                        </div>
+
+                    </div>
                     <div class="modal_footer-content-left">
                         <div class="small-text-wrap modal_footer-left-first">
                             <h3>© Carlos Prado</h3>
@@ -245,6 +261,8 @@
 
                 </section>
             </div>
+        </div>
+        <div id="cursor">
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>

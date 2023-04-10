@@ -1,4 +1,15 @@
-
+#cursor{
+    position: fixed;
+    left: 10px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+}
 .sec_separata{
     height: 50vh;
     &.initial {
@@ -34,5 +45,10 @@
             }
         }
         
+    }
+}
+@media(max-width:768px){
+    #cursor{
+        display: none;
     }
 }
