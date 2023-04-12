@@ -10,6 +10,17 @@
 .grid__row{
     display: flex;
     margin-bottom: 120px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    &.grid__row--first{
+        justify-content: space-between;
+        h2{
+            font-size: 5vw;
+            line-height: 5vw;
+            padding: 10px;
+        }
+    }
     article{
         width: 33.3%;
         padding: 10px;
@@ -39,22 +50,32 @@
 
 .portfolio__horizontal{
     height: 100vh;
-    display: flex;
+    // padding-top: 60px;
+    // padding-bottom: 60px;
     left: 0;
     background: black;
     color: white;
+    display: flex;
+    flex-direction: column;
     &.initial {
         display: none;
     }
+    .horizontal__title{
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-top: 60px;
+        padding-left: 10px;
+    }
     .grid__wrap--horizontal{
-        height: calc(100vh - 120px);
-        margin: 60px 0;  
+        height: calc(100% - 90px);
+        margin-top: 30px; 
+        margin-bottom: 60px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         article{
-            min-height: calc(100% - 60px);
-            margin: 30px 0;
+            height: calc(100%);
+            margin: 0;
             padding:0 10px;
             aspect-ratio: 1/1;
             .article_wrap{
@@ -72,7 +93,7 @@
                 // }
                 img {
                     object-fit: cover;
-                    height: 100%;
+                    height: calc(100% - 23px);
                     width: 100%;
                     filter: grayscale(1);
                     &:hover {
@@ -83,6 +104,26 @@
                     margin-top: 10px;
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .grid__row {
+        &.grid__row--first {
+            h2 {
+                font-size: 14vw;
+                line-height: 14vw;
+            }
+        }
+    }
+    .portfolio__horizontal {
+        .horizontal__title {
+            font-size: 14vw;
+            line-height: 14vw;
+        }
+        .grid__wrap--horizontal {
+            height: calc(100% - 30px - 14vw);
         }
     }
 }
