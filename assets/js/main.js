@@ -256,23 +256,23 @@ function scrollHorizontall() {
     },
   });
 
-  let imgs = document.querySelectorAll(".grid__wrap--horizontal article .article_wrap");
-  let leftTrigger = window.innerWidth * 0.2;
-  let rigthTrigger = window.innerWidth * 0.7;
+  // let imgs = document.querySelectorAll(".grid__wrap--horizontal article .article_wrap");
+  // let leftTrigger = window.innerWidth * 0.2;
+  // let rigthTrigger = window.innerWidth * 0.7;
 
-  window.addEventListener("scroll", function (event) {
-    imgs.forEach((image, index) => {
-      if ((!imgs[0].classList.contains("centered") && image.getBoundingClientRect().left > leftTrigger) & (image.getBoundingClientRect().left < rigthTrigger)) {
-        image.classList.add("centered");
-      } else {
-        if (image.classList.contains("centered")) image.classList.remove("centered");
-      }
-      if (index === 0 && image.getBoundingClientRect().left < 100 && image.getBoundingClientRect().left >= -100) {
-        image.classList.add("centered");
-        document.querySelector(".article__wrap--app").classList.remove("centered");
-      } else if (index === 0 && image.getBoundingClientRect().left < -100) image.classList.remove("centered");
-    });
-  });
+  // window.addEventListener("scroll", function (event) {
+  //   imgs.forEach((image, index) => {
+  //     if ((!imgs[0].classList.contains("centered") && image.getBoundingClientRect().left > leftTrigger) & (image.getBoundingClientRect().left < rigthTrigger)) {
+  //       image.classList.add("centered");
+  //     } else {
+  //       if (image.classList.contains("centered")) image.classList.remove("centered");
+  //     }
+  //     if (index === 0 && image.getBoundingClientRect().left < 100 && image.getBoundingClientRect().left >= -100) {
+  //       image.classList.add("centered");
+  //       document.querySelector(".article__wrap--app").classList.remove("centered");
+  //     } else if (index === 0 && image.getBoundingClientRect().left < -100) image.classList.remove("centered");
+  //   });
+  // });
 }
 
 //INITIAL ANIMATION
