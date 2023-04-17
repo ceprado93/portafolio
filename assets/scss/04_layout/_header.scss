@@ -34,6 +34,7 @@
 
 header {
     // margin-bottom: 120px;
+    height: calc(100dvh - 20px);
     &.initial{
         color: white !important;
         a{
@@ -43,13 +44,69 @@ header {
    
     .header-top {
         margin-bottom: 60px;
-        .header-top-content {
-            display: flex;
-            justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
+        .header-top-nav{
+            h3{
+                display: flex;
+                gap: 6px;
+                .lang--disabled{
+                    opacity: 0.45;
+                }
+            }
         }
+            .colorToggle {
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                    cursor: pointer;
+                    border-radius: 12.5px;
+                    border: 1px solid white;
+                    background-color: transparent;
+                    margin-right: 6px;
+                    transition: transform 1s cubic-bezier(0.25, 0.1, 0, 0.98);
+            
+                    &.initial {
+                        transform: translate(48vw, -48vh) scale(3) rotate(180deg);
+            
+                        &.rotate {
+                            transform: translate(48vw, -48vh) scale(3) rotate(360deg);
+                        }
+                    }
+            
+                    span {
+            
+                        width: 10px;
+                        height: 12px;
+                        display: block;
+                        border-radius: 12.5px;
+                        position: relative;
+                        border: 1px solid;
+                        border-width: 6px;
+                        border-top-color: transparent;
+                        border-right-color: white;
+                        border-bottom-color: white;
+                        border-left-color: transparent;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(135deg);
+                        transition: all .35s ease-in-out;
+                    }
+            
+                    &.light {
+                        border: 1px solid #000;
+            
+                        span {
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                            transition: all .35s ease-in-out;
+                            border-right-color: #000;
+                            border-bottom-color: #000;
+                        }
+                    }
+                }
     }
     .header-main{
-        height: calc(100dvh - 20px);
+        height: calc(100% - 60px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -74,51 +131,7 @@ header {
     p {
         width: 60%;
     }
-    .colorToggle {
-        width: 12px;
-        height: 12px;
-        display: block;
-        cursor: pointer;
-        border-radius: 12.5px;
-        border: 1px solid white;
-        background-color: transparent;
-        margin-right: 6px;
-        transition: transform 1s cubic-bezier(0.25, 0.1, 0, 0.98);
-        &.initial{
-            transform: translate(48vw, -48vh) scale(3) rotate(180deg);
-            &.rotate {
-                    transform: translate(48vw, -48vh) scale(3) rotate(360deg);
-                }
-        }
-            
-        span{
 
-            width: 10px;
-            height: 12px;
-            display: block;
-            border-radius: 12.5px;
-            position: relative;
-            border: 1px solid;
-            border-width: 6px;
-            border-top-color: transparent;
-            border-right-color: white;
-            border-bottom-color: white;
-            border-left-color: transparent;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(135deg);
-            transition: all .35s ease-in-out;
-        }
-        &.light{
-            border: 1px solid #000;
-            span{
-                transform: translate(-50%, -50%) rotate(-45deg);
-                transition: all .35s ease-in-out;
-                border-right-color: #000;
-                border-bottom-color: #000;
-            }
-        }
-    }
 }
 
 @media(min-width: 200px) {
