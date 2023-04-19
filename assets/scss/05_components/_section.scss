@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section component.
+// -----------------------------------------------------------------------------
+
+section{
+    &.current__intro{
+        width: 100vw;
+        height: 200vh;
+        .current__wrap{
+            padding: 10px;
+            height: 100% !important;
+            display: flex;
+            align-items: center;
+            p{
+                width: 40vw;
+                margin-left: 16.69%;
+                font-size: 2.5vw;
+                line-height: 2.7vw;
+            }
+        }
+    }
+}

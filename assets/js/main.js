@@ -194,6 +194,7 @@ let colorToggle = document.querySelector(".colorToggle");
 let container = document.querySelector(".container");
 
 colorToggle.addEventListener("click", () => {
+  console.log("aaa");
   if (colorToggle.classList.contains("light")) {
     colorToggle.classList.remove("light");
     container.classList.add("dark");
@@ -210,32 +211,32 @@ let bio = document.getElementById("bio");
 let portfolio__grid = document.getElementById("portfolio__grid");
 
 addEventListener("scroll", (event) => {
-  title.style.opacity = 1 - document.documentElement.scrollTop / 300;
-  bio.style.opacity = 1 - document.documentElement.scrollTop / 500;
+  // title.style.opacity = 1 - document.documentElement.scrollTop / 300;
+  // bio.style.opacity = 1 - document.documentElement.scrollTop / 500;
   if (document.documentElement.scrollTop > 1700) {
     portfolio__grid.style.opacity = 1 - document.documentElement.scrollTop / 2700;
   } else portfolio__grid.style.opacity = 1;
 });
 
-//PARALLAX
-(function () {
-  window.addEventListener("scroll", function (event) {
-    var depth, i, layer, layers, len, movement, topDistance, translate3d;
-    topDistance = document.documentElement.scrollTop;
-    layers = document.querySelectorAll("[data-type='parallax']");
-    for (i = 0, len = layers.length; i < len; i++) {
-      layer = layers[i];
-      depth = layer.getAttribute("data-depth");
-      movement = -(topDistance * (depth / 100));
-      translate3d = "translate3d(0, " + movement + "px, 3px)";
-      layer.style["-webkit-transform"] = translate3d;
-      layer.style["-moz-transform"] = translate3d;
-      layer.style["-ms-transform"] = translate3d;
-      layer.style["-o-transform"] = translate3d;
-      layer.style.transform = translate3d;
-    }
-  });
-}.call(this));
+// //PARALLAX
+// (function () {
+//   window.addEventListener("scroll", function (event) {
+//     var depth, i, layer, layers, len, movement, topDistance, translate3d;
+//     topDistance = document.documentElement.scrollTop;
+//     layers = document.querySelectorAll("[data-type='parallax']");
+//     for (i = 0, len = layers.length; i < len; i++) {
+//       layer = layers[i];
+//       depth = layer.getAttribute("data-depth");
+//       movement = -(topDistance * (depth / 100));
+//       translate3d = "translate3d(0, " + movement + "px, 3px)";
+//       layer.style["-webkit-transform"] = translate3d;
+//       layer.style["-moz-transform"] = translate3d;
+//       layer.style["-ms-transform"] = translate3d;
+//       layer.style["-o-transform"] = translate3d;
+//       layer.style.transform = translate3d;
+//     }
+//   });
+// }.call(this));
 
 //HORIZONTAL SCROLL
 
@@ -297,7 +298,7 @@ window.onload = () => {
     // GSAP INITIAL
 
     //   gsap.from(".header-top", { y: 20, opacity: 0, duration: 0.8 });
-    gsap.from("h1", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
+    gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
     gsap.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.9 });
     gsap.from(".headerDesc__text", { y: 30, x: 30, opacity: 0, duration: 0.8, delay: 0.9 });
   }, 1500);
@@ -356,6 +357,69 @@ closeButton.addEventListener("click", () => {
     if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
   }, 1000);
 });
+// gsap.to(".current__wrap", {
+//   position: "fixed",
+//   top: 0,
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".current__wrap",
+//     markers: true,
+//     start: "top top+=" + 2 * window.innerHeight + "px",
+//     end: "bottom top",
+//     pin: true,
+//     pinSpacing: false,
+//   },
+// });
+
+ScrollTrigger.create({
+  trigger: "#top",
+  // markers: true,
+  start: "top top+=1px",
+  end: "+=" + window.innerHeight + "px",
+  pin: !0,
+  pinSpacing: !1,
+}),
+  gsap.to(".header-top", {
+    scrollTrigger: {
+      trigger: ".portfolio__grid",
+      // markers: true,
+      start: "top top+=" + window.innerHeight + "px",
+      end: "+=" + window.innerHeight + "px",
+      scrub: !0,
+    },
+    opacity: 0,
+    ease: "none",
+  });
+gsap.to(".header-main", {
+  scrollTrigger: {
+    trigger: ".portfolio__grid",
+    // markers: true,
+    start: "top top+=" + window.innerHeight + "px",
+    end: "+=" + window.innerHeight + "px",
+    scrub: !0,
+  },
+  opacity: 0,
+  ease: "none",
+});
+ScrollTrigger.create({
+  trigger: ".current__wrap",
+  // markers: true,
+  start: "top top",
+  end: "+=" + window.innerHeight + "px",
+  pin: !0,
+  pinSpacing: !1,
+}),
+  gsap.to(".currenttext__wrap", {
+    scrollTrigger: {
+      trigger: ".portfolio__horizontal",
+      // markers: true,
+      start: "top top+=" + 2 * window.innerHeight + "px",
+      end: "+=" + window.innerHeight + "px",
+      scrub: !0,
+    },
+    opacity: 0,
+    ease: "none",
+  });
 
 //CURSOR
 

@@ -6,10 +6,48 @@
 }
 .animated {
     animation: font-animation infinite;
-    animation-duration: 8s;
+    animation-duration: 6s;
     transition-timing-function: ease-in-out
 }
 
+// @keyframes font-animation {
+//     0% {
+//         font-variation-settings: "wght" 500, "HEXP" 10;
+//     }
+
+//     2% {
+//         font-variation-settings: "wght" 400, "HEXP" 0;    }
+
+//     4% {
+//         font-variation-settings: "wght" 400, "HEXP"00;    }
+
+//     6% {
+//         font-variation-settings: "wght" 600, "HEXP"20;    }
+
+//     8% {
+//         font-variation-settings: "wght" 600, "HEXP"20;    }
+
+//     10% {
+//         font-variation-settings: "wght" 500, "HEXP" 10;    }
+
+//     90% {
+//     font-variation-settings: "wght" 500, "HEXP" 10;        }
+
+//     92% {
+//     font-variation-settings: "wght" 400, "HEXP" 0;        }
+
+//     94% {
+//     font-variation-settings: "wght" 600, "HEXP" 20;        }
+
+//     96% {
+//     font-variation-settings: "wght" 400, "HEXP" 0;        }
+
+//     98% {
+//     font-variation-settings: "wght" 600, "HEXP" 20;        }
+
+//     100% {
+//     font-variation-settings: "wght" 500, "HEXP" 10;        }
+// }
 @keyframes font-animation {
         0% {
             font-variation-settings: "wght" 400, "HEXP" 20;
@@ -43,9 +81,11 @@ header {
     }
    
     .header-top {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         display: flex;
         justify-content: space-between;
+        z-index: 2;
+        position: relative;
         .header-top-nav{
             h3{
                 display: flex;
@@ -106,10 +146,12 @@ header {
                 }
     }
     .header-main{
-        height: calc(100% - 60px);
+        height: calc(100% - 30px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
+        z-index: 1;
     }
 }
 

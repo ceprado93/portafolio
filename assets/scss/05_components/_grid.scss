@@ -7,33 +7,63 @@
         display: none;
     }
 }
+.portfolio__grid{
+    height: 100vh;
+    margin: 120px 0;
+    background: white;
+    position: relative;
+    z-index: 2;
+}
+.grid__row--separate{
+    width: 100%;
+    height: 12.5vh;
+}
 .grid__row{
     display: flex;
-    margin-bottom: 120px;
     &:last-child{
         margin-bottom: 0;
     }
     &.grid__row--first{
         justify-content: space-between;
         h2{
-            font-size: 8vw;
-            line-height: 8vw;
+            font-size: 7vw;
+            line-height: 6.5vw;
             padding: 10px;
         }
     }
-    article{
-        width: 33.3%;
+    &.grid__row--center{
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+    &.grid__row--around {
+        justify-content: space-around;
+    }
+    
+    .article{
         padding: 10px;
-        aspect-ratio: 1/1;
-        &:first-child{
-            transform: translateY(-60px);
+
+        // &:first-child{
+        //     transform: translateY(-60px);
+        // }
+        // &:last-child {
+        //     transform: translateY(60px);
+        // }
+        &.article--wide{
+        width: 33.333vw;
+        height: 25vh;
         }
-        &:last-child {
-            transform: translateY(60px);
+        &.article--big {
+            width: 33.333vw;
+            height: 37.5vh;
+        }
+        &.article--tall {
+            width: 16.666vw;
+            height: 37.5vh;
         }
         img{
             object-fit: cover;
             height: 100%;
+            width: 100%;
             filter: grayscale(1);
                 &:hover {
                     filter: grayscale(0);
