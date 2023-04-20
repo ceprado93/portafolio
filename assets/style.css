@@ -839,7 +839,7 @@ section.current__intro {
   height: 200vh; }
   section.current__intro .current__wrap {
     padding: 10px;
-    height: 100% !important;
+    height: 100%;
     display: flex;
     align-items: center; }
     section.current__intro .current__wrap p {
@@ -869,8 +869,8 @@ section.current__intro {
   .grid__row.grid__row--first {
     justify-content: space-between; }
     .grid__row.grid__row--first h2 {
-      font-size: 7vw;
-      line-height: 6.5vw;
+      font-size: 10vw;
+      line-height: 80%;
       padding: 10px; }
   .grid__row.grid__row--center {
     justify-content: space-evenly;

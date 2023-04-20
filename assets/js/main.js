@@ -248,6 +248,7 @@ function scrollHorizontall() {
   gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
     ease: "none",
+    // markers: true,
     scrollTrigger: {
       trigger: "#portfolio__horizontal",
       pin: true,
@@ -357,62 +358,21 @@ closeButton.addEventListener("click", () => {
     if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
   }, 1000);
 });
-// gsap.to(".current__wrap", {
-//   position: "fixed",
-//   top: 0,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".current__wrap",
-//     markers: true,
-//     start: "top top+=" + 2 * window.innerHeight + "px",
-//     end: "bottom top",
-//     pin: true,
-//     pinSpacing: false,
-//   },
-// });
 
 ScrollTrigger.create({
-  trigger: "#top",
+  trigger: ".top",
   // markers: true,
-  start: "top top+=1px",
+  id: "top",
+  start: "top top",
   end: "+=" + window.innerHeight + "px",
-  pin: !0,
-  pinSpacing: !1,
+  pin: true,
 }),
-  gsap.to(".header-top", {
+  gsap.to(".header-main", {
     scrollTrigger: {
       trigger: ".portfolio__grid",
       // markers: true,
-      start: "top top+=" + window.innerHeight + "px",
-      end: "+=" + window.innerHeight + "px",
-      scrub: !0,
-    },
-    opacity: 0,
-    ease: "none",
-  });
-gsap.to(".header-main", {
-  scrollTrigger: {
-    trigger: ".portfolio__grid",
-    // markers: true,
-    start: "top top+=" + window.innerHeight + "px",
-    end: "+=" + window.innerHeight + "px",
-    scrub: !0,
-  },
-  opacity: 0,
-  ease: "none",
-});
-ScrollTrigger.create({
-  trigger: ".current__wrap",
-  // markers: true,
-  start: "top top",
-  end: "+=" + window.innerHeight + "px",
-  pin: !0,
-  pinSpacing: !1,
-}),
-  gsap.to(".currenttext__wrap", {
-    scrollTrigger: {
-      trigger: ".portfolio__horizontal",
-      // markers: true,
+      id: "topdos",
+      toggleActions: "restart none reverse pause",
       start: "top top+=" + 2 * window.innerHeight + "px",
       end: "+=" + window.innerHeight + "px",
       scrub: !0,
@@ -420,6 +380,43 @@ ScrollTrigger.create({
     opacity: 0,
     ease: "none",
   });
+// Obtener la altura de la ventana gráfica
+const windowHeight = window.innerHeight;
+
+// Dividir la altura por 2 para obtener la mitad
+const halfWindowHeight = windowHeight;
+
+// Establecer la altura de ".current__wrap" en la mitad de la altura de la ventana gráfica
+const currentWrap = document.querySelector(".current__wrap");
+currentWrap.style.height = `${halfWindowHeight}px`;
+
+ScrollTrigger.create({
+  trigger: ".current__wrap",
+  // markers: true,
+  id: "primero",
+  start: "top top",
+  end: "+=" + 2 * window.innerHeight + "px",
+  pin: true,
+}),
+  gsap.to(".currenttext__wrap", {
+    scrollTrigger: {
+      trigger: ".portfolio__horizontal",
+      // markers: true,
+      id: "segundo",
+      toggleActions: "restart none reverse pause",
+      start: "top top+=" + 2 * windowHeight + "px",
+      end: "+=" + windowHeight + "px",
+      scrub: !0,
+    },
+    opacity: 0,
+    ease: "none",
+  });
+
+// gsap.to(".current__wrap", {
+//   scrollTrigger: {
+
+//   }
+// });
 
 //CURSOR
 
