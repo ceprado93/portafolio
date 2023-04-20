@@ -380,13 +380,9 @@ ScrollTrigger.create({
     opacity: 0,
     ease: "none",
   });
-// Obtener la altura de la ventana gráfica
 const windowHeight = window.innerHeight;
-
-// Dividir la altura por 2 para obtener la mitad
 const halfWindowHeight = windowHeight;
 
-// Establecer la altura de ".current__wrap" en la mitad de la altura de la ventana gráfica
 const currentWrap = document.querySelector(".current__wrap");
 currentWrap.style.height = `${halfWindowHeight}px`;
 
