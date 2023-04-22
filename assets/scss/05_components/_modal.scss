@@ -192,6 +192,9 @@
 .modal{
     min-height: 100dvh;
     overflow-y: scroll;
+    .modal__top {
+            padding: 10px 10px 0 0;
+        }
     .modal__container {
         flex-direction: column;
         .modal__col-first {

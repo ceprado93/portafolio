@@ -13,12 +13,28 @@ section{
             .current__wrap--inner{
                 display: flex;
                 align-items: center;
+                p{
+                    width: 80vw;
+                    margin-left: 8vw;
+                    font-size: 3.5vw;
+                    line-height: 3.3vw;
+                }
             }
-            p{
-                width: 80vw;
-                margin-left: 8vw;
-                font-size: 3.5vw;
-                line-height: 3.3vw;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    section{
+        &.current__intro {
+            .current__wrap {
+                .current__wrap--inner {        
+                    p {
+                        margin-left: 0;
+                        font-size: 7vw;
+                        line-height: 6.5vw;
+                    }
+                }
             }
         }
     }

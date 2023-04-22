@@ -192,7 +192,7 @@ let modalTitle = document.querySelector(".modal__title");
 let modalDescription = document.querySelector(".modal__description");
 let modalImg = document.querySelector(".modal__img");
 let modallandingImg = document.querySelector(".modal__landingImg");
-let closeButton = document.querySelector(".close_button");
+let closeButtons = document.querySelectorAll(".close_button");
 
 gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
@@ -256,16 +256,36 @@ window.onload = () => {
       ease: "none",
     });
 
-  gridArticle.forEach((gridArt) => {
-    gsap.from(gridArt, {
-      scrollTrigger: {
-        start: "top bottom",
-        end: "bottom top",
-        trigger: gridArt,
-        toggleClass: "display",
-      },
+  if (window.innerWidth > 768) {
+    gridArticle.forEach((gridArt) => {
+      gsap.from(gridArt, {
+        scrollTrigger: {
+          start: "top bottom",
+          end: "bottom top",
+          trigger: gridArt,
+          toggleClass: "display",
+        },
+      });
     });
-  });
+  } else {
+    gridArticle.forEach((gridArt, index) => {
+      gridArt.classList.add("display");
+      const article__wrap = gridArt.querySelector(".article__wrap");
+      const [x, xEnd] = index % 2 ? [100, 0] : [-100, 0];
+      gsap.fromTo(
+        article__wrap,
+        { x },
+        {
+          x: xEnd,
+          scrollTrigger: {
+            trigger: gridArt,
+            // markers: true,
+            scrub: 0.5,
+          },
+        }
+      );
+    });
+  }
 
   textSpan.forEach(function (t) {
     t.classList.remove("effect1", "effect2", "effect3", "effect4");
@@ -400,15 +420,17 @@ window.onload = () => {
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
 
-  closeButton.addEventListener("click", () => {
-    modalContainer.classList.remove("display");
-    setTimeout(() => {
-      modal.classList.remove("fadeIn");
-    }, 100);
-    setTimeout(() => {
-      modal.classList.remove("show");
-      if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
-    }, 1000);
+  closeButtons.forEach((closeButton) => {
+    closeButton.addEventListener("click", () => {
+      modalContainer.classList.remove("display");
+      setTimeout(() => {
+        modal.classList.remove("fadeIn");
+      }, 100);
+      setTimeout(() => {
+        modal.classList.remove("show");
+        if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
+      }, 1000);
+    });
   });
 
   //CURSOR

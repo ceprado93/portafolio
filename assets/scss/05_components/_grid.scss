@@ -187,11 +187,27 @@
 }
 
 @media(max-width: 768px) {
-    .grid__row {
-        &.grid__row--first {
-            h2 {
-                font-size: 14vw;
-                line-height: 14vw;
+    .portfolio__grid{
+        .grid__wrap{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            .article{
+                width: 100%;
+                aspect-ratio: 1/1;
+                margin-bottom: 30px;
+                .article__wrap{
+                    width: 100%;
+                    height: 100%;
+                }
+                h3{
+                    margin-top: 10px;
+                }
+                img, video{
+                    &.centered{
+                        filter: grayscale(0);
+                    }
+                }
             }
         }
     }

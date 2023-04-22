@@ -247,6 +247,9 @@ header {
         }
         .text__wrap--small{
             align-items: center;
+            .small__header--regular{
+                margin-left: 0;
+            }
         }
         .colorToggle{
             height: 14px;
