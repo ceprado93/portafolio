@@ -107,10 +107,10 @@ header {
                     transition: transform 1s cubic-bezier(0.25, 0.1, 0, 0.98);
             
                     &.initial {
-                        transform: translate(48vw, -48vh) scale(3) rotate(180deg);
+                        transform: translate(48vw, 48vh) scale(3) rotate(180deg);
             
                         &.rotate {
-                            transform: translate(48vw, -48vh) scale(3) rotate(360deg);
+                            transform: translate(48vw, 48vh) scale(3) rotate(360deg);
                         }
                     }
             
