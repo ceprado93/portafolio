@@ -8,36 +8,80 @@
     }
 }
 .portfolio__grid{
-    height: 100vh;
+    min-height: 10vh;
+    height: 100%;
+    width: 100%;
     margin: 120px 0;
     background: white;
     position: relative;
     z-index: 2;
-}
-.grid__row--separate{
-    width: 100%;
-    height: 12.5vh;
+    .grid__wrap{
+        display: grid;
+        position: relative;
+        grid-area: 1/1/-1/-1;
+        row-gap: 20px;
+        column-gap: 15px;
+        --sqs-site-gutter: 3vw;
+        --sqs-mobile-site-gutter: 6vw;
+        --sqs-site-max-width: 1800px;
+        --grid-gutter: calc(var(--sqs-site-gutter, 4vw) - 15.0px);
+        --cell-max-width: calc((var(--sqs-site-max-width, 1500px) - (15.0px * (24 - 1))) / 24);
+        --inset-padding: 0vw;
+        --row-height-scaling-factor: 0.0215;
+        --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding)));
+        grid-template-rows: repeat(67, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+        grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(24, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+        .grid__heading{
+            grid-area: 6/1/7/8;
+        }
+        .article{
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+            &.display{
+                opacity: 1;
+                transform: scale(1);
+            }
+            img,video {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                filter: grayscale(1);
+        
+                &:hover {
+                    filter: grayscale(0);
+                }
+        
+                &.img--nemeson {
+                    background: #ededed;
+                }
+            }
+            &.article--0{
+                grid-area: 9/1/21/15;
+            }
+            &.article--1 {
+                grid-area: 12/18/18/25;
+            }
+            &.article--2 {
+                    grid-area: 27/4/35/10;
+            }
+            &.article--3 {
+                    grid-area: 34/15/44/27;
+            }
+
+            &.article--4 {
+                grid-area: 45/5/56/12;
+            }
+
+            &.article--5{
+                grid-area: 58/16/65/24;
+            }
+        }
+    }
 }
 .grid__row{
     display: flex;
-    &:last-child{
-        margin-bottom: 0;
-    }
-    &.grid__row--first{
-        justify-content: space-between;
-        h2{
-            font-size: 10vw;
-            line-height: 80%;
-            padding: 10px;
-        }
-    }
-    &.grid__row--center{
-        justify-content: space-evenly;
-        align-items: flex-end;
-    }
-    &.grid__row--around {
-        justify-content: space-around;
-    }
+   
     
     .article{
         padding: 10px;

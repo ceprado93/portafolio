@@ -4,7 +4,7 @@
 #top{
     padding: 10px;
 }
-.animated {
+.animate {
     animation: font-animation infinite;
     animation-duration: 6s;
     transition-timing-function: ease-in-out
@@ -80,13 +80,13 @@ header {
         }
     }
    
-    .header-top {
+    .header__top {
         margin-bottom: 30px;
         display: flex;
         justify-content: space-between;
         z-index: 2;
         position: relative;
-        .header-top-nav{
+        .header__top-nav{
             h3{
                 display: flex;
                 gap: 6px;
@@ -145,7 +145,7 @@ header {
                     }
                 }
     }
-    .header-main{
+    .header__main{
         height: calc(100% - 30px);
         display: flex;
         flex-direction: column;
@@ -155,16 +155,16 @@ header {
     }
 }
 
-.small-text-wrap {
+.text__wrap--small {
     display: flex;
     flex-wrap: wrap;
 }
 
-.animated-name-wrap {
+.header__title--animate {
     margin-bottom: 30px
 }
 
-.headerDesc-wrap {
+.header__desc-wrap {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -178,32 +178,32 @@ header {
 
 @media(min-width: 200px) {
 
-    .small-text-wrap {
+    .text__wrap--small {
         margin-bottom: 4px
     }
 
-    .headerDesc-wrap p {
+    .header__desc-wrap p {
         width: 100%
     }
 
 }
 
 @media(min-width: 600px) {
-    .headerDesc-wrap p {
+    .header__desc-wrap p {
         width: 70%
     }
 
 }
 
 @media(min-width: 750px) {
-    .headerDesc-wrap p {
+    .header__desc-wrap p {
         width: 60%
     }
 
 }
 
 @media(min-width: 900px) {
-    .small-text-wrap {
+    .text__wrap--small {
         margin-bottom: 0
     }
 
@@ -213,7 +213,7 @@ header {
 }
 
 @media(min-width: 1620px) {
-    .headerDesc-wrap{
+    .header__desc-wrap{
         p {
             width: 38%
         }
@@ -222,14 +222,14 @@ header {
 }
 
 @media(max-width: 768px) {
-    .headerDesc-wrap {
+    .header__desc-wrap {
         flex-direction: column-reverse;
         align-items: flex-start;
-        .headerDesc__text{
+        .header__desc--text{
             margin-bottom: 30px;
             width: 80%;
         }
-        .small-text-wrap{
+        .text__wrap--small{
             align-items: center;
         }
         .colorToggle{

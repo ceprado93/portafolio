@@ -14,6 +14,7 @@
     transform: translateY(100vh);
     transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98);
     overflow-y:scroll;
+    z-index: 50;
     &.show{
         display: block;
         &.fadeIn{
@@ -32,6 +33,14 @@
         }
         .modal__container .modal__col-second .modal__img_wrp a .modal__img#modalImg5 {
             background-color: black;
+        }
+    }
+    .modal__top{
+        margin: 0;
+        width: 100%;
+        padding: 10px 0 0 10px;
+        .text__wrap--small{
+            justify-content: flex-end;
         }
     }
 

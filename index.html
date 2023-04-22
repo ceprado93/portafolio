@@ -29,34 +29,34 @@
 
         <div class="container">
             <header id="top" class="top initial">
-                <div class="header-top">
-                    <div class="header-top-nav">
+                <div class="header__top">
+                    <div class="header__top-nav">
                         <h3>
                             <p class="colorToggle light initial rotate"><span></span></p>
                             Toogle color
                         </h3>
                     </div>
-                    <div class="header-top-nav">
+                    <div class="header__top-nav">
                         <h3>
                             <span class="lang--active"> ES </span> | <span class="lang--disabled"> EN</span>
                         </h3>
                     </div>
                 </div>
-                <section class="header-main">
-                    <div class="animated-name-wrap">
-                        <h1 id="title" class="animated">
+                <section class="header__main">
+                    <div class="header__title--animate">
+                        <h1 id="title" class="animate">
                             Carlos <br> Prado
                         </h1>
                     </div>
-                    <div id="bio" class="headerDesc-wrap">
-                        <div class="small-text-wrap header__info">
+                    <div id="header__desc" class="header__desc-wrap">
+                        <div class="text__wrap--small header__info">
                             <h3>Front end developer</h3>
-                            <h3 class="smallHeader--reg">
+                            <h3 class="small__header--regular">
                                 <a href="https://zorraquino.com/" target="_blank" rel="noopener noreferrer"
                                     class="link-hover">@zorraquino</a>
                             </h3>
                         </div>
-                        <p class="headerDesc__text">
+                        <p class="header__desc--text">
                             Soy un desarrollador con sede en Bilbao con más de tres años de
                             experiencia en el desarrollo
                             web
@@ -75,50 +75,44 @@
             <!-- <section class="sec_separata initial"></section> -->
             <section id="portfolio__grid" class="portfolio__grid initial">
                 <div class="grid__wrap">
-                    <div class="grid__row grid__row--first">
-                        <h2 class="">Proyectos</h2>
-                        <article class="article article--wide" id="0">
-                            <video src="./assets/video/apsvideo.mp4" autoplay loop muted>
-                                <p>Su navegador no soporta vídeos HTML5.</p>
-                            </video>
-                            <!-- <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg"
+                    <h2 class="grid__heading">Proyectos</h2>
+                    <article class="article article--0" id="0">
+                        <video src="./assets/video/apsvideo.mp4" autoplay loop muted>
+                            <p>Su navegador no soporta vídeos HTML5.</p>
+                        </video>
+                        <!-- <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg"
                                 alt="aps" loading="lazy" /> -->
-                            <h3>APS Racing</h3>
-                        </article>
-                        <!-- <article class="article article--wide" id="0" data-type="parallax" data-depth="4">
+                        <h3>APS Racing</h3>
+                    </article>
+                    <!-- <article class="article article--wide" id="0" data-type="parallax" data-depth="4">
                             <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg" alt="aps" />
                             <h3>APS Racing</h3>
                         </article> -->
-                    </div>
-                    <div class="grid__row grid__row--center">
 
-                        <article id="1" class="article article--big">
-                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256885/portfolio/5-the-playground_dscgga.jpg"
-                                alt="wave maps" loading="lazy" />
-                            <h3>Wave maps</h3>
-                        </article>
-                        <article id="2" class="article article--tall">
-                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png"
-                                alt="la bamba" loading="lazy" />
-                            <h3>La bamba</h3>
-                        </article>
-                        <article id="3" class="article article--wide">
-                            <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256895/portfolio/cpzfondo_llaxtv.png"
-                                alt="Celia Perez art" loading="lazy" />
-                            <h3>Celia Perez Art</h3>
-                        </article>
-                    </div>
-                    <div class="grid__row--separate"></div>
-                    <div class="grid__row grid__row--around">
-                        <article id="4" class="article article--wide">
-                            <img src="./assets/img/procor.png" alt="Procorlab" loading="lazy" />
-                            <h3>Procorlab</h3>
-                        </article>
-                        <article id="5" class="article article--wide">
-                            <img class="img--nemeson" src="./assets/img/manos.png" alt="Nemeson one" loading="lazy" />
-                            <h3>Nemeson One</h3>
-                        </article>
-                    </div>
+                    <article id="1" class="article article--1">
+                        <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256885/portfolio/5-the-playground_dscgga.jpg"
+                            alt="wave maps" loading="lazy" />
+                        <h3>Wave maps</h3>
+                    </article>
+                    <article id="2" class="article article--2">
+                        <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670256895/portfolio/cpzfondo_llaxtv.png"
+                            alt="Celia Perez art" loading="lazy" />
+                        <h3>Celia Perez Art</h3>
+                    </article>
+                    <article id="3" class="article article--3">
+                        <img src="https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png"
+                            alt="la bamba" loading="lazy" />
+                        <h3>La bamba</h3>
+                    </article>
+                    <article id="4" class="article article--4">
+                        <img class="img--nemeson" src="./assets/img/manos.png" alt="Nemeson one" loading="lazy" />
+                        <h3>Nemeson One</h3>
+                    </article>
+                    <article id="5" class="article article--5">
+                        <img src="./assets/img/procor.png" alt="Procorlab" loading="lazy" />
+                        <h3>Procorlab</h3>
+                    </article>
+
                 </div>
             </section>
             <section class="current__intro initial">
@@ -197,14 +191,14 @@
                 </section>
                 <section class="footer-end">
                     <div class="footer-content-left">
-                        <div class="small-text-wrap footer-left-first">
+                        <div class="text__wrap--small footer-left-first">
                             <h3>© Carlos Prado</h3>
-                            <h3 class="smallHeader--reg">2023.</h3>
+                            <h3 class="small__header--regular">2023.</h3>
                         </div>
 
-                        <div class="small-text-wrap">
+                        <div class="text__wrap--small">
                             <h3>social</h3>
-                            <h3 class="smallHeader--reg">
+                            <h3 class="small__header--regular">
                                 <a class="link-hover" href="https://www.linkedin.com/in/carlos-prado-buesa/"
                                     target="_blank" rel="noopener noreferrer">Linkedin</a>,
                                 <a class="link-hover" href="https://www.instagram.com/carloospradoo/" target="_blank"
@@ -218,7 +212,7 @@
 
                     <div class="footer-content-right">
 
-                        <div class="small-text-wrap">
+                        <div class="text__wrap--small">
                             <h3>
                                 <a class="link-hover" href="#top" target="_self" rel="noopener noreferrer">Arriba</a>
                             </h3>
@@ -230,6 +224,13 @@
             </footer>
 
             <div class="modal">
+                <div class="modal__top">
+                    <div class="text__wrap--small">
+                        <h3>
+                            <a class="link-hover close_button">Cerrar</a>
+                        </h3>
+                    </div>
+                </div>
                 <div class="modal__container">
                     <div class="modal__col-first">
                         <h2 class="modal__title">APS Racing</h2>
@@ -263,23 +264,23 @@
                 </div>
                 <section class="modal_footer">
                     <div class="modal_footer-content-left">
-                        <div class="small-text-wrap modal_footer-left-first">
+                        <div class="text__wrap--small modal_footer-left-first">
                             <h3>Siguiente projecto</h3>
-                            <h3 class="smallHeader--reg">
+                            <h3 class="small__header--regular">
                                 <a class="link-hover">Wave maps</a>
                             </h3>
                         </div>
 
                     </div>
                     <div class="modal_footer-content-left">
-                        <div class="small-text-wrap modal_footer-left-first">
+                        <div class="text__wrap--small modal_footer-left-first">
                             <h3>© Carlos Prado</h3>
-                            <h3 class="smallHeader--reg">2023.</h3>
+                            <h3 class="small__header--regular">2023.</h3>
                         </div>
 
-                        <div class="small-text-wrap">
+                        <div class="text__wrap--small">
                             <h3>social</h3>
-                            <h3 class="smallHeader--reg">
+                            <h3 class="small__header--regular">
                                 <a class="link-hover" href="https://www.linkedin.com/in/carlos-prado-buesa/"
                                     target="_blank" rel="noopener noreferrer">Linkedin</a>,
                                 <a class="link-hover" href="https://www.instagram.com/carloospradoo/" target="_blank"
@@ -292,7 +293,7 @@
 
 
                     <div class="modal_footer-content-right">
-                        <div class="small-text-wrap">
+                        <div class="text__wrap--small">
                             <h3>
                                 <a class="link-hover close_button">Cerrar</a>
                             </h3>

@@ -27,19 +27,6 @@ const projects = [
   },
   {
     id: "2",
-    title: "La Bamba",
-    subtitle: "MERN web para una empresa de eventos de Madrid.",
-    description:
-      "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
-    tecnologies: ["react", "axios", "nodejs", "mongodb"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png",
-    landing: "./assets/img/bamba_landing.png",
-    size: "medium",
-    row: "row3",
-    column: "column1",
-  },
-  {
-    id: "3",
     title: "Celia Perez Art",
     subtitle: "React y Sass portafolio de una artista y diseñadora.",
     description:
@@ -52,21 +39,20 @@ const projects = [
     column: "column2",
   },
   {
-    id: "4",
-    title: "Procorlab",
-    subtitle: "E-commerce y plataforma de reservas para tests medicos.",
+    id: "3",
+    title: "La Bamba",
+    subtitle: "MERN web para una empresa de eventos de Madrid.",
     description:
-      "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
-    tecnologies: ["react", "sass", "php", "mysql", "shopify"],
-    img: "./assets/img/procor.png",
-    landing: "./assets/img/procorlab_landing.png",
-    size: "big",
+      "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
+    tecnologies: ["react", "axios", "nodejs", "mongodb"],
+    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png",
+    landing: "./assets/img/bamba_landing.png",
+    size: "medium",
     row: "row3",
-    column: "column3",
-    url: "https://procorlab.es/",
+    column: "column1",
   },
   {
-    id: "5",
+    id: "4",
     title: "Nemeson One",
     subtitle: "React y Sass web.",
     description:
@@ -79,6 +65,21 @@ const projects = [
     column: "column3",
     url: "https://nemesonone.es/",
   },
+  {
+    id: "5",
+    title: "Procorlab",
+    subtitle: "E-commerce y plataforma de reservas para tests medicos.",
+    description:
+      "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
+    tecnologies: ["react", "sass", "php", "mysql", "shopify"],
+    img: "./assets/img/procor.png",
+    landing: "./assets/img/procorlab_landing.png",
+    size: "big",
+    row: "row3",
+    column: "column3",
+    url: "https://procorlab.es/",
+  },
+
   {
     id: "6",
     title: "Zorraquino",
@@ -167,15 +168,18 @@ const projects = [
 //INITIAL ANIMATION
 
 let header = document.querySelector("header");
+let portfolio__grid = document.querySelector(".portfolio__grid");
 let portfolio__horizontal = document.querySelector(".portfolio__horizontal");
 let footer = document.querySelector("footer");
 let sec_separata = document.querySelectorAll(".sec_separata");
 let colorToggle = document.querySelector(".colorToggle");
 let container = document.querySelector(".container");
 
+const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
+
 let textSpan = document.querySelectorAll(".currenttext__wrap p span");
 const currentWrap = document.querySelector(".current__wrap--inner");
-const currentWrapHeight = window.innerHeight * 1.6;
+const currentWrapHeight = window.innerHeight * 1.7;
 let effect1 = document.querySelectorAll(".effect1");
 let effect2 = document.querySelectorAll(".effect2");
 let effect3 = document.querySelectorAll(".effect3");
@@ -208,10 +212,10 @@ window.onload = () => {
     // GSAP INITIAL
     var tl = new TimelineMax();
 
-    //   gsap.from(".header-top", { y: 20, opacity: 0, duration: 0.8 });
+    //   gsap.from(".header__top", { y: 20, opacity: 0, duration: 0.8 });
     tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
     tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.3 });
-    tl.from(".headerDesc__text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
+    tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
   }, 1500);
 
   //COLOR TOGGLE
@@ -236,7 +240,7 @@ window.onload = () => {
     end: "+=" + window.innerHeight + "px",
     pin: true,
   }),
-    gsap.to(".header-main", {
+    gsap.to(".header__main", {
       scrollTrigger: {
         trigger: ".portfolio__grid",
         // markers: true,
@@ -249,6 +253,17 @@ window.onload = () => {
       opacity: 0,
       ease: "none",
     });
+
+  gridArticle.forEach((gridArt) => {
+    gsap.from(gridArt, {
+      scrollTrigger: {
+        start: "top bottom",
+        end: "bottom top",
+        trigger: gridArt,
+        toggleClass: "display",
+      },
+    });
+  });
 
   textSpan.forEach(function (t) {
     t.classList.remove("effect1", "effect2", "effect3", "effect4");
@@ -340,42 +355,48 @@ window.onload = () => {
     });
   }
 
-  //MODAL
+  const handleGridClick = (event) => {
+    const target = event.target.closest("article");
+    if (!target) return;
+    const projectId = target.id;
+    const project = projects.find((p) => p.id === projectId);
+    if (!project) {
+      return;
+    }
+    modalTitle.innerHTML = project.title;
+    modalDescription.innerHTML = project.description;
+    modalImg.src = project.img;
+    modallandingImg.src = project.landing;
+    modalImg.id = "modalImg" + project.id;
 
-  articles.forEach((elm) => {
-    elm.addEventListener("click", () => {
-      projects.forEach((project) => {
-        if (project.id === elm.id) {
-          modalTitle.innerHTML = project.title;
-          modalDescription.innerHTML = project.description;
-          modalImg.src = project.img;
-          modallandingImg.src = project.landing;
-          modalImg.id = "modalImg" + project.id;
+    if (project.id >= 6) {
+      modal.classList.add("light");
+    }
 
-          if (project.id >= 6) modal.classList.add("ligth");
-        }
-      });
-
-      if (modal.classList.contains("show")) {
-        modal.classList.remove("show");
-        modal.classList.remove("fadeIn");
-        if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
-      } else {
-        modal.classList.add("show");
-        setTimeout(() => {
-          modal.classList.add("fadeIn");
-        }, 100);
-        setTimeout(() => {
-          modal.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-          modalContainer.classList.add("display");
-        }, 1000);
+    if (modal.classList.contains("show")) {
+      modal.classList.remove("show");
+      modal.classList.remove("fadeIn");
+      if (modal.classList.contains("light")) {
+        modal.classList.remove("light");
       }
-    });
-  });
+    } else {
+      modal.classList.add("show");
+      setTimeout(() => {
+        modal.classList.add("fadeIn");
+      }, 100);
+      setTimeout(() => {
+        modal.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+        modalContainer.classList.add("display");
+      }, 1000);
+    }
+  };
+
+  portfolio__grid.addEventListener("click", handleGridClick);
+  portfolio__horizontal.addEventListener("click", handleGridClick);
 
   closeButton.addEventListener("click", () => {
     modalContainer.classList.remove("display");
@@ -390,47 +411,39 @@ window.onload = () => {
 
   //CURSOR
 
-  let cursor = document.getElementById("cursor"),
-    elWidth = cursor.offsetWidth,
-    elHeight = cursor.offsetHeight,
-    width = window.innerWidth,
-    height = window.innerHeight,
-    target = {
-      x: width / 2,
-      y: height / 2,
-    },
-    position = {
-      x: height,
-      y: width,
-    },
-    ease = 0.075;
+  const cursor = document.getElementById("cursor");
+  const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
+  const { innerWidth: width, innerHeight: height } = window;
+  const target = { x: width / 2, y: height / 2 };
+  const position = { x: height, y: width };
+  const ease = 0.075;
 
   window.addEventListener("mousemove", function (event) {
     target.x = event.clientX;
     target.y = event.clientY;
   });
 
-  function update() {
-    let dx = target.x - position.x,
-      dy = target.y - position.y,
-      vx = dx * ease,
-      vy = dy * ease;
+  const update = () => {
+    const { x: targetX, y: targetY } = target;
+    const { x: posX, y: posY } = position;
+    const dx = targetX - posX;
+    const dy = targetY - posY;
+    const vx = dx * ease;
+    const vy = dy * ease;
 
     position.x += vx;
     position.y += vy;
 
-    cursor.style.left = (position.x - elWidth / 2).toFixed() + "px";
-    cursor.style.top = (position.y - elHeight / 2).toFixed() + "px";
+    cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
+    cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
 
     requestAnimationFrame(update);
-  }
+  };
 
   update();
 
   //INITIAL SCROLL
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
+  window.onbeforeunload = () => window.scrollTo(0, 0);
 
   //Fin
 };
