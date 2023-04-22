@@ -6,16 +6,19 @@ section{
     &.current__intro{
         width: 100vw;
         height: 200vh;
+
         .current__wrap{
             padding: 10px;
             height: 100%;
-            display: flex;
-            align-items: center;
+            .current__wrap--inner{
+                display: flex;
+                align-items: center;
+            }
             p{
                 width: 80vw;
                 margin-left: 8vw;
-                font-size: 5vw;
-                line-height: 4.6vw;
+                font-size: 3.5vw;
+                line-height: 3.3vw;
             }
         }
     }

@@ -178,8 +178,8 @@ let container = document.querySelector(".container");
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
 
 let textSpan = document.querySelectorAll(".currenttext__wrap p span");
-const currentWrap = document.querySelector(".current__wrap--inner");
-const currentWrapHeight = window.innerHeight * 1.7;
+const currentInnerWrap = document.querySelector(".current__wrap--inner");
+const currentWrapHeight = window.innerHeight;
 let effect1 = document.querySelectorAll(".effect1");
 let effect2 = document.querySelectorAll(".effect2");
 let effect3 = document.querySelectorAll(".effect3");
@@ -215,6 +215,8 @@ window.onload = () => {
     //   gsap.from(".header__top", { y: 20, opacity: 0, duration: 0.8 });
     tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
     tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.3 });
+    tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.8 });
+
     tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
   }, 1500);
 
@@ -233,20 +235,20 @@ window.onload = () => {
   //GSAP
 
   ScrollTrigger.create({
-    trigger: ".top",
+    trigger: ".header",
     // markers: true,
     id: "top",
     start: "top top",
     end: "+=" + window.innerHeight + "px",
     pin: true,
   }),
-    gsap.to(".header__main", {
+    gsap.to(".header", {
       scrollTrigger: {
         trigger: ".portfolio__grid",
         // markers: true,
         id: "topdos",
         toggleActions: "restart none reverse pause",
-        start: "top top+=" + 2 * window.innerHeight + "px",
+        start: "top top+=" + 1.6 * window.innerHeight + "px",
         end: "+=" + window.innerHeight + "px",
         scrub: !0,
       },
@@ -272,7 +274,7 @@ window.onload = () => {
     t.classList.add("effect" + parseInt(Math.floor(4 * Math.random()) + 1));
   });
 
-  currentWrap.style.height = `${currentWrapHeight}px`;
+  currentInnerWrap.style.height = `${currentWrapHeight}px`;
   gsap.to(".currenttext__wrap", {
     scrollTrigger: {
       trigger: ".current__wrap",

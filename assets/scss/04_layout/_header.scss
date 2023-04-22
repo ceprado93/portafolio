@@ -73,6 +73,7 @@
 header {
     // margin-bottom: 120px;
     height: calc(100dvh - 20px);
+    max-height: calc(100dvh - 20px) !important;
     &.initial{
         color: white !important;
         a{
@@ -158,6 +159,35 @@ header {
 .text__wrap--small {
     display: flex;
     flex-wrap: wrap;
+    .text--bounce{
+        font-weight: 600;
+        margin-left: 0;
+        animation: infinite 4s bounce-7 cubic-bezier(0.280, 0.840, 0.420, 1) ;
+        
+        @keyframes bounce-7 {
+            0% {
+                transform: scale(1, 1) translateY(0);
+            }
+            10% {
+                transform: scale(1.1, .9) translateY(0);
+            } 
+            20% {
+                transform: scale(.9, 1.1) translateY(-10px);
+            } 
+            30% {
+                transform: scale(1.05, .95) translateY(0);
+            } 
+            40% {
+                transform: scale(1, 1) translateY(-2px);
+            } 
+            44% {
+                transform: scale(1, 1) translateY(0);
+            } 
+            100% {
+                transform: scale(1, 1) translateY(0);
+            }
+        }          
+    }
 }
 
 .header__title--animate {
@@ -170,9 +200,12 @@ header {
     justify-content: space-between;
     align-items: flex-end;
 
-    p {
-        width: 60%;
+    .header__desc--text {
+        width: 40%;
     }
+        .header__info {
+            width: 40%;
+        }
 
 }
 
@@ -182,25 +215,8 @@ header {
         margin-bottom: 4px
     }
 
-    .header__desc-wrap p {
-        width: 100%
-    }
-
 }
 
-@media(min-width: 600px) {
-    .header__desc-wrap p {
-        width: 70%
-    }
-
-}
-
-@media(min-width: 750px) {
-    .header__desc-wrap p {
-        width: 60%
-    }
-
-}
 
 @media(min-width: 900px) {
     .text__wrap--small {
@@ -214,7 +230,7 @@ header {
 
 @media(min-width: 1620px) {
     .header__desc-wrap{
-        p {
+        .header__desc--text {
             width: 38%
         }
     } 
