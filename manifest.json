@@ -1,0 +1,27 @@
+{
+  "short_name": "CP",
+  "name": "Carlos Prado Portfolio",
+  "icons": [
+    {
+      "src": "/assets/img/cp512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/img/cp192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/cp512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fff",
+  "description": "Soy un desarrollador con sede en Bilbao. Me encanta el diseño minimalista y brutalista. Creo sitios web a medida, buscando el equilibrio adecuado entre funcionalidad e impacto visual."
+}
