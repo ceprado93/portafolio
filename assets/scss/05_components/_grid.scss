@@ -3,11 +3,6 @@
 // -----------------------------------------------------------------------------
 
 .portfolio__grid{
-    &.initial {
-        display: none;
-    }
-}
-.portfolio__grid{
     min-height: 10vh;
     height: 100%;
     width: 100%;
@@ -15,7 +10,11 @@
     background: white;
     position: relative;
     z-index: 2;
+    &.initial {
+        display: none;
+    }
     .grid__wrap{
+        padding: 10px;
         display: grid;
         position: relative;
         grid-area: 1/1/-1/-1;
@@ -189,7 +188,6 @@
 @media(max-width: 768px) {
     .portfolio__grid{
         .grid__wrap{
-            padding: 10px;
             display: flex;
             flex-direction: column;
             .article{

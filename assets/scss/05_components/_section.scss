@@ -6,6 +6,9 @@ section{
     &.current__intro{
         width: 100vw;
         height: 200vh;
+        &.initial {
+            display: none;
+        }
 
         .current__wrap{
             padding: 10px;

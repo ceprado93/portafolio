@@ -169,9 +169,9 @@ const projects = [
 
 let header = document.querySelector("header");
 let portfolio__grid = document.querySelector(".portfolio__grid");
+let current__intro = document.querySelector(".current__intro");
 let portfolio__horizontal = document.querySelector(".portfolio__horizontal");
 let footer = document.querySelector("footer");
-let sec_separata = document.querySelectorAll(".sec_separata");
 let colorToggle = document.querySelector(".colorToggle");
 let container = document.querySelector(".container");
 
@@ -203,21 +203,27 @@ window.onload = () => {
   setTimeout(() => {
     colorToggle.classList.remove("initial");
     header.classList.remove("initial");
-    sec_separata.forEach((sec) => sec.classList.remove("initial"));
     portfolio__grid.classList.remove("initial");
+    current__intro.classList.remove("initial");
     portfolio__horizontal.classList.remove("initial");
     footer.classList.remove("initial");
     scrollHorizontall();
 
     // GSAP INITIAL
     var tl = new TimelineMax();
-
-    //   gsap.from(".header__top", { y: 20, opacity: 0, duration: 0.8 });
-    tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.8, delay: 0.6 });
-    tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.8, delay: 0.3 });
-    tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.8 });
-
-    tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
+    if (window.innerWidth > 768) {
+      gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
+      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.7, delay: 0.6 });
+      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.7, delay: 0.3 });
+      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
+      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.7 });
+    } else {
+      gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
+      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.6 });
+      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.6, delay: 0.3 });
+      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
+      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
+    }
   }, 1500);
 
   //COLOR TOGGLE
@@ -241,23 +247,23 @@ window.onload = () => {
     start: "top top",
     end: "+=" + window.innerHeight + "px",
     pin: true,
-  }),
-    gsap.to(".header", {
-      scrollTrigger: {
-        trigger: ".portfolio__grid",
-        // markers: true,
-        id: "topdos",
-        toggleActions: "restart none reverse pause",
-        start: "top top+=" + 1.6 * window.innerHeight + "px",
-        end: "+=" + window.innerHeight + "px",
-        scrub: !0,
-      },
-      opacity: 0,
-      ease: "none",
-    });
+  });
+  gsap.to(".header", {
+    scrollTrigger: {
+      trigger: ".portfolio__grid",
+      // markers: true,
+      id: "topdos",
+      toggleActions: "restart none reverse pause",
+      start: "top top+=" + 1.6 * window.innerHeight + "px",
+      end: "+=" + window.innerHeight + "px",
+      scrub: !0,
+    },
+    opacity: 0,
+    ease: "none",
+  });
 
-  if (window.innerWidth > 768) {
-    gridArticle.forEach((gridArt) => {
+  gridArticle.forEach((gridArt, index) => {
+    if (window.innerWidth > 768) {
       gsap.from(gridArt, {
         scrollTrigger: {
           start: "top bottom",
@@ -266,12 +272,17 @@ window.onload = () => {
           toggleClass: "display",
         },
       });
-    });
-  } else {
-    gridArticle.forEach((gridArt, index) => {
+    } else {
       gridArt.classList.add("display");
       const article__wrap = gridArt.querySelector(".article__wrap");
-      const [x, xEnd] = index % 2 ? [100, 0] : [-100, 0];
+      const article__media = article__wrap.querySelector(".article__media");
+      const [x, xEnd] = index % 2 ? [100, -20] : [-100, 20];
+      ScrollTrigger.create({
+        trigger: article__media,
+        toggleClass: "centered",
+        start: "top center",
+        end: "bottom center",
+      });
       gsap.fromTo(
         article__wrap,
         { x },
@@ -284,8 +295,8 @@ window.onload = () => {
           },
         }
       );
-    });
-  }
+    }
+  });
 
   textSpan.forEach(function (t) {
     t.classList.remove("effect1", "effect2", "effect3", "effect4");
