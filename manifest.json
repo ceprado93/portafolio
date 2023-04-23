@@ -3,22 +3,22 @@
   "name": "Carlos Prado Portfolio",
   "icons": [
     {
-      "src": "/assets/img/cp512.png",
+      "src": "portafolio/assets/img/cp512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "/assets/img/cp192.png",
+      "src": "portafolio/assets/img/cp192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/img/cp512.png",
+      "src": "portafolio/assets/img/cp512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "portafolio/index.html",
   "background_color": "#fff",
   "display": "standalone",
   "scope": "/",
