@@ -280,6 +280,7 @@ window.onload = () => {
       ScrollTrigger.create({
         trigger: article__media,
         toggleClass: "centered",
+        markers: true,
         start: "top center",
         end: "bottom center",
       });
