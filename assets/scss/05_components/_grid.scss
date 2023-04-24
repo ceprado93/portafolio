@@ -204,6 +204,7 @@
                 img, video{
                     &.centered{
                         filter: grayscale(0);
+                        -webkit-transform: translateZ(0);
                     }
                 }
             }
@@ -216,6 +217,16 @@
         }
         .grid__wrap--horizontal {
             height: calc(100% - 30px - 14vw);
+            article{
+                .article_wrap{
+                    img {
+                        &.centered {
+                            filter: grayscale(0);
+                            -webkit-transform: translateZ(0);
+                        }
+                    }
+                }
+            }
         }
     }
 }
