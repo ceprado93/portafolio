@@ -1235,17 +1235,18 @@ section.current__intro {
     min-height: 100dvh;
     overflow-y: scroll; }
     .project .project__top {
-      padding: 10px 10px 0 0; }
+      padding: 10px 10px 0 0;
+      margin-bottom: 45px; }
     .project .project__container {
       flex-direction: column; }
       .project .project__container .project__row-first {
-        width: 100%;
-        display: flex;
-        margin-bottom: 60px; }
+        flex-direction: column;
+        margin-bottom: 30px; }
         .project .project__container .project__row-first .project__index {
-          width: calc(0.1 * var(--columns-width) + 30px); }
+          width: 100%; }
         .project .project__container .project__row-first h1.project__title {
-          width: calc(0.8 * var(--columns-width) + 60px); }
+          width: 100%;
+          margin-top: 15px; }
       .project .project__container .project__row-second {
         flex-wrap: wrap;
         margin-bottom: 30px; }

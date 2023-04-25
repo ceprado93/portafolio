@@ -278,23 +278,24 @@
 
         .project__top {
             padding: 10px 10px 0 0;
+            margin-bottom: 45px;
         }
 
         .project__container {
             flex-direction: column;
 
             .project__row-first {
-                    width: 100%;
-                    display: flex;
-                    margin-bottom: 60px;
+                    flex-direction: column;
+                    margin-bottom: 30px;
             
                     .project__index {
-                        width: calc(0.1 * var(--columns-width) + 30px);
+                        width: 100%;
                     }
             
                     h1 {
                         &.project__title {
-                            width: calc(0.8 * var(--columns-width) + 60px);
+                            width: 100%;
+                            margin-top: 15px;
                         }
                     }
                 }
