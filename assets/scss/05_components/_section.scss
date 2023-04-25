@@ -17,10 +17,10 @@ section{
                 display: flex;
                 align-items: center;
                 p{
-                    width: 80vw;
-                    margin-left: 8vw;
-                    font-size: 3.5vw;
-                    line-height: 3.3vw;
+                    width: calc(0.6 * var(--columns-width) + 60px);
+                    margin-left: calc(0.2 * var(--columns-width) + 30px);
+                    font-size: 3vw;
+                    line-height: 2.8vw;
                 }
             }
         }

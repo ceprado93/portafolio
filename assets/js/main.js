@@ -180,10 +180,7 @@ const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
 let textSpan = document.querySelectorAll(".currenttext__wrap p span");
 const currentInnerWrap = document.querySelector(".current__wrap--inner");
 const currentWrapHeight = window.innerHeight;
-let effect1 = document.querySelectorAll(".effect1");
-let effect2 = document.querySelectorAll(".effect2");
-let effect3 = document.querySelectorAll(".effect3");
-let effect4 = document.querySelectorAll(".effect4");
+let effect = document.querySelectorAll(".effect");
 
 let articles = document.querySelectorAll("article");
 let modal = document.querySelector(".modal");
@@ -299,13 +296,6 @@ window.onload = () => {
     }
   });
 
-  textSpan.forEach(function (t) {
-    t.classList.remove("effect1", "effect2", "effect3", "effect4");
-  });
-  textSpan.forEach(function (t) {
-    t.classList.add("effect" + parseInt(Math.floor(4 * Math.random()) + 1));
-  });
-
   currentInnerWrap.style.height = `${currentWrapHeight}px`;
   gsap.to(".currenttext__wrap", {
     scrollTrigger: {
@@ -320,58 +310,26 @@ window.onload = () => {
     // y: "-5%",
     ease: "none",
   }),
-    effect1.forEach(function (t) {
-      gsap.to(t, {
-        scrollTrigger: {
-          trigger: t.closest(".current__intro"),
-          start: "top 0%",
-          end: "top -40%",
-          scrub: !0,
-        },
-        opacity: 0,
-        ease: "none",
-      });
-    }),
-    effect2.forEach(function (t) {
-      gsap.to(t, {
-        scrollTrigger: {
-          trigger: t.closest(".current__intro"),
-          id: "effect2",
-          start: "top -20%",
-          end: "top -60%",
-          scrub: !0,
-        },
-        opacity: 0,
-        ease: "none",
-      });
-    }),
-    effect3.forEach(function (t) {
-      gsap.to(t, {
-        scrollTrigger: {
-          trigger: t.closest(".current__intro"),
-          id: "effect3",
-          start: "top -40%",
-          end: "top -80%",
-          scrub: !0,
-        },
-        opacity: 0,
-        ease: "none",
-      });
-    }),
-    effect4.forEach(function (t) {
-      gsap.to(t, {
-        scrollTrigger: {
-          trigger: t.closest(".current__intro"),
-          id: "effect4",
-          start: "top -60%",
-          end: "top -100%",
-          scrub: !0,
-        },
-        opacity: 0,
-        ease: "none",
-      });
+    effect.forEach((t, index) => {
+      let startPops = 60 * index + 200;
+      let endPops = 5 * index;
+      gsap.fromTo(
+        t,
+        { opacity: 0.2 },
+        {
+          scrollTrigger: {
+            trigger: t,
+            id: "effect",
+            start: "top bottom-=" + startPops + "px",
+            // markers: true,
+            end: "top top-=" + endPops + "px",
+            scrub: !0,
+          },
+          opacity: 1,
+          ease: "none",
+        }
+      );
     });
-
   //HORIZONTAL SCROLL
 
   function scrollHorizontall() {

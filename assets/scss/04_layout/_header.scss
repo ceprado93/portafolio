@@ -161,7 +161,7 @@ header {
     align-items: flex-end;
 
     .header__desc--text {
-        width: 40%;
+        width: calc(0.4 * var(--columns-width) + 30px);
     }
         .header__info {
             width: 40%;
