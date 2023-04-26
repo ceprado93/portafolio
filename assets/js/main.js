@@ -439,5 +439,11 @@ window.onload = () => {
   //INITIAL SCROLL
   window.onbeforeunload = () => window.scrollTo(0, 0);
 
+  let test = document.querySelector(".test");
+  test.addEventListener("click", () => {
+    console.log("aaa", window.history);
+    history.replaceState({ page: "project" }, "project", "./project.html");
+  });
+
   //Fin
 };
