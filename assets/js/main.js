@@ -441,8 +441,30 @@ window.onload = () => {
 
   let test = document.querySelector(".test");
   test.addEventListener("click", () => {
-    console.log("aaa", window.history);
+    console.log("aaa");
     history.replaceState({ page: "project" }, "project", "./project.html");
+    fetch("project.html")
+      .then(function (response) {
+        // When the page is loaded convert it to text
+        return response.text();
+      })
+      .then(function (html) {
+        // Initialize the DOM parser
+        var parser = new DOMParser();
+
+        // Parse the text
+        var doc = parser.parseFromString(html, "text/html");
+
+        // You can now even select part of that html as you would in the regular DOM
+        // Example:
+        var docBody = doc.querySelector("body").innerHTML;
+        document.querySelector("body").innerHTML = docBody;
+
+        console.log(doc);
+      })
+      .catch(function (err) {
+        console.log("Failed to fetch page: ", err);
+      });
   });
 
   //Fin
