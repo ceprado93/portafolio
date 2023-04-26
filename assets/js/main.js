@@ -6,8 +6,8 @@ const projects = [
     description:
       "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
     tecnologies: ["react", "axios", "nodejs", "mongodb"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670256890/portfolio/aps_intvdp.jpg",
-    landing: "./assets/img/apsRacing.png",
+    img: "./assets/img/aps.webp",
+    landing: "./assets/img/apsRacing.webp",
     size: "big",
     row: "row1",
     column: "column1",
@@ -19,8 +19,8 @@ const projects = [
     description:
       "Wave Maps es una página web de atlas de olas construida con React, Node.js, Express y MongoDB. Proporciona información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas. Es una herramienta avanzada y completa para los entusiastas del surf y deportes acuáticos.",
     tecnologies: ["react", "axios", "nodejs", "mongodb"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670256885/portfolio/5-the-playground_dscgga.jpg",
-    landing: "./assets/img/wm-home.png",
+    img: "./assets/img/wavemaps.webp",
+    landing: "./assets/img/wm-home.webp",
     size: "small",
     row: "row3",
     column: "column2",
@@ -32,8 +32,8 @@ const projects = [
     description:
       "El portfolio en línea de Celia Perez, diseñadora, está construido con React y Sass. Ofrece una vista completa de su trabajo, habilidades y experiencia, en una interfaz interactiva y visualmente atractiva. Es una solución moderna y profesional para promocionar el trabajo de un diseñador.",
     tecnologies: ["react", "sass"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670256895/portfolio/cpzfondo_llaxtv.png",
-    landing: "./assets/img/celia_landing.png",
+    img: "./assets/img/cpzfondo.webp",
+    landing: "./assets/img/celia_landing.webp",
     size: "small",
     row: "row4",
     column: "column2",
@@ -45,8 +45,8 @@ const projects = [
     description:
       "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
     tecnologies: ["react", "axios", "nodejs", "mongodb"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257072/portfolio/bardt_ti7mpb.png",
-    landing: "./assets/img/bamba_landing.png",
+    img: "./assets/img/bardot.webp",
+    landing: "./assets/img/bamba_landing.webp",
     size: "medium",
     row: "row3",
     column: "column1",
@@ -58,8 +58,8 @@ const projects = [
     description:
       "Página web informativa de los audífonos Nemeson One está creada con React, Redux y Sass. Ofrece detalles sobre características técnicas, diseño y confort. Es una experiencia interactiva y visualmente atractiva para explorar todas las bondades de los audífonos.",
     tecnologies: ["react", "redux", "sass"],
-    img: "./assets/img/manos.png",
-    landing: "./assets/img/nemesonone_landing.png",
+    img: "./assets/img/manos.webp",
+    landing: "./assets/img/nemesonone_landing.webp",
     size: "small",
     row: "row1",
     column: "column3",
@@ -72,8 +72,8 @@ const projects = [
     description:
       "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
     tecnologies: ["react", "sass", "php", "mysql", "shopify"],
-    img: "./assets/img/procor.png",
-    landing: "./assets/img/procorlab_landing.png",
+    img: "./assets/img/procor.webp",
+    landing: "./assets/img/procorlab_landing.webp",
     size: "big",
     row: "row3",
     column: "column3",
@@ -87,8 +87,8 @@ const projects = [
     description:
       "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
     tecnologies: ["php", "js", "css", "zorraquino"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257868/portfolio/zq_jyruz9.webp",
-    landing: "./assets/img/zorraquino_landing.png",
+    img: "./assets/img/zq.webp",
+    landing: "./assets/img/zorraquino_landing.webp",
     size: "big",
     row: "row1",
     column: "column2",
@@ -101,8 +101,8 @@ const projects = [
     description:
       "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
     tecnologies: ["ionic", "vue", "sass"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670260847/portfolio/sdiq_pjfair.png",
-    landing: "./assets/img/sdiq_landing.png",
+    img: "./assets/img/sdiq_app.webp",
+    landing: "./assets/img/sdiq_landing.webp",
     size: "medium",
     row: "row3",
     column: "column4",
@@ -114,8 +114,8 @@ const projects = [
     description:
       "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
     tecnologies: ["php", "js", "sass", "zorraquino"],
-    img: "./assets/img/whitehole.png",
-    landing: "./assets/img/whitehole_landing.png",
+    img: "./assets/img/whitehole.webp",
+    landing: "./assets/img/whitehole_landing.webp",
     size: "small",
     row: "row3",
     column: "column3",
@@ -128,8 +128,8 @@ const projects = [
     description:
       "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
     tecnologies: ["php", "js", "css", "zorraquino"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257867/portfolio/kutxabank-kvvG-U7026419564jqG-624x385_El_Correo-kv4C-U701178451438THE-624x385_El_Correo_yru5q7.jpg",
-    landing: "./assets/img/clientes_landing.png",
+    img: "./assets/img/kutxabank.webp",
+    landing: "./assets/img/clientes_landing.webp",
     size: "big",
     row: "row3",
     column: "column1",
@@ -142,8 +142,8 @@ const projects = [
     description:
       "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
     tecnologies: ["php", "js", "sass", "zorraquino"],
-    img: "https://res.cloudinary.com/df5xojjiw/image/upload/v1670257869/portfolio/sistema-genia-air-l_2x_datewo.jpg",
-    landing: "./assets/img/instalxpert_landing.png",
+    img: "./assets/img/saunier.webp",
+    landing: "./assets/img/instalxpert_landing.webp",
     size: "small",
     row: "row2",
     column: "column4",
@@ -156,8 +156,8 @@ const projects = [
     description:
       "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
     tecnologies: ["php", "js", "sass", "zorraquino"],
-    img: "./assets/img/Enkarterri.png",
-    landing: "./assets/img/digitalsignage_landing.png",
+    img: "./assets/img/Enkarterri.webp",
+    landing: "./assets/img/digitalsignage_landing.webp",
     size: "small",
     row: "row2",
     column: "column1",
@@ -442,7 +442,7 @@ window.onload = () => {
   let test = document.querySelector(".test");
   test.addEventListener("click", () => {
     console.log("aaa");
-    history.replaceState({ page: "project" }, "project", "./project.html");
+    history.replaceState({ page: "project" }, "project", "/project.html");
     fetch("project.html")
       .then(function (response) {
         // When the page is loaded convert it to text
