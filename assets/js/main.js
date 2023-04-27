@@ -442,7 +442,7 @@ window.onload = () => {
   let test = document.querySelector(".test");
   test.addEventListener("click", () => {
     console.log("aaa");
-    history.replaceState({ page: "project" }, "project", "/project.html");
+    history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
     fetch("project.html")
       .then(function (response) {
         // When the page is loaded convert it to text
