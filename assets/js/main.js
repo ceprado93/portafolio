@@ -355,11 +355,12 @@ window.onload = () => {
     if (!project) {
       return;
     }
-    modalTitle.innerHTML = project.title;
-    modalDescription.innerHTML = project.description;
-    modalImg.src = project.img;
-    modallandingImg.src = project.landing;
-    modalImg.id = "modalImg" + project.id;
+
+    // modalTitle.innerHTML = project.title;
+    // modalDescription.innerHTML = project.description;
+    // modalImg.src = project.img;
+    // modallandingImg.src = project.landing;
+    // modalImg.id = "modalImg" + project.id;
 
     if (project.id >= 6) {
       modal.classList.add("light");
@@ -385,6 +386,29 @@ window.onload = () => {
         modalContainer.classList.add("display");
       }, 1000);
     }
+    history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
+    fetch("project.html")
+      .then(function (response) {
+        // When the page is loaded convert it to text
+        return response.text();
+      })
+      .then(function (html) {
+        // Initialize the DOM parser
+        var parser = new DOMParser();
+
+        // Parse the text
+        var doc = parser.parseFromString(html, "text/html");
+
+        // You can now even select part of that html as you would in the regular DOM
+        // Example:
+        var docBody = doc.querySelector(".container").innerHTML;
+        document.querySelector(".container").innerHTML = docBody;
+
+        console.log(doc);
+      })
+      .catch(function (err) {
+        console.log("Failed to fetch page: ", err);
+      });
   };
 
   portfolio__grid.addEventListener("click", handleGridClick);
@@ -442,29 +466,29 @@ window.onload = () => {
   let test = document.querySelector(".test");
   test.addEventListener("click", () => {
     console.log("aaa");
-    history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
-    fetch("project.html")
-      .then(function (response) {
-        // When the page is loaded convert it to text
-        return response.text();
-      })
-      .then(function (html) {
-        // Initialize the DOM parser
-        var parser = new DOMParser();
+    // history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
+    // fetch("project.html")
+    //   .then(function (response) {
+    //     // When the page is loaded convert it to text
+    //     return response.text();
+    //   })
+    //   .then(function (html) {
+    //     // Initialize the DOM parser
+    //     var parser = new DOMParser();
 
-        // Parse the text
-        var doc = parser.parseFromString(html, "text/html");
+    //     // Parse the text
+    //     var doc = parser.parseFromString(html, "text/html");
 
-        // You can now even select part of that html as you would in the regular DOM
-        // Example:
-        var docBody = doc.querySelector("body").innerHTML;
-        document.querySelector("body").innerHTML = docBody;
+    //     // You can now even select part of that html as you would in the regular DOM
+    //     // Example:
+    //     var docBody = doc.querySelector(".container").innerHTML;
+    //     document.querySelector(".container").innerHTML = docBody;
 
-        console.log(doc);
-      })
-      .catch(function (err) {
-        console.log("Failed to fetch page: ", err);
-      });
+    //     console.log(doc);
+    //   })
+    //   .catch(function (err) {
+    //     console.log("Failed to fetch page: ", err);
+    //   });
   });
 
   //Fin
