@@ -383,9 +383,12 @@ window.onload = () => {
           left: 0,
           behavior: "smooth",
         });
-        modalContainer.classList.add("display");
+        handleHtml();
       }, 1000);
     }
+  };
+
+  const handleHtml = () => {
     history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
     fetch("project.html")
       .then(function (response) {
