@@ -195,17 +195,17 @@ gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
 
 window.onload = () => {
-  colorToggle.classList.remove("rotate");
+  colorToggle?.classList.remove("rotate");
   setTimeout(() => {
-    colorToggle.classList.remove("initial");
+    colorToggle?.classList.remove("initial");
   }, 550);
 
   setTimeout(() => {
-    header.classList.remove("initial");
-    portfolio__grid.classList.remove("initial");
-    current__intro.classList.remove("initial");
-    portfolio__horizontal.classList.remove("initial");
-    footer.classList.remove("initial");
+    header?.classList.remove("initial");
+    portfolio__grid?.classList.remove("initial");
+    current__intro?.classList.remove("initial");
+    portfolio__horizontal?.classList.remove("initial");
+    footer?.classList.remove("initial");
     scrollHorizontall();
 
     // GSAP INITIAL
@@ -486,7 +486,7 @@ const handleHtml = (project) => {
           });
         });
         document.querySelector(".link__next").addEventListener("click", () => {
-          console.log("hola next");
+          console.log("hola nextt");
           handleGridClick;
         });
       } else {
