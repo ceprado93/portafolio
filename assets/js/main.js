@@ -411,6 +411,8 @@ window.onload = () => {
         document.querySelector(".container").innerHTML = docBody;
         modal.classList.remove("show");
         console.log(doc);
+        console.log(projectImg);
+        console.log(docBody);
       })
       .catch(function (err) {
         console.log("Failed to fetch page: ", err);
