@@ -459,6 +459,7 @@ const handleHtml = (project) => {
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
         doc.querySelector(".link__next").id = parseInt(project.id) + 1;
+        doc.querySelector(".link__next .link-hover").innerHTML = projects[parseInt(project.id) + 1].title;
 
         let tags = doc.querySelectorAll(".project__info p");
         console.log(tags);
