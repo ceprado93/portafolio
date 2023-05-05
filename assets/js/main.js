@@ -463,8 +463,8 @@ const handleHtml = (project) => {
         let projectImg = doc.querySelector(".project__img");
         doc.querySelector(".project__title").innerHTML = project.title;
         doc.querySelector(".project__description").innerHTML = project.description;
-        doc.querySelector(".project__index").innerHTML = project.id;
-
+        doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
+        closeButtons = doc.querySelectorAll(".close_button");
         let tags = doc.querySelectorAll(".project__info p");
         console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
