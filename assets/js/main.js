@@ -366,12 +366,20 @@ window.onload = () => {
       modal.classList.add("light");
     }
 
+    handleModal();
+    setTimeout(() => {
+      handleHtml(project);
+    }, 1000);
+  };
+  const handleModal = () => {
     if (modal.classList.contains("show")) {
-      modal.classList.remove("show");
-      modal.classList.remove("fadeIn");
-      if (modal.classList.contains("light")) {
-        modal.classList.remove("light");
-      }
+      setTimeout(() => {
+        modal.classList.remove("fadeIn");
+      }, 100);
+      setTimeout(() => {
+        modal.classList.remove("show");
+        if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
+      }, 1000);
     } else {
       modal.classList.add("show");
       setTimeout(() => {
@@ -383,14 +391,14 @@ window.onload = () => {
           left: 0,
           behavior: "smooth",
         });
-        handleHtml(project);
       }, 1000);
     }
   };
 
   const handleHtml = (project) => {
-    history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
-    fetch("project.html")
+    let type = project ? "project" : "index";
+    history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+    fetch(type + ".html")
       .then(function (response) {
         return response.text();
       })
@@ -410,7 +418,6 @@ window.onload = () => {
         document.querySelector(".container").innerHTML = docBody;
         modal.classList.remove("show");
         console.log(doc);
-        console.log(projectImg);
         console.log(docBody);
       })
       .catch(function (err) {
@@ -423,13 +430,9 @@ window.onload = () => {
 
   closeButtons.forEach((closeButton) => {
     closeButton.addEventListener("click", () => {
-      modalContainer.classList.remove("display");
+      handleModal();
       setTimeout(() => {
-        modal.classList.remove("fadeIn");
-      }, 100);
-      setTimeout(() => {
-        modal.classList.remove("show");
-        if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
+        handleHtml(false);
       }, 1000);
     });
   });
