@@ -392,21 +392,14 @@ window.onload = () => {
     history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
     fetch("project.html")
       .then(function (response) {
-        // When the page is loaded convert it to text
         return response.text();
       })
       .then(function (html) {
-        // Initialize the DOM parser
         var parser = new DOMParser();
-
-        // Parse the text
         var doc = parser.parseFromString(html, "text/html");
-
-        // You can now even select part of that html as you would in the regular DOM
-        // Example:
         var docBody = doc.querySelector(".container").innerHTML;
         document.querySelector(".container").innerHTML = docBody;
-
+        modal.classList.remove("show");
         console.log(doc);
       })
       .catch(function (err) {
