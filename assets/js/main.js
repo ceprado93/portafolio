@@ -455,6 +455,9 @@ const handleHtml = (project) => {
       if (project) {
         console.log(project);
         let projectImg = doc.querySelector(".project__img");
+        let proj = doc.querySelector(".project");
+        if (project.id % 2 === 0) proj.classList.add("ligth");
+        else proj.classList.remove("ligth");
         doc.querySelector(".project__title").innerHTML = project.title;
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
