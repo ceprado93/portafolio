@@ -210,15 +210,18 @@
 
     .project_footer-content-left {
         width: 100%;
-        margin-bottom: 20px
+        margin-bottom: 20px;
     }
 
     .project_footer-left-first {
-        margin-right: 0
+        margin-right: 0;
+        article{
+            display: flex;
+        }
     }
 
     .project_footer-content-right {
-        width: 100%
+        width: 100%;
     }
 
 }
@@ -227,15 +230,15 @@
 
     .project_footer-content-left {
         width: 80%;
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
     .project_footer-left-first {
-        margin-right: 20px
+        margin-right: 20px;
     }
 
     .project_footer-content-right {
-        width: 20%
+        width: 20%;
     }
 
 }
@@ -243,32 +246,32 @@
 @media(min-width: 750px) {
 
     .project_footer-content-left {
-        width: 70%
+        width: 70%;
     }
 
     .project_footer-content-right {
-        width: 30%
+        width: 30%;
     }
 }
 
 @media(min-width: 1200px) {
     .project_footer-content-left {
-        width: 60%
+        width: 60%;
     }
 
     .project_footer-content-right {
-        width: 40%
+        width: 40%;
     }
 }
 
 @media(min-width: 1620px) {
 
     .project_footer-content-left {
-        width: 50%
+        width: 50%;
     }
 
     .project_footer-content-right {
-        width: 50%
+        width: 50%;
     }
 }
 
