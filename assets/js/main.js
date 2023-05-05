@@ -336,15 +336,6 @@ window.onload = () => {
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
 
-  //CURSOR
-
-  const cursor = document.getElementById("cursor");
-  const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
-  const { innerWidth: width, innerHeight: height } = window;
-  const target = { x: width / 2, y: height / 2 };
-  const position = { x: height, y: width };
-  const ease = 0.075;
-
   window.addEventListener("mousemove", function (event) {
     target.x = event.clientX;
     target.y = event.clientY;
@@ -372,6 +363,13 @@ function scrollHorizontall() {
   });
 }
 
+const cursor = document.getElementById("cursor");
+const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
+const { innerWidth: width, innerHeight: height } = window;
+const target = { x: width / 2, y: height / 2 };
+const position = { x: height, y: width };
+const ease = 0.075;
+
 const update = () => {
   const { x: targetX, y: targetY } = target;
   const { x: posX, y: posY } = position;
@@ -390,6 +388,7 @@ const update = () => {
 };
 
 const handleGridClick = (event) => {
+  console.log("next");
   const target = event.target.closest("article");
   if (!target) return;
   const projectId = target.id;
@@ -403,6 +402,7 @@ const handleGridClick = (event) => {
   // modalImg.src = project.img;
   // modallandingImg.src = project.landing;
   // modalImg.id = "modalImg" + project.id;
+  console.log("nex33t");
 
   if (project.id >= 6) {
     modal.classList.add("light");
@@ -415,6 +415,8 @@ const handleGridClick = (event) => {
 };
 
 const handleModal = () => {
+  console.log("nex55t");
+
   if (modal.classList.contains("show")) {
     setTimeout(() => {
       modal.classList.remove("fadeIn");
@@ -439,6 +441,8 @@ const handleModal = () => {
 };
 
 const handleHtml = (project) => {
+  console.log("next", project);
+
   let type = project ? "project" : "index";
   history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
   fetch(type + ".html")
