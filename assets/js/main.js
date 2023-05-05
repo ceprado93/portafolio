@@ -465,7 +465,8 @@ const handleHtml = (project) => {
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = project.id;
 
-        let tags = doc.querySelector(".project__info p");
+        let tags = doc.querySelectorAll(".project__info p");
+        console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
         projectImg.src = project.img;
         projectImg.id = "projectImg" + project.id;
