@@ -347,89 +347,12 @@ window.onload = () => {
     });
   }
 
-  const handleGridClick = (event) => {
-    const target = event.target.closest("article");
-    if (!target) return;
-    const projectId = target.id;
-    const project = projects.find((p) => p.id === projectId);
-    if (!project) {
-      return;
-    }
-
-    // modalTitle.innerHTML = project.title;
-    // modalDescription.innerHTML = project.description;
-    // modalImg.src = project.img;
-    // modallandingImg.src = project.landing;
-    // modalImg.id = "modalImg" + project.id;
-
-    if (project.id >= 6) {
-      modal.classList.add("light");
-    }
-
-    handleModal();
-    setTimeout(() => {
-      handleHtml(project);
-    }, 1000);
-  };
-  const handleModal = () => {
-    if (modal.classList.contains("show")) {
-      setTimeout(() => {
-        modal.classList.remove("fadeIn");
-      }, 100);
-      setTimeout(() => {
-        modal.classList.remove("show");
-        if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
-      }, 1000);
-    } else {
-      modal.classList.add("show");
-      setTimeout(() => {
-        modal.classList.add("fadeIn");
-      }, 100);
-      setTimeout(() => {
-        modal.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 1000);
-    }
-  };
-
-  const handleHtml = (project) => {
-    let type = project ? "project" : "index";
-    history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
-    fetch(type + ".html")
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (html) {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(html, "text/html");
-        if (project) {
-          console.log(project);
-          let projectImg = doc.querySelector(".project__img");
-          doc.querySelector(".project__title").innerHTML = project.title;
-          doc.querySelector(".project__description").innerHTML = project.description;
-          projectImg.src = project.img;
-          projectImg.id = "projectImg" + project.id;
-        }
-        var docBody = doc.querySelector(".container").innerHTML;
-
-        document.querySelector(".container").innerHTML = docBody;
-        modal.classList.remove("show");
-        console.log(doc);
-        console.log(docBody);
-      })
-      .catch(function (err) {
-        console.log("Failed to fetch page: ", err);
-      });
-  };
-
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
 
   closeButtons.forEach((closeButton) => {
     closeButton.addEventListener("click", () => {
+      console.log("hola boton");
       handleModal();
       setTimeout(() => {
         handleHtml(false);
@@ -473,33 +396,84 @@ window.onload = () => {
   //INITIAL SCROLL
   window.onbeforeunload = () => window.scrollTo(0, 0);
 
-  let test = document.querySelector(".test");
-  test.addEventListener("click", () => {
-    console.log("aaa");
-    // history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
-    // fetch("project.html")
-    //   .then(function (response) {
-    //     // When the page is loaded convert it to text
-    //     return response.text();
-    //   })
-    //   .then(function (html) {
-    //     // Initialize the DOM parser
-    //     var parser = new DOMParser();
-
-    //     // Parse the text
-    //     var doc = parser.parseFromString(html, "text/html");
-
-    //     // You can now even select part of that html as you would in the regular DOM
-    //     // Example:
-    //     var docBody = doc.querySelector(".container").innerHTML;
-    //     document.querySelector(".container").innerHTML = docBody;
-
-    //     console.log(doc);
-    //   })
-    //   .catch(function (err) {
-    //     console.log("Failed to fetch page: ", err);
-    //   });
-  });
-
   //Fin
+};
+
+const handleGridClick = (event) => {
+  const target = event.target.closest("article");
+  if (!target) return;
+  const projectId = target.id;
+  const project = projects.find((p) => p.id === projectId);
+  if (!project) {
+    return;
+  }
+
+  // modalTitle.innerHTML = project.title;
+  // modalDescription.innerHTML = project.description;
+  // modalImg.src = project.img;
+  // modallandingImg.src = project.landing;
+  // modalImg.id = "modalImg" + project.id;
+
+  if (project.id >= 6) {
+    modal.classList.add("light");
+  }
+
+  handleModal();
+  setTimeout(() => {
+    handleHtml(project);
+  }, 1000);
+};
+
+const handleModal = () => {
+  if (modal.classList.contains("show")) {
+    setTimeout(() => {
+      modal.classList.remove("fadeIn");
+    }, 100);
+    setTimeout(() => {
+      modal.classList.remove("show");
+      if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
+    }, 1000);
+  } else {
+    modal.classList.add("show");
+    setTimeout(() => {
+      modal.classList.add("fadeIn");
+    }, 100);
+    setTimeout(() => {
+      modal.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 1000);
+  }
+};
+
+const handleHtml = (project) => {
+  let type = project ? "project" : "index";
+  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  fetch(type + ".html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, "text/html");
+      if (project) {
+        console.log(project);
+        let projectImg = doc.querySelector(".project__img");
+        doc.querySelector(".project__title").innerHTML = project.title;
+        doc.querySelector(".project__description").innerHTML = project.description;
+        projectImg.src = project.img;
+        projectImg.id = "projectImg" + project.id;
+      }
+      var docBody = doc.querySelector(".container").innerHTML;
+
+      document.querySelector(".container").innerHTML = docBody;
+      modal.classList.remove("show");
+      console.log(doc);
+      console.log(docBody);
+    })
+    .catch(function (err) {
+      console.log("Failed to fetch page: ", err);
+    });
 };
