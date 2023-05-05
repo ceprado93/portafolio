@@ -470,20 +470,30 @@ const handleHtml = (project) => {
       console.log(docBody);
     })
     .then(() => {
-      closeButtons = document.querySelectorAll(".close_button");
-      closeButtons.forEach((closeButton) => {
-        closeButton.addEventListener("click", () => {
-          console.log("hola boton");
-          handleModal();
-          setTimeout(() => {
-            handleHtml(false);
-          }, 1000);
+      if (project) {
+        closeButtons = document.querySelectorAll(".close_button");
+        closeButtons.forEach((closeButton) => {
+          closeButton.addEventListener("click", () => {
+            console.log("hola boton");
+            handleModal();
+            setTimeout(() => {
+              handleHtml(false);
+            }, 1000);
+          });
         });
-      });
-      document.querySelector(".link__next").addEventListener("click", () => {
-        console.log("hola next");
-        handleGridClick();
-      });
+        document.querySelector(".link__next").addEventListener("click", () => {
+          console.log("hola next");
+          handleGridClick();
+        });
+      } else {
+        colorToggle.classList.remove("initial");
+        header.classList.remove("initial");
+        portfolio__grid.classList.remove("initial");
+        current__intro.classList.remove("initial");
+        portfolio__horizontal.classList.remove("initial");
+        footer.classList.remove("initial");
+        scrollHorizontall();
+      }
     })
     .catch(function (err) {
       console.log("Failed to fetch page: ", err);
