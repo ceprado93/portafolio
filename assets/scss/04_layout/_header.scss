@@ -65,7 +65,7 @@ header {
                     border: 1px solid white;
                     background-color: transparent;
                     margin-right: 6px;
-                    transition: transform 1s cubic-bezier(0.25, 0.1, 0, 0.98);
+                    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0, 0.98);
             
                     &.initial {
                         transform: translate(48vw, 48vh) scale(3) rotate(180deg);

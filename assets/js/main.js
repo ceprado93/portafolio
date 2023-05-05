@@ -196,9 +196,11 @@ let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
 
 window.onload = () => {
   colorToggle.classList.remove("rotate");
-
   setTimeout(() => {
     colorToggle.classList.remove("initial");
+  }, 550);
+
+  setTimeout(() => {
     header.classList.remove("initial");
     portfolio__grid.classList.remove("initial");
     current__intro.classList.remove("initial");
@@ -209,7 +211,7 @@ window.onload = () => {
     // GSAP INITIAL
     var tl = new TimelineMax();
     if (window.innerWidth > 768) {
-      gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
+      // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
       tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.7, delay: 0.6 });
       tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.7, delay: 0.3 });
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
