@@ -397,16 +397,16 @@ window.onload = () => {
       .then(function (html) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
-        var docBody = doc.querySelector(".container").innerHTML;
         if (project) {
-          let projectImg = docBody.querySelector(".project__img");
+          let projectImg = doc.querySelector(".project__img");
 
-          docBody.querySelector(".project__title").innerHTML = project.title;
-          docBody.querySelector(".project__description").innerHTML = project.description;
+          doc.querySelector(".project__title").innerHTML = project.title;
+          doc.querySelector(".project__description").innerHTML = project.description;
           projectImg.src = project.img;
-          docBody.querySelector(".project__landingImg").src = project.landing;
+          doc.querySelector(".project__landingImg").src = project.landing;
           projectImg.id = "projectImg" + project.id;
         }
+        var docBody = doc.querySelector(".container").innerHTML;
 
         document.querySelector(".container").innerHTML = docBody;
         modal.classList.remove("show");
