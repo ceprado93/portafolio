@@ -483,7 +483,7 @@ const handleHtml = (project) => {
         });
         document.querySelector(".link__next").addEventListener("click", () => {
           console.log("hola next");
-          handleGridClick();
+          handleGridClick;
         });
       } else {
         colorToggle.classList.remove("initial");
