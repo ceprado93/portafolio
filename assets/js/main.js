@@ -404,9 +404,8 @@ const handleGridClick = (event) => {
   // modalImg.id = "modalImg" + project.id;
   console.log("nex33t");
 
-  if (project.id >= 6) {
-    modal.classList.add("light");
-  }
+  if (project.id % 2 === 0) modal.classList.add("ligth");
+  else modal.classList.remove("ligth");
 
   handleModal();
   setTimeout(() => {
