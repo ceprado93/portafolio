@@ -455,26 +455,12 @@ const handleHtml = (project) => {
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
         doc.querySelector(".link__next").id = parseInt(project.id) + 1;
-        closeButtons = doc.querySelectorAll(".close_button");
-        closeButtons.forEach((closeButton) => {
-          closeButton.addEventListener("click", () => {
-            console.log("hola boton");
-            handleModal();
-            setTimeout(() => {
-              handleHtml(false);
-            }, 1000);
-          });
-        });
+
         let tags = doc.querySelectorAll(".project__info p");
         console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
         projectImg.src = project.img;
         projectImg.id = "projectImg" + project.id;
-
-        doc.querySelector(".link__next").addEventListener("click", () => {
-          console.log("hola boton");
-          handleGridClick();
-        });
       }
       var docBody = doc.querySelector(".container").innerHTML;
 
@@ -482,6 +468,22 @@ const handleHtml = (project) => {
       modal.classList.remove("show");
       console.log(doc);
       console.log(docBody);
+    })
+    .then(() => {
+      closeButtons = document.querySelectorAll(".close_button");
+      closeButtons.forEach((closeButton) => {
+        closeButton.addEventListener("click", () => {
+          console.log("hola boton");
+          handleModal();
+          setTimeout(() => {
+            handleHtml(false);
+          }, 1000);
+        });
+      });
+      document.querySelector(".link__next").addEventListener("click", () => {
+        console.log("hola next");
+        handleGridClick();
+      });
     })
     .catch(function (err) {
       console.log("Failed to fetch page: ", err);
