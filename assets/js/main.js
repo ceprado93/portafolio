@@ -484,6 +484,7 @@ const handleHtml = (project) => {
           handleGridClick;
         });
       } else {
+        console.log(header);
         colorToggle.classList.remove("initial");
         header.classList.remove("initial");
         portfolio__grid.classList.remove("initial");
