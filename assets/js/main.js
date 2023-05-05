@@ -330,22 +330,6 @@ window.onload = () => {
         }
       );
     });
-  //HORIZONTAL SCROLL
-
-  function scrollHorizontall() {
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      // markers: true,
-      scrollTrigger: {
-        trigger: "#portfolio__horizontal",
-        pin: true,
-        scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "bottom top",
-      },
-    });
-  }
 
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
@@ -364,29 +348,43 @@ window.onload = () => {
     target.y = event.clientY;
   });
 
-  const update = () => {
-    const { x: targetX, y: targetY } = target;
-    const { x: posX, y: posY } = position;
-    const dx = targetX - posX;
-    const dy = targetY - posY;
-    const vx = dx * ease;
-    const vy = dy * ease;
-
-    position.x += vx;
-    position.y += vy;
-
-    cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
-    cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
-
-    requestAnimationFrame(update);
-  };
-
   update();
 
   //INITIAL SCROLL
   window.onbeforeunload = () => window.scrollTo(0, 0);
 
   //Fin
+};
+function scrollHorizontall() {
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    // markers: true,
+    scrollTrigger: {
+      trigger: "#portfolio__horizontal",
+      pin: true,
+      scrub: 1,
+      snap: 1 / (sections.length - 1),
+      end: "bottom top",
+    },
+  });
+}
+
+const update = () => {
+  const { x: targetX, y: targetY } = target;
+  const { x: posX, y: posY } = position;
+  const dx = targetX - posX;
+  const dy = targetY - posY;
+  const vx = dx * ease;
+  const vy = dy * ease;
+
+  position.x += vx;
+  position.y += vy;
+
+  cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
+  cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
+
+  requestAnimationFrame(update);
 };
 
 const handleGridClick = (event) => {
