@@ -350,16 +350,6 @@ window.onload = () => {
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
 
-  closeButtons.forEach((closeButton) => {
-    closeButton.addEventListener("click", () => {
-      console.log("hola boton");
-      handleModal();
-      setTimeout(() => {
-        handleHtml(false);
-      }, 1000);
-    });
-  });
-
   //CURSOR
 
   const cursor = document.getElementById("cursor");
@@ -465,6 +455,15 @@ const handleHtml = (project) => {
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
         closeButtons = doc.querySelectorAll(".close_button");
+        closeButtons.forEach((closeButton) => {
+          closeButton.addEventListener("click", () => {
+            console.log("hola boton");
+            handleModal();
+            setTimeout(() => {
+              handleHtml(false);
+            }, 1000);
+          });
+        });
         let tags = doc.querySelectorAll(".project__info p");
         console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
