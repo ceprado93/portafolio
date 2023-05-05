@@ -28,10 +28,10 @@ const update = () => {
 
   requestAnimationFrame(update);
 };
-let test = document.querySelector(".test");
-test.addEventListener("click", () => {
-  console.log("hola");
-});
+// let test = document.querySelector(".test");
+// test.addEventListener("click", () => {
+//   console.log("hola");
+// });
 update();
 
 //INITIAL SCROLL

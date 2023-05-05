@@ -383,12 +383,12 @@ window.onload = () => {
           left: 0,
           behavior: "smooth",
         });
-        handleHtml();
+        handleHtml(project);
       }, 1000);
     }
   };
 
-  const handleHtml = () => {
+  const handleHtml = (project) => {
     history.replaceState({ page: "project" }, "project", "/portafolio/project.html");
     fetch("project.html")
       .then(function (response) {
@@ -398,6 +398,16 @@ window.onload = () => {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
         var docBody = doc.querySelector(".container").innerHTML;
+        if (project) {
+          let projectImg = docBody.querySelector(".project__img");
+
+          docBody.querySelector(".project__title").innerHTML = project.title;
+          docBody.querySelector(".project__description").innerHTML = project.description;
+          projectImg.src = project.img;
+          docBody.querySelector(".project__landingImg").src = project.landing;
+          projectImg.id = "projectImg" + project.id;
+        }
+
         document.querySelector(".container").innerHTML = docBody;
         modal.classList.remove("show");
         console.log(doc);
