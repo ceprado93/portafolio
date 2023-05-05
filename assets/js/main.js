@@ -485,10 +485,7 @@ const handleHtml = (project) => {
             }, 1000);
           });
         });
-        document.querySelector(".link__next").addEventListener("click", () => {
-          console.log("hola nextt");
-          handleGridClick;
-        });
+        document.querySelector(".link__next").addEventListener("click", handleGridClick);
       } else {
         console.log(header);
         colorToggle.classList.remove("initial");
