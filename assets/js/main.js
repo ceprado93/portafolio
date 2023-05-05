@@ -398,12 +398,11 @@ window.onload = () => {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
         if (project) {
+          console.log(project);
           let projectImg = doc.querySelector(".project__img");
-
           doc.querySelector(".project__title").innerHTML = project.title;
           doc.querySelector(".project__description").innerHTML = project.description;
           projectImg.src = project.img;
-          doc.querySelector(".project__landingImg").src = project.landing;
           projectImg.id = "projectImg" + project.id;
         }
         var docBody = doc.querySelector(".container").innerHTML;
