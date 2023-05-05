@@ -86,7 +86,7 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
-    tags: ["php", "js", "css", "zorraquino"],
+    tags: ["Bilbao", "Web", "Agencia", "2022"],
     img: "./assets/img/zq.webp",
     landing: "./assets/img/zorraquino_landing.webp",
     size: "big",
@@ -100,7 +100,7 @@ const projects = [
     subtitle: "App para Ios y Android con Ionic y Vue.",
     description:
       "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
-    tags: ["ionic", "vue", "sass"],
+    tags: ["Bilbao", "App", "Ios & Android", "2023"],
     img: "./assets/img/sdiq_app.webp",
     landing: "./assets/img/sdiq_landing.webp",
     size: "medium",
@@ -113,7 +113,7 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
-    tags: ["php", "js", "sass", "zorraquino"],
+    tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/whitehole.webp",
     landing: "./assets/img/whitehole_landing.webp",
     size: "small",
@@ -127,7 +127,7 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
-    tags: ["php", "js", "css", "zorraquino"],
+    tags: ["Bilbao", "Web", "Portal", "2022"],
     img: "./assets/img/kutxabank.webp",
     landing: "./assets/img/clientes_landing.webp",
     size: "big",
@@ -141,7 +141,7 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
-    tags: ["php", "js", "sass", "zorraquino"],
+    tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
     size: "small",
@@ -155,7 +155,7 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
-    tags: ["php", "js", "sass", "zorraquino"],
+    tags: ["Bilbao", "Web", "Entertainment", "2023"],
     img: "./assets/img/Enkarterri.webp",
     landing: "./assets/img/digitalsignage_landing.webp",
     size: "small",
@@ -236,23 +236,24 @@ window.onload = () => {
   });
 
   //GSAP
-
+  console.log("aaa");
   ScrollTrigger.create({
     trigger: ".header",
     // markers: true,
     id: "top",
     start: "top top",
-    end: "+=" + window.innerHeight + "px",
+    markers: true,
+    end: "+=" + 0.2 * window.innerHeight + "px",
     pin: true,
   });
   gsap.to(".header", {
     scrollTrigger: {
       trigger: ".portfolio__grid",
-      // markers: true,
+      markers: true,
       id: "topdos",
       toggleActions: "restart none reverse pause",
-      start: "top top+=" + 1.6 * window.innerHeight + "px",
-      end: "+=" + window.innerHeight + "px",
+      start: "top top+=" + 0.8 * window.innerHeight + "px",
+      end: "+=" + 0.4 * window.innerHeight + "px",
       scrub: !0,
     },
     opacity: 0,
