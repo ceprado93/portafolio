@@ -402,7 +402,6 @@ const handleGridClick = (event) => {
   // modalImg.src = project.img;
   // modallandingImg.src = project.landing;
   // modalImg.id = "modalImg" + project.id;
-  console.log("nex33t");
 
   if (project.id % 2 === 0) modal.classList.add("ligth");
   else modal.classList.remove("ligth");
@@ -414,8 +413,6 @@ const handleGridClick = (event) => {
 };
 
 const handleModal = () => {
-  console.log("nex55t");
-
   if (modal.classList.contains("show")) {
     setTimeout(() => {
       modal.classList.remove("fadeIn");
@@ -496,7 +493,7 @@ const handleHtml = (project) => {
         closeButtons = document.querySelectorAll(".close_button");
         closeButtons.forEach((closeButton) => {
           closeButton.addEventListener("click", () => {
-            console.log("hola boton");
+            modal.classList.add("ligth");
             handleModal();
             setTimeout(() => {
               handleHtml(false);
