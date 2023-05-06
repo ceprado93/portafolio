@@ -1150,7 +1150,9 @@ section.current__intro {
           width: 100%; }
         .project .project__container .project__row-first h1.project__title {
           width: 100%;
-          margin-top: 15px; }
+          margin-top: 15px;
+          font-size: 66px;
+          line-height: 60px; }
       .project .project__container .project__row-second {
         flex-wrap: wrap;
         margin-bottom: 30px; }
