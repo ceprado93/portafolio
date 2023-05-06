@@ -317,7 +317,7 @@
                     }
             
                     .project__info {
-                        width: calc(0.2 * var(--columns-width));
+                        width: fit-content;
                         margin-right: 30px;
                         display: flex;
                         flex-direction: column;

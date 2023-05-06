@@ -775,10 +775,15 @@ section.current__intro {
         line-height: 2.8vw; }
 
 @media (max-width: 768px) {
-  section.current__intro .current__wrap .current__wrap--inner p {
-    margin-left: 0;
-    font-size: 7vw;
-    line-height: 6.5vw; } }
+  section.current__intro .current__wrap {
+    width: calc(100%); }
+    section.current__intro .current__wrap .current__wrap--inner {
+      width: 100%; }
+      section.current__intro .current__wrap .current__wrap--inner p {
+        width: 95%;
+        margin-left: 0;
+        font-size: 8vw;
+        line-height: 7.5vw; } }
 
 .portfolio__grid {
   min-height: 10vh;
@@ -936,6 +941,9 @@ section.current__intro {
   .container.dark {
     background: black;
     color: white; }
+    .container.dark .portfolio__grid {
+      background: black;
+      color: white; }
     .container.dark .portfolio__horizontal {
       background: white;
       color: black; }
@@ -1162,7 +1170,7 @@ section.current__intro {
           margin-bottom: 15px;
           color: #8c8c8c; }
         .project .project__container .project__row-second .project__info {
-          width: calc(0.2 * var(--columns-width));
+          width: fit-content;
           margin-right: 30px;
           display: flex;
           flex-direction: column;

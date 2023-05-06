@@ -27,6 +27,10 @@
     &.dark{
         background: black;
         color: white;
+        .portfolio__grid{
+            background: black;
+            color: white;
+        }
         .portfolio__horizontal{
             background: white;
             color: black;

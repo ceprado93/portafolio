@@ -217,11 +217,11 @@ window.onload = () => {
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
       tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.7 });
     } else {
-      gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
-      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.6 });
-      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.6, delay: 0.3 });
+      // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
+      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.5 });
+      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.4 });
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
-      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.8 });
+      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
     }
   }, 1500);
 
@@ -473,6 +473,15 @@ const handleHtml = (project) => {
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
         projectImg.src = project.img;
         projectImg.id = "projectImg" + project.id;
+      } else {
+        console.log(header);
+        doc.querySelector(".colorToggle").classList.remove("initial");
+        doc.querySelector("header").classList.remove("initial");
+        doc.querySelector(".portfolio__grid").classList.remove("initial");
+        doc.querySelector(".current__intro").classList.remove("initial");
+        doc.querySelector(".portfolio__horizontal").classList.remove("initial");
+        doc.querySelector("footer").classList.remove("initial");
+        scrollHorizontall();
       }
       var docBody = doc.querySelector(".container").innerHTML;
 
@@ -495,15 +504,6 @@ const handleHtml = (project) => {
           });
         });
         document.querySelector(".link__next").addEventListener("click", handleGridClick);
-      } else {
-        console.log(header);
-        colorToggle.classList.remove("initial");
-        header.classList.remove("initial");
-        portfolio__grid.classList.remove("initial");
-        current__intro.classList.remove("initial");
-        portfolio__horizontal.classList.remove("initial");
-        footer.classList.remove("initial");
-        scrollHorizontall();
       }
     })
     .catch(function (err) {

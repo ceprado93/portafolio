@@ -31,11 +31,14 @@ section{
     section{
         &.current__intro {
             .current__wrap {
-                .current__wrap--inner {        
+                width: calc(100% );
+                .current__wrap--inner {     
+                    width: 100%;   
                     p {
+                        width: 95%;
                         margin-left: 0;
-                        font-size: 7vw;
-                        line-height: 6.5vw;
+                        font-size: 8vw;
+                        line-height: 7.5vw;
                     }
                 }
             }
