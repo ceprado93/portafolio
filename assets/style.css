@@ -1082,7 +1082,7 @@ section.current__intro {
           object-position: 100% 20%; }
       .project .project__container .project__row-fifth .project__description {
         width: calc(0.2 * var(--columns-width));
-        margin-right: 30px; }
+        margin-left: 30px; }
   .project .project_footer {
     width: 100%;
     padding: 10px;
@@ -1224,7 +1224,7 @@ section.current__intro {
             object-position: 100% 20%; }
         .project .project__container .project__row-fifth .project__description {
           width: 100%;
-          margin-right: 0;
+          margin-left: 0;
           margin-bottom: 15px; }
     .project .project_footer {
       position: relative;
