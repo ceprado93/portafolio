@@ -46,7 +46,7 @@ const projects = [
       "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
     tags: ["Madrid", "Web", "Business", "2021"],
     img: "./assets/img/bardot.webp",
-    landing: "./assets/img/bamba_landing.webp",
+    landing: "./assets/img/bamba/bamba_movil.png",
     size: "medium",
     row: "row3",
     column: "column1",
@@ -451,6 +451,7 @@ const handleHtml = (project) => {
       if (project) {
         console.log(project);
         let projectImg = doc.querySelector(".project__img");
+        let projectImgMv = doc.querySelector(".project__img-movil");
         let proj = doc.querySelector(".project");
         if (project.id % 2 === 0) proj.classList.add("ligth");
         else proj.classList.remove("ligth");
@@ -469,6 +470,8 @@ const handleHtml = (project) => {
         console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
         projectImg.src = project.img;
+        projectImgMv.src = project.landing;
+
         projectImg.id = "projectImg" + project.id;
       } else {
         console.log(header);
