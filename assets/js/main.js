@@ -194,7 +194,7 @@ let closeButtons = document.querySelectorAll(".close_button");
 gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
 
-window.onload = () => {
+const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
   setTimeout(() => {
     colorToggle?.classList.remove("initial");
@@ -224,21 +224,19 @@ window.onload = () => {
       tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
     }
   }, 1500);
+};
 
-  //COLOR TOGGLE
+const toogleColor = () => {
+  if (colorToggle.classList.contains("light")) {
+    colorToggle.classList.remove("light");
+    container.classList.add("dark");
+  } else {
+    colorToggle.classList.add("light");
+    container.classList.remove("dark");
+  }
+};
 
-  colorToggle.addEventListener("click", () => {
-    if (colorToggle.classList.contains("light")) {
-      colorToggle.classList.remove("light");
-      container.classList.add("dark");
-    } else {
-      colorToggle.classList.add("light");
-      container.classList.remove("dark");
-    }
-  });
-
-  //GSAP
-  console.log("aaa");
+const loadGsap = () => {
   ScrollTrigger.create({
     trigger: ".header",
     // markers: true,
@@ -332,6 +330,18 @@ window.onload = () => {
         }
       );
     });
+};
+window.onload = () => {
+  loadingAnimation();
+
+  //COLOR TOGGLE
+
+  colorToggle.addEventListener("click", () => {
+    toogleColor();
+  });
+
+  //GSAP
+  loadGsap();
 
   portfolio__grid.addEventListener("click", handleGridClick);
   portfolio__horizontal.addEventListener("click", handleGridClick);
@@ -481,6 +491,8 @@ const handleHtml = (project) => {
         doc.querySelector(".current__intro").classList.remove("initial");
         doc.querySelector(".portfolio__horizontal").classList.remove("initial");
         doc.querySelector("footer").classList.remove("initial");
+        loadGsap();
+
         scrollHorizontall();
       }
       var docBody = doc.querySelector(".container").innerHTML;
