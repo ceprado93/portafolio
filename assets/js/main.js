@@ -157,6 +157,13 @@ const projects = [
       "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
     tags: ["Bilbao", "Web", "Entertainment", "2023"],
     img: "./assets/img/Enkarterri.webp",
+    projImgs: [
+      "./assets/img/enkartur/enkartur-laptop.webp",
+      "./assets/img/enkartur/enkartur-ipad4.png",
+      "./assets/img/enkartur/enkartur-ipad2.webp",
+      "./assets/img/enkartur/enkartur-ipad3.png",
+      "./assets/img/enkartur/enkartur-ipad.webp",
+    ],
     landing: "./assets/img/digitalsignage_landing.webp",
     size: "small",
     row: "row2",
@@ -206,37 +213,38 @@ const loadingAnimation = () => {
     current__intro?.classList.remove("initial");
     portfolio__horizontal?.classList.remove("initial");
     footer?.classList.remove("initial");
-    scrollHorizontall();
+    scrollHorizontall(sections);
 
     // GSAP INITIAL
     var tl = new TimelineMax();
     if (window.innerWidth > 768) {
       // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
-      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.7, delay: 0.6 });
-      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.7, delay: 0.3 });
-      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
-      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.7 });
+      gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.4 });
+      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.3 });
+      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
+      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
     } else {
       // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
       tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.5 });
       tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.4 });
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
-      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
+      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.4 });
     }
   }, 1500);
 };
 
-const toogleColor = () => {
-  if (colorToggle.classList.contains("light")) {
-    colorToggle.classList.remove("light");
+const toogleColor = (elm) => {
+  console.log("toggle", elm);
+  if (elm.classList.contains("light")) {
+    elm.classList.remove("light");
     container.classList.add("dark");
   } else {
-    colorToggle.classList.add("light");
+    elm.classList.add("light");
     container.classList.remove("dark");
   }
 };
 
-const loadGsap = () => {
+const loadGsap = (gridArticle, currentInnerWrap, effect) => {
   ScrollTrigger.create({
     trigger: ".header",
     // markers: true,
@@ -296,7 +304,7 @@ const loadGsap = () => {
     }
   });
 
-  currentInnerWrap.style.height = `${currentWrapHeight}px`;
+  if (currentInnerWrap) currentInnerWrap.style.height = `${currentWrapHeight}px`;
   gsap.to(".currenttext__wrap", {
     scrollTrigger: {
       trigger: ".current__wrap",
@@ -331,20 +339,27 @@ const loadGsap = () => {
       );
     });
 };
+const handleClose = () => {
+  closeButtons = document.querySelectorAll(".close_button");
+  closeButtons?.forEach((closeButton) => {
+    closeButton.addEventListener("click", () => {
+      console.log(modal);
+      modal?.classList.add("ligth");
+      handleModal();
+      setTimeout(() => {
+        handleHtml(false);
+      }, 1000);
+    });
+  });
+};
 window.onload = () => {
   loadingAnimation();
-
-  //COLOR TOGGLE
-
-  colorToggle.addEventListener("click", () => {
-    toogleColor();
+  loadGsap(gridArticle, currentInnerWrap, effect);
+  portfolio__grid?.addEventListener("click", handleGridClick);
+  portfolio__horizontal?.addEventListener("click", handleGridClick);
+  colorToggle?.addEventListener("click", () => {
+    toogleColor(colorToggle);
   });
-
-  //GSAP
-  loadGsap();
-
-  portfolio__grid.addEventListener("click", handleGridClick);
-  portfolio__horizontal.addEventListener("click", handleGridClick);
 
   window.addEventListener("mousemove", function (event) {
     target.x = event.clientX;
@@ -352,22 +367,19 @@ window.onload = () => {
   });
 
   update();
-
-  //INITIAL SCROLL
+  handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
-
-  //Fin
 };
-function scrollHorizontall() {
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
+function scrollHorizontall(horizontalSections) {
+  gsap.to(horizontalSections, {
+    xPercent: -100 * (horizontalSections.length - 1),
     ease: "none",
     // markers: true,
     scrollTrigger: {
       trigger: "#portfolio__horizontal",
       pin: true,
       scrub: 1,
-      snap: 1 / (sections.length - 1),
+      snap: 1 / (horizontalSections.length - 1),
       end: "bottom top",
     },
   });
@@ -447,10 +459,14 @@ const handleModal = () => {
 };
 
 const handleHtml = (project) => {
-  console.log("next", project);
-
+  // console.log("next", project);
+  let indexPos;
+  if (!project) {
+    indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
+  }
+  console.log(indexPos);
   let type = project ? "project" : "index";
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html");
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
@@ -459,9 +475,10 @@ const handleHtml = (project) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, "text/html");
       if (project) {
-        console.log(project);
+        // console.log(project);
         let projectImg = doc.querySelector(".project__img");
         let projectImgMv = doc.querySelector(".project__img-movil");
+        let proj__img = doc.querySelectorAll(".proj__img");
         let proj = doc.querySelector(".project");
         if (project.id % 2 === 0) proj.classList.add("ligth");
         else proj.classList.remove("ligth");
@@ -475,25 +492,25 @@ const handleHtml = (project) => {
           doc.querySelector(".link__next").id = 0;
           doc.querySelector(".link__next .link-hover").innerHTML = projects[0].title;
         }
+        projectImg.src = project.img;
+        if (project.projImgs) {
+          proj__img.forEach((elm, idx) => {
+            elm.src = project.projImgs[idx];
+          });
+        }
 
         let tags = doc.querySelectorAll(".project__info p");
-        console.log(tags);
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
-        projectImg.src = project.img;
-        projectImgMv.src = project.landing;
+        // projectImgMv.src = project.landing;
 
         projectImg.id = "projectImg" + project.id;
       } else {
-        console.log(header);
         doc.querySelector(".colorToggle").classList.remove("initial");
         doc.querySelector("header").classList.remove("initial");
         doc.querySelector(".portfolio__grid").classList.remove("initial");
         doc.querySelector(".current__intro").classList.remove("initial");
         doc.querySelector(".portfolio__horizontal").classList.remove("initial");
         doc.querySelector("footer").classList.remove("initial");
-        loadGsap();
-
-        scrollHorizontall();
       }
       var docBody = doc.querySelector(".container").innerHTML;
 
@@ -501,7 +518,6 @@ const handleHtml = (project) => {
       modal.classList.remove("show");
       modal.classList.remove("fadeIn");
       if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
-      console.log(docBody);
     })
     .then(() => {
       if (project) {
@@ -516,6 +532,20 @@ const handleHtml = (project) => {
           });
         });
         document.querySelector(".link__next").addEventListener("click", handleGridClick);
+      } else {
+        let newSections = gsap.utils.toArray(".grid__wrap--horizontal article");
+        let newgridArticle = gsap.utils.toArray(".portfolio__grid .article");
+        let newcurrentInnerWrap = document.querySelector(".current__wrap--inner");
+        let neweffect = document.querySelectorAll(".effect");
+        let newCol = document.querySelector(".colorToggle");
+        scrollHorizontall(newSections);
+        loadGsap(newgridArticle, newcurrentInnerWrap, neweffect);
+        document.querySelector(".portfolio__grid")?.addEventListener("click", handleGridClick);
+        document.querySelector(".portfolio__horizontal")?.addEventListener("click", handleGridClick);
+        newCol?.addEventListener("click", () => {
+          console.log("ee");
+          toogleColor(newCol);
+        });
       }
     })
     .catch(function (err) {

@@ -72,6 +72,8 @@
             margin-bottom: 60px;
             .project__index{
                 width: calc(0.2 * var(--columns-width) + 30px);
+                font-size: 32px;
+                line-height: 30px;
             }
             h1{
                 &.project__title{
@@ -95,6 +97,7 @@
                 flex-direction: column;
                 align-items: flex-end;
                 text-align: right;
+                color: #c1c1c1;
             }
             .project__info{
                 width: calc(0.2 * var(--columns-width));
@@ -118,6 +121,7 @@
             .project__img {
                 width: 100%;
                 object-fit: cover;
+                aspect-ratio: 1/0.56;
                 &#projectImg5 {
                     background-color: #ededed;
                 }
@@ -141,12 +145,14 @@
                     &:first-child{
                         margin-right: 30px;
                     }
+                    
                 }
             }
             .project__img {
                 width: calc(0.4 * var(--columns-width) + 30px);
                 margin-left: calc(0.2 * var(--columns-width) + 30px);
                 object-fit: cover;
+                aspect-ratio: 1/1;
 
                 &#projectImg5 {
                     background-color: #ededed;
@@ -164,6 +170,7 @@
                     width: calc(0.4 * var(--columns-width) + 30px);
                     margin-right: calc(0.2 * var(--columns-width) + 30px);
                     object-fit: cover;
+                    aspect-ratio: 1/1;
             
                     &#projectImg5 {
                         background-color: #ededed;
@@ -294,6 +301,7 @@
             
                     .project__index {
                         width: 100%;
+    
                     }
             
                     h1 {

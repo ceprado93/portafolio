@@ -1009,7 +1009,9 @@ section.current__intro {
       display: flex;
       margin-bottom: 60px; }
       .project .project__container .project__row-first .project__index {
-        width: calc(0.2 * var(--columns-width) + 30px); }
+        width: calc(0.2 * var(--columns-width) + 30px);
+        font-size: 32px;
+        line-height: 30px; }
       .project .project__container .project__row-first h1.project__title {
         font-weight: 600;
         font-size: 83px;
@@ -1026,7 +1028,8 @@ section.current__intro {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        text-align: right; }
+        text-align: right;
+        color: #c1c1c1; }
       .project .project__container .project__row-second .project__info {
         width: calc(0.2 * var(--columns-width));
         margin-right: 30px;
@@ -1042,7 +1045,8 @@ section.current__intro {
       margin-bottom: 90px; }
       .project .project__container .project__row-third .project__img {
         width: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        aspect-ratio: 1/0.56; }
         .project .project__container .project__row-third .project__img#projectImg5 {
           background-color: #ededed; }
         .project .project__container .project__row-third .project__img#projectImg8 {
@@ -1064,7 +1068,8 @@ section.current__intro {
       .project .project__container .project__row-fourth .project__img {
         width: calc(0.4 * var(--columns-width) + 30px);
         margin-left: calc(0.2 * var(--columns-width) + 30px);
-        object-fit: cover; }
+        object-fit: cover;
+        aspect-ratio: 1/1; }
         .project .project__container .project__row-fourth .project__img#projectImg5 {
           background-color: #ededed; }
         .project .project__container .project__row-fourth .project__img#projectImg8 {
@@ -1075,7 +1080,8 @@ section.current__intro {
       .project .project__container .project__row-fifth .project__img {
         width: calc(0.4 * var(--columns-width) + 30px);
         margin-right: calc(0.2 * var(--columns-width) + 30px);
-        object-fit: cover; }
+        object-fit: cover;
+        aspect-ratio: 1/1; }
         .project .project__container .project__row-fifth .project__img#projectImg5 {
           background-color: #ededed; }
         .project .project__container .project__row-fifth .project__img#projectImg8 {
