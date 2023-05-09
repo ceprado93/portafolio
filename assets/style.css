@@ -390,18 +390,21 @@ a {
   font-family: ReadexPro-variable;
   src: url(./fonts/ReadexPro-Variable.ttf) format("truetype");
   font-weight: 400;
+  font-display: swap;
   font-style: normal; }
 
 @font-face {
   font-family: ReadexPro;
   src: url(./fonts/ReadexPro-Regular.ttf) format("truetype");
   font-weight: 400;
+  font-display: swap;
   font-style: normal; }
 
 @font-face {
   font-family: ReadexPro;
   src: url(./fonts/ReadexPro-Bold.ttf) format("truetype");
   font-weight: 700;
+  font-display: swap;
   font-style: normal; }
 
 /**
@@ -462,7 +465,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: neueMontreal, Arial, Helvetica, sans-serif;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
   scroll-behavior: smooth; }
 
 #top {
