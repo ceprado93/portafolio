@@ -320,6 +320,14 @@ h3 {
   letter-spacing: .05em;
   margin: 0; }
 
+.small__header {
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  font-family: ReadexPro, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em; }
+
 .small__header--regular {
   font-size: 1.3rem;
   line-height: 1.3rem;
@@ -371,7 +379,7 @@ a {
   h3 {
     font-size: 1.2rem;
     line-height: 1.2rem; }
-  .small__header--regular {
+  .small__header, .small__header--regular {
     font-size: 1.2rem;
     line-height: 1.2rem; }
   p {
@@ -482,17 +490,26 @@ header {
     color: white !important; }
     header.initial a {
       color: white !important; }
+    header.initial .lang--disabled {
+      color: white !important; }
   header .header__top {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     z-index: 2;
     position: relative; }
-    header .header__top .header__top-nav h3 {
+    header .header__top .header__top-nav .topnav__p {
       display: flex;
-      gap: 6px; }
-      header .header__top .header__top-nav h3 .lang--disabled {
-        opacity: 0.45; }
+      gap: 6px;
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      font-family: ReadexPro, Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin: 0; }
+      header .header__top .header__top-nav .topnav__p .lang--disabled {
+        color: #8d8d8d; }
     header .header__top .colorToggle {
       width: 12px;
       height: 12px;

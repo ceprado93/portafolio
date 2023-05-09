@@ -39,6 +39,9 @@ header {
         a{
             color: white !important;
         }
+        .lang--disabled{
+            color: white !important;
+        }
     }
    
     .header__top {
@@ -48,11 +51,18 @@ header {
         z-index: 2;
         position: relative;
         .header__top-nav{
-            h3{
+            .topnav__p{
                 display: flex;
                 gap: 6px;
+                font-size: 1.3rem;
+                    line-height: 1.3rem;
+                    font-family: ReadexPro, Arial, Helvetica, sans-serif;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: .05em;
+                    margin: 0;
                 .lang--disabled{
-                    opacity: 0.45;
+                    color: #8d8d8d;
                 }
             }
         }

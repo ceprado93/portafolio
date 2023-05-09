@@ -133,6 +133,15 @@ h3 {
     margin: 0
 }
 
+.small__header {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-family: ReadexPro, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
 .small__header--regular {
     font-size: 1.3rem;
     line-height: 1.3rem;
@@ -202,7 +211,7 @@ a {
         line-height: 1.2rem;
     }
 
-    .small__header--regular {
+        .small__header, .small__header--regular {
         font-size: 1.2rem;
         line-height: 1.2rem
     }
