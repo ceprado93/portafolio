@@ -219,7 +219,7 @@ const loadingAnimation = () => {
     var tl = new TimelineMax();
     if (window.innerWidth > 768) {
       // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
-      gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.4 });
+      gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
       tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.3 });
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
       tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
@@ -230,7 +230,7 @@ const loadingAnimation = () => {
       tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
       tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.4 });
     }
-  }, 1500);
+  }, 1000);
 };
 
 const toogleColor = (elm) => {
