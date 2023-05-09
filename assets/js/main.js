@@ -466,7 +466,7 @@ const handleHtml = (project) => {
   }
   console.log(indexPos);
   let type = project ? "project" : "index";
-  history.replaceState({ page: type }, type, "/" + type + ".html");
+  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
