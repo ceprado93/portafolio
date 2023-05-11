@@ -388,42 +388,41 @@ window.onload = () => {
   handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
 };
-if (window.innerWidth > 768) {
-  const moveTitle = (event) => {
-    debounceTimeout = setTimeout(function () {
-      let text = document.getElementById("title");
-      let width = event.clientX || window.innerWidth / 2;
-      let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
-      text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
-    }, 10);
-  };
-  const interpolate = (value, inMin, inMax, outMin, outMax) => {
-    return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-  };
-  const cursor = document.getElementById("cursor");
-  const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
-  const { innerWidth: width, innerHeight: height } = window;
-  const target = { x: width / 2, y: height / 2 };
-  const position = { x: height, y: width };
-  const ease = 0.075;
+const moveTitle = (event) => {
+  debounceTimeout = setTimeout(function () {
+    let text = document.getElementById("title");
+    let width = event.clientX || window.innerWidth / 2;
+    let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
+    text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
+  }, 10);
+};
+const interpolate = (value, inMin, inMax, outMin, outMax) => {
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+};
+const cursor = document.getElementById("cursor");
+const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
+const { innerWidth: width, innerHeight: height } = window;
+const target = { x: width / 2, y: height / 2 };
+const position = { x: height, y: width };
+const ease = 0.075;
 
-  const update = () => {
-    const { x: targetX, y: targetY } = target;
-    const { x: posX, y: posY } = position;
-    const dx = targetX - posX;
-    const dy = targetY - posY;
-    const vx = dx * ease;
-    const vy = dy * ease;
+const update = () => {
+  const { x: targetX, y: targetY } = target;
+  const { x: posX, y: posY } = position;
+  const dx = targetX - posX;
+  const dy = targetY - posY;
+  const vx = dx * ease;
+  const vy = dy * ease;
 
-    position.x += vx;
-    position.y += vy;
+  position.x += vx;
+  position.y += vy;
 
-    cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
-    cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
+  cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
+  cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
 
-    requestAnimationFrame(update);
-  };
-}
+  requestAnimationFrame(update);
+};
+
 function scrollHorizontall(horizontalSections) {
   gsap.to(horizontalSections, {
     xPercent: -100 * (horizontalSections.length - 1),
