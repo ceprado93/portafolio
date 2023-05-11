@@ -180,7 +180,10 @@ let current__intro = document.querySelector(".current__intro");
 let portfolio__horizontal = document.querySelector(".portfolio__horizontal");
 let footer = document.querySelector("footer");
 let colorToggle = document.querySelector(".colorToggle");
+let colorToggleBlock = document.querySelector(".topnav__p--color");
+
 let container = document.querySelector(".container");
+let debounceTimeout;
 
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
 
@@ -357,8 +360,13 @@ window.onload = () => {
   loadGsap(gridArticle, currentInnerWrap, effect);
   portfolio__grid?.addEventListener("click", handleGridClick);
   portfolio__horizontal?.addEventListener("click", handleGridClick);
-  colorToggle?.addEventListener("click", () => {
+  colorToggleBlock?.addEventListener("click", () => {
     toogleColor(colorToggle);
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    clearTimeout(debounceTimeout);
+    moveTitle(event);
   });
 
   window.addEventListener("mousemove", function (event) {
@@ -369,6 +377,18 @@ window.onload = () => {
   update();
   handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
+};
+
+const moveTitle = (event) => {
+  debounceTimeout = setTimeout(function () {
+    let text = document.getElementById("title");
+    let width = event.clientX || window.innerWidth / 2;
+    let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
+    text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
+  }, 10);
+};
+const interpolate = (value, inMin, inMax, outMin, outMax) => {
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };
 function scrollHorizontall(horizontalSections) {
   gsap.to(horizontalSections, {
@@ -538,12 +558,13 @@ const handleHtml = (project) => {
         let newcurrentInnerWrap = document.querySelector(".current__wrap--inner");
         let neweffect = document.querySelectorAll(".effect");
         let newCol = document.querySelector(".colorToggle");
+        let colBlock = document.querySelector(".topnav__p--color");
+
         scrollHorizontall(newSections);
         loadGsap(newgridArticle, newcurrentInnerWrap, neweffect);
         document.querySelector(".portfolio__grid")?.addEventListener("click", handleGridClick);
         document.querySelector(".portfolio__horizontal")?.addEventListener("click", handleGridClick);
-        newCol?.addEventListener("click", () => {
-          console.log("ee");
+        colBlock?.addEventListener("click", () => {
           toogleColor(newCol);
         });
       }

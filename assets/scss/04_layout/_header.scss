@@ -5,7 +5,8 @@
     padding: 10px;
 }
 .animate {
-    animation: var-animation 6s ease-out infinite;
+    transition: all 0.5s ease;
+    // animation: var-animation 6s ease-out infinite;
 }
 
 @keyframes var-animation {
