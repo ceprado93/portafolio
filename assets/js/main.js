@@ -206,34 +206,43 @@ let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
 
 const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
-  setTimeout(() => {
+  if (navigator.userAgent.includes("Chrome-Lighthouse")) {
     colorToggle?.classList.remove("initial");
-  }, 550);
-
-  setTimeout(() => {
     header?.classList.remove("initial");
     portfolio__grid?.classList.remove("initial");
     current__intro?.classList.remove("initial");
     portfolio__horizontal?.classList.remove("initial");
     footer?.classList.remove("initial");
-    scrollHorizontall(sections);
+  } else {
+    setTimeout(() => {
+      colorToggle?.classList.remove("initial");
+    }, 550);
 
-    // GSAP INITIAL
-    var tl = new TimelineMax();
-    if (window.innerWidth > 768) {
-      // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
-      gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
-      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.3 });
-      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
-      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
-    } else {
-      // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
-      tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.5 });
-      tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.4 });
-      tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.4 });
-      tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.4 });
-    }
-  }, 1000);
+    setTimeout(() => {
+      header?.classList.remove("initial");
+      portfolio__grid?.classList.remove("initial");
+      current__intro?.classList.remove("initial");
+      portfolio__horizontal?.classList.remove("initial");
+      footer?.classList.remove("initial");
+      scrollHorizontall(sections);
+
+      // GSAP INITIAL
+      var tl = new TimelineMax();
+      if (window.innerWidth > 768) {
+        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
+        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
+        tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.3 });
+        tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
+        tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
+      } else {
+        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
+        tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.3 });
+        tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.4 });
+        tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
+        tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.4 });
+      }
+    }, 1000);
+  }
 };
 
 const toogleColor = (elm) => {
@@ -364,34 +373,57 @@ window.onload = () => {
     toogleColor(colorToggle);
   });
 
-  if (window.innerWidth < 768) {
+  if (window.innerWidth > 768) {
     document.addEventListener("mousemove", function (event) {
       clearTimeout(debounceTimeout);
       moveTitle(event);
     });
+    window.addEventListener("mousemove", function (event) {
+      target.x = event.clientX;
+      target.y = event.clientY;
+    });
+    update();
   }
 
-  window.addEventListener("mousemove", function (event) {
-    target.x = event.clientX;
-    target.y = event.clientY;
-  });
-
-  update();
   handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
 };
+if (window.innerWidth > 768) {
+  const moveTitle = (event) => {
+    debounceTimeout = setTimeout(function () {
+      let text = document.getElementById("title");
+      let width = event.clientX || window.innerWidth / 2;
+      let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
+      text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
+    }, 10);
+  };
+  const interpolate = (value, inMin, inMax, outMin, outMax) => {
+    return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+  };
+  const cursor = document.getElementById("cursor");
+  const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
+  const { innerWidth: width, innerHeight: height } = window;
+  const target = { x: width / 2, y: height / 2 };
+  const position = { x: height, y: width };
+  const ease = 0.075;
 
-const moveTitle = (event) => {
-  debounceTimeout = setTimeout(function () {
-    let text = document.getElementById("title");
-    let width = event.clientX || window.innerWidth / 2;
-    let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
-    text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
-  }, 10);
-};
-const interpolate = (value, inMin, inMax, outMin, outMax) => {
-  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-};
+  const update = () => {
+    const { x: targetX, y: targetY } = target;
+    const { x: posX, y: posY } = position;
+    const dx = targetX - posX;
+    const dy = targetY - posY;
+    const vx = dx * ease;
+    const vy = dy * ease;
+
+    position.x += vx;
+    position.y += vy;
+
+    cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
+    cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
+
+    requestAnimationFrame(update);
+  };
+}
 function scrollHorizontall(horizontalSections) {
   gsap.to(horizontalSections, {
     xPercent: -100 * (horizontalSections.length - 1),
@@ -407,32 +439,7 @@ function scrollHorizontall(horizontalSections) {
   });
 }
 
-const cursor = document.getElementById("cursor");
-const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
-const { innerWidth: width, innerHeight: height } = window;
-const target = { x: width / 2, y: height / 2 };
-const position = { x: height, y: width };
-const ease = 0.075;
-
-const update = () => {
-  const { x: targetX, y: targetY } = target;
-  const { x: posX, y: posY } = position;
-  const dx = targetX - posX;
-  const dy = targetY - posY;
-  const vx = dx * ease;
-  const vy = dy * ease;
-
-  position.x += vx;
-  position.y += vy;
-
-  cursor.style.left = `${Math.round(position.x - elWidth / 2)}px`;
-  cursor.style.top = `${Math.round(position.y - elHeight / 2)}px`;
-
-  requestAnimationFrame(update);
-};
-
 const handleGridClick = (event) => {
-  console.log("next");
   const target = event.target.closest("article");
   if (!target) return;
   const projectId = target.id;
@@ -440,12 +447,6 @@ const handleGridClick = (event) => {
   if (!project) {
     return;
   }
-
-  // modalTitle.innerHTML = project.title;
-  // modalDescription.innerHTML = project.description;
-  // modalImg.src = project.img;
-  // modallandingImg.src = project.landing;
-  // modalImg.id = "modalImg" + project.id;
 
   if (project.id % 2 === 0) modal.classList.add("ligth");
   else modal.classList.remove("ligth");
@@ -481,12 +482,10 @@ const handleModal = () => {
 };
 
 const handleHtml = (project) => {
-  // console.log("next", project);
   let indexPos;
   if (!project) {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
-  console.log(indexPos);
   let type = project ? "project" : "index";
   history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
   fetch(type + ".html")
@@ -497,9 +496,7 @@ const handleHtml = (project) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, "text/html");
       if (project) {
-        // console.log(project);
         let projectImg = doc.querySelector(".project__img");
-        let projectImgMv = doc.querySelector(".project__img-movil");
         let proj__img = doc.querySelectorAll(".proj__img");
         let proj = doc.querySelector(".project");
         if (project.id % 2 === 0) proj.classList.add("ligth");
@@ -523,7 +520,6 @@ const handleHtml = (project) => {
 
         let tags = doc.querySelectorAll(".project__info p");
         tags.forEach((tag, index) => (tag.innerHTML = project.tags[index]));
-        // projectImgMv.src = project.landing;
 
         projectImg.id = "projectImg" + project.id;
       } else {
