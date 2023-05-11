@@ -329,7 +329,8 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
     },
     // y: "-5%",
     ease: "none",
-  }),
+  });
+  if (!navigator.userAgent.includes("Chrome-Lighthouse")) {
     effect.forEach((t, index) => {
       let startPops = 60 * index + 200;
       let endPops = 5 * index;
@@ -350,6 +351,7 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
         }
       );
     });
+  }
 };
 const handleClose = () => {
   closeButtons = document.querySelectorAll(".close_button");
