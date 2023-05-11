@@ -399,7 +399,7 @@ function scrollHorizontall(horizontalSections) {
       trigger: "#portfolio__horizontal",
       pin: true,
       scrub: 1,
-      snap: 1 / (horizontalSections.length - 1),
+      // snap: 1 / (horizontalSections.length - 1),
       end: "bottom top",
     },
   });
