@@ -471,21 +471,6 @@ body {
 #top {
   padding: 10px; }
 
-.animate {
-  transition: all 0.5s ease; }
-
-@keyframes var-animation {
-  0% {
-    font-variation-settings: "wght" 400, "HEXP" 10; }
-  25% {
-    font-variation-settings: "wght" 700, "HEXP" 10; }
-  50% {
-    font-variation-settings: "wght" 400, "HEXP" 10; }
-  75% {
-    font-variation-settings: "wght" 550, "HEXP" 10; }
-  100% {
-    font-variation-settings: "wght" 400, "HEXP" 10; } }
-
 header {
   height: calc(100dvh - 20px);
   max-height: calc(100dvh - 20px) !important; }
@@ -610,6 +595,19 @@ header {
     width: 38%; } }
 
 @media (max-width: 768px) {
+  .animate {
+    animation: var-animation 6s ease-out infinite; }
+  @keyframes var-animation {
+    0% {
+      font-variation-settings: "wght" 400, "HEXP" 10; }
+    25% {
+      font-variation-settings: "wght" 700, "HEXP" 10; }
+    50% {
+      font-variation-settings: "wght" 400, "HEXP" 10; }
+    75% {
+      font-variation-settings: "wght" 550, "HEXP" 10; }
+    100% {
+      font-variation-settings: "wght" 400, "HEXP" 10; } }
   .header__desc-wrap {
     flex-direction: column-reverse;
     align-items: flex-start; }

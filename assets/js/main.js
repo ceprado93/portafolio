@@ -364,10 +364,12 @@ window.onload = () => {
     toogleColor(colorToggle);
   });
 
-  document.addEventListener("mousemove", function (event) {
-    clearTimeout(debounceTimeout);
-    moveTitle(event);
-  });
+  if (window.innerWidth < 768) {
+    document.addEventListener("mousemove", function (event) {
+      clearTimeout(debounceTimeout);
+      moveTitle(event);
+    });
+  }
 
   window.addEventListener("mousemove", function (event) {
     target.x = event.clientX;
