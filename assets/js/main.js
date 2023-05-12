@@ -1,177 +1,3 @@
-const projects = [
-  {
-    id: "0",
-    title: "APS Racing",
-    subtitle: "MERN app para rally media.",
-    description:
-      "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
-    tags: ["Madrid", "Web", "News", "2021"],
-    img: "./assets/img/aps.webp",
-    landing: "./assets/img/apsRacing.webp",
-    size: "big",
-    row: "row1",
-    column: "column1",
-  },
-  {
-    id: "1",
-    title: "Wave Maps",
-    subtitle: "Atlas de Surf y Olas MERN .",
-    description:
-      "Wave Maps es una página web de atlas de olas construida con React, Node.js, Express y MongoDB. Proporciona información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas. Es una herramienta avanzada y completa para los entusiastas del surf y deportes acuáticos.",
-    tags: ["Madrid", "Web", "Atlas", "2021"],
-    img: "./assets/img/wavemaps.webp",
-    landing: "./assets/img/wm-home.webp",
-    size: "small",
-    row: "row3",
-    column: "column2",
-  },
-  {
-    id: "2",
-    title: "Celia Perez Art",
-    subtitle: "React y Sass portafolio de una artista y diseñadora.",
-    description:
-      "El portfolio en línea de Celia Perez, diseñadora, está construido con React y Sass. Ofrece una vista completa de su trabajo, habilidades y experiencia, en una interfaz interactiva y visualmente atractiva. Es una solución moderna y profesional para promocionar el trabajo de un diseñador.",
-    tags: ["Bilbao", "Web", "Portfolio", "2021"],
-    img: "./assets/img/cpzfondo.webp",
-    landing: "./assets/img/celia_landing.webp",
-    size: "small",
-    row: "row4",
-    column: "column2",
-  },
-  {
-    id: "3",
-    title: "La Bamba",
-    subtitle: "MERN web para una empresa de eventos de Madrid.",
-    description:
-      "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
-    tags: ["Madrid", "Web", "Business", "2021"],
-    img: "./assets/img/bardot.webp",
-    landing: "./assets/img/bamba/bamba_movil.png",
-    size: "medium",
-    row: "row3",
-    column: "column1",
-  },
-  {
-    id: "4",
-    title: "Nemeson One",
-    subtitle: "React y Sass web.",
-    description:
-      "Página web informativa de los audífonos Nemeson One está creada con React, Redux y Sass. Ofrece detalles sobre características técnicas, diseño y confort. Es una experiencia interactiva y visualmente atractiva para explorar todas las bondades de los audífonos.",
-    tags: ["Madrid", "Web", "E-commerce", "2021"],
-    img: "./assets/img/manos.webp",
-    landing: "./assets/img/nemesonone_landing.webp",
-    size: "small",
-    row: "row1",
-    column: "column3",
-    url: "https://nemesonone.es/",
-  },
-  {
-    id: "5",
-    title: "Procorlab",
-    subtitle: "E-commerce y plataforma de reservas para tests medicos.",
-    description:
-      "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
-    tags: ["Madrid", "Web", "E-commerce", "2021"],
-    img: "./assets/img/procor.webp",
-    landing: "./assets/img/procorlab_landing.webp",
-    size: "big",
-    row: "row3",
-    column: "column3",
-    url: "https://procorlab.es/",
-  },
-
-  {
-    id: "6",
-    title: "Zorraquino",
-    subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
-    tags: ["Bilbao", "Web", "Agencia", "2022"],
-    img: "./assets/img/zq.webp",
-    landing: "./assets/img/zorraquino_landing.webp",
-    size: "big",
-    row: "row1",
-    column: "column2",
-    url: "https://www.zorraquino.com/",
-  },
-  {
-    id: "7",
-    title: "Saunier Duval IQ app",
-    subtitle: "App para Ios y Android con Ionic y Vue.",
-    description:
-      "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
-    tags: ["Bilbao", "App", "Ios & Android", "2023"],
-    img: "./assets/img/sdiq_app.webp",
-    landing: "./assets/img/sdiq_landing.webp",
-    size: "medium",
-    row: "row3",
-    column: "column4",
-  },
-  {
-    id: "8",
-    title: "Whitehole",
-    subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
-    tags: ["Bilbao", "Web", "Business", "2022"],
-    img: "./assets/img/whitehole.webp",
-    landing: "./assets/img/whitehole_landing.webp",
-    size: "small",
-    row: "row3",
-    column: "column3",
-    url: "https://www.whitehole.es/",
-  },
-  {
-    id: "9",
-    title: "Clientes Kutxabank",
-    subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
-    tags: ["Bilbao", "Web", "Portal", "2022"],
-    img: "./assets/img/kutxabank.webp",
-    landing: "./assets/img/clientes_landing.webp",
-    size: "big",
-    row: "row3",
-    column: "column1",
-    url: "https://clientes.kutxabank.es/es/",
-  },
-  {
-    id: "10",
-    title: "IntalXpert Saunier Duval",
-    subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
-    tags: ["Bilbao", "Web", "Business", "2022"],
-    img: "./assets/img/saunier.webp",
-    landing: "./assets/img/instalxpert_landing.webp",
-    size: "small",
-    row: "row2",
-    column: "column4",
-    url: "https://instalxpert.saunierduval.es/",
-  },
-  {
-    id: "11",
-    title: "Enkartur",
-    subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
-    tags: ["Bilbao", "Web", "Entertainment", "2023"],
-    img: "./assets/img/Enkarterri.webp",
-    projImgs: [
-      "./assets/img/enkartur/enkartur-laptop.webp",
-      "./assets/img/enkartur/enkartur-ipad4.png",
-      "./assets/img/enkartur/enkartur-ipad2.webp",
-      "./assets/img/enkartur/enkartur-ipad3.png",
-      "./assets/img/enkartur/enkartur-ipad.webp",
-    ],
-    landing: "./assets/img/digitalsignage_landing.webp",
-    size: "small",
-    row: "row2",
-    column: "column1",
-    url: "https://www.visitenkarterri.com/",
-  },
-];
-
 //INITIAL ANIMATION
 
 let header = document.querySelector("header");
@@ -216,7 +42,7 @@ const loadingAnimation = () => {
   } else {
     setTimeout(() => {
       colorToggle?.classList.remove("initial");
-    }, 550);
+    }, 800);
 
     setTimeout(() => {
       header?.classList.remove("initial");
@@ -235,11 +61,11 @@ const loadingAnimation = () => {
         tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
         tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
       } else {
-        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6, delay: 0.6 });
-        tl.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0.3 });
-        tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.4 });
-        tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
-        tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.4 });
+        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6 });
+        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
       }
     }, 1000);
   }
@@ -366,7 +192,7 @@ const handleClose = () => {
     });
   });
 };
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", () => {
   loadingAnimation();
   loadGsap(gridArticle, currentInnerWrap, effect);
   portfolio__grid?.addEventListener("click", handleGridClick);
@@ -389,7 +215,7 @@ window.onload = () => {
 
   handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
-};
+});
 const moveTitle = (event) => {
   debounceTimeout = setTimeout(function () {
     let text = document.getElementById("title");
@@ -572,3 +398,177 @@ const handleHtml = (project) => {
       console.log("Failed to fetch page: ", err);
     });
 };
+
+const projects = [
+  {
+    id: "0",
+    title: "APS Racing",
+    subtitle: "MERN app para rally media.",
+    description:
+      "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
+    tags: ["Madrid", "Web", "News", "2021"],
+    img: "./assets/img/aps.webp",
+    landing: "./assets/img/apsRacing.webp",
+    size: "big",
+    row: "row1",
+    column: "column1",
+  },
+  {
+    id: "1",
+    title: "Wave Maps",
+    subtitle: "Atlas de Surf y Olas MERN .",
+    description:
+      "Wave Maps es una página web de atlas de olas construida con React, Node.js, Express y MongoDB. Proporciona información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas. Es una herramienta avanzada y completa para los entusiastas del surf y deportes acuáticos.",
+    tags: ["Madrid", "Web", "Atlas", "2021"],
+    img: "./assets/img/wavemaps.webp",
+    landing: "./assets/img/wm-home.webp",
+    size: "small",
+    row: "row3",
+    column: "column2",
+  },
+  {
+    id: "2",
+    title: "Celia Perez Art",
+    subtitle: "React y Sass portafolio de una artista y diseñadora.",
+    description:
+      "El portfolio en línea de Celia Perez, diseñadora, está construido con React y Sass. Ofrece una vista completa de su trabajo, habilidades y experiencia, en una interfaz interactiva y visualmente atractiva. Es una solución moderna y profesional para promocionar el trabajo de un diseñador.",
+    tags: ["Bilbao", "Web", "Portfolio", "2021"],
+    img: "./assets/img/cpzfondo.webp",
+    landing: "./assets/img/celia_landing.webp",
+    size: "small",
+    row: "row4",
+    column: "column2",
+  },
+  {
+    id: "3",
+    title: "La Bamba",
+    subtitle: "MERN web para una empresa de eventos de Madrid.",
+    description:
+      "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
+    tags: ["Madrid", "Web", "Business", "2021"],
+    img: "./assets/img/bardot.webp",
+    landing: "./assets/img/bamba/bamba_movil.png",
+    size: "medium",
+    row: "row3",
+    column: "column1",
+  },
+  {
+    id: "4",
+    title: "Nemeson One",
+    subtitle: "React y Sass web.",
+    description:
+      "Página web informativa de los audífonos Nemeson One está creada con React, Redux y Sass. Ofrece detalles sobre características técnicas, diseño y confort. Es una experiencia interactiva y visualmente atractiva para explorar todas las bondades de los audífonos.",
+    tags: ["Madrid", "Web", "E-commerce", "2021"],
+    img: "./assets/img/manos.webp",
+    landing: "./assets/img/nemesonone_landing.webp",
+    size: "small",
+    row: "row1",
+    column: "column3",
+    url: "https://nemesonone.es/",
+  },
+  {
+    id: "5",
+    title: "Procorlab",
+    subtitle: "E-commerce y plataforma de reservas para tests medicos.",
+    description:
+      "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
+    tags: ["Madrid", "Web", "E-commerce", "2021"],
+    img: "./assets/img/procor.webp",
+    landing: "./assets/img/procorlab_landing.webp",
+    size: "big",
+    row: "row3",
+    column: "column3",
+    url: "https://procorlab.es/",
+  },
+
+  {
+    id: "6",
+    title: "Zorraquino",
+    subtitle: "PHP y CRM de Zorraquino.",
+    description:
+      "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
+    tags: ["Bilbao", "Web", "Agencia", "2022"],
+    img: "./assets/img/zq.webp",
+    landing: "./assets/img/zorraquino_landing.webp",
+    size: "big",
+    row: "row1",
+    column: "column2",
+    url: "https://www.zorraquino.com/",
+  },
+  {
+    id: "7",
+    title: "Saunier Duval IQ app",
+    subtitle: "App para Ios y Android con Ionic y Vue.",
+    description:
+      "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
+    tags: ["Bilbao", "App", "Ios & Android", "2023"],
+    img: "./assets/img/sdiq_app.webp",
+    landing: "./assets/img/sdiq_landing.webp",
+    size: "medium",
+    row: "row3",
+    column: "column4",
+  },
+  {
+    id: "8",
+    title: "Whitehole",
+    subtitle: "PHP y CRM de Zorraquino.",
+    description:
+      "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
+    tags: ["Bilbao", "Web", "Business", "2022"],
+    img: "./assets/img/whitehole.webp",
+    landing: "./assets/img/whitehole_landing.webp",
+    size: "small",
+    row: "row3",
+    column: "column3",
+    url: "https://www.whitehole.es/",
+  },
+  {
+    id: "9",
+    title: "Clientes Kutxabank",
+    subtitle: "PHP y CRM de Zorraquino.",
+    description:
+      "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
+    tags: ["Bilbao", "Web", "Portal", "2022"],
+    img: "./assets/img/kutxabank.webp",
+    landing: "./assets/img/clientes_landing.webp",
+    size: "big",
+    row: "row3",
+    column: "column1",
+    url: "https://clientes.kutxabank.es/es/",
+  },
+  {
+    id: "10",
+    title: "IntalXpert Saunier Duval",
+    subtitle: "PHP y CRM de Zorraquino.",
+    description:
+      "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
+    tags: ["Bilbao", "Web", "Business", "2022"],
+    img: "./assets/img/saunier.webp",
+    landing: "./assets/img/instalxpert_landing.webp",
+    size: "small",
+    row: "row2",
+    column: "column4",
+    url: "https://instalxpert.saunierduval.es/",
+  },
+  {
+    id: "11",
+    title: "Enkartur",
+    subtitle: "PHP y CRM de Zorraquino.",
+    description:
+      "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
+    tags: ["Bilbao", "Web", "Entertainment", "2023"],
+    img: "./assets/img/Enkarterri.webp",
+    projImgs: [
+      "./assets/img/enkartur/enkartur-laptop.webp",
+      "./assets/img/enkartur/enkartur-ipad4.png",
+      "./assets/img/enkartur/enkartur-ipad2.webp",
+      "./assets/img/enkartur/enkartur-ipad3.png",
+      "./assets/img/enkartur/enkartur-ipad.webp",
+    ],
+    landing: "./assets/img/digitalsignage_landing.webp",
+    size: "small",
+    row: "row2",
+    column: "column1",
+    url: "https://www.visitenkarterri.com/",
+  },
+];
