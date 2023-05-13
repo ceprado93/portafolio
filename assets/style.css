@@ -1120,6 +1120,29 @@ section.current__intro {
       .project .project__container .project__row-fifth .project__description {
         width: calc(0.2 * var(--columns-width));
         margin-left: 30px; }
+  .project .project__row-sixth {
+    width: 100%;
+    display: flex;
+    margin-top: 90px; }
+    .project .project__row-sixth .smallimages__wrap {
+      width: calc(0.4 * var(--columns-width) + 30px);
+      margin-right: 30px;
+      display: flex; }
+      .project .project__row-sixth .smallimages__wrap .small__img {
+        width: calc(50% - 15px);
+        object-fit: cover;
+        aspect-ratio: 1/1; }
+        .project .project__row-sixth .smallimages__wrap .small__img:first-child {
+          margin-right: 30px; }
+    .project .project__row-sixth .project__img {
+      width: calc(0.4 * var(--columns-width) + 30px);
+      margin-left: calc(0.2 * var(--columns-width) + 30px);
+      object-fit: cover;
+      aspect-ratio: 1/1; }
+      .project .project__row-sixth .project__img#projectImg5 {
+        background-color: #ededed; }
+      .project .project__row-sixth .project__img#projectImg8 {
+        object-position: 100% 20%; }
   .project .project_footer {
     width: 100%;
     padding: 10px;
@@ -1263,6 +1286,27 @@ section.current__intro {
           width: 100%;
           margin-left: 0;
           margin-bottom: 15px; }
+      .project .project__container .project__row-sixth {
+        flex-wrap: wrap;
+        margin-bottom: 30px; }
+        .project .project__container .project__row-sixth .smallimages__wrap {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 15px; }
+          .project .project__container .project__row-sixth .smallimages__wrap .small__img {
+            width: calc(50% - 15px);
+            object-fit: cover;
+            aspect-ratio: 1/1; }
+            .project .project__container .project__row-sixth .smallimages__wrap .small__img:first-child {
+              margin-right: 30px; }
+        .project .project__container .project__row-sixth .project__img {
+          width: 100%;
+          margin-left: 0;
+          object-fit: cover; }
+          .project .project__container .project__row-sixth .project__img#projectImg5 {
+            background-color: #ededed; }
+          .project .project__container .project__row-sixth .project__img#projectImg8 {
+            object-position: 100% 20%; }
     .project .project_footer {
       position: relative;
       flex-direction: column;

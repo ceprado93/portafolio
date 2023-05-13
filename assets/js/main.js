@@ -265,7 +265,9 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
+  // history.replaceState({ page: type }, type, "/" + type + ".html");
   history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
@@ -357,7 +359,14 @@ const projects = [
       "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
-    projImgs: ["./assets/img/aps/aps-macbook.png"],
+    projImgs: [
+      "./assets/img/aps/aps-macbook.webp",
+      "./assets/img/aps/aps-ipad.webp",
+      "./assets/img/aps/aps-ipad1.webp",
+      "./assets/img/aps/aps-iphone.webp",
+      "./assets/img/aps/aps-macbook1.webp",
+      "./assets/img/aps/aps-iphone1.webp",
+    ],
     landing: "./assets/img/apsRacing.webp",
     size: "big",
     row: "row1",
