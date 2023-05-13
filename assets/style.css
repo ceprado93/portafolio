@@ -497,7 +497,7 @@ header {
       letter-spacing: .05em;
       margin: 0; }
       header .header__top .header__top-nav .topnav__p .lang--disabled {
-        color: #8d8d8d; }
+        font-weight: 400; }
     header .header__top .colorToggle {
       width: 12px;
       height: 12px;
@@ -507,7 +507,7 @@ header {
       border: 1px solid white;
       background-color: transparent;
       margin-right: 6px;
-      transition: transform 0.8s cubic-bezier(0.25, 0.1, 0, 0.98); }
+      transition: transform 0.7s cubic-bezier(0.25, 0.1, 0, 0.98); }
       header .header__top .colorToggle.initial {
         transform: translate(48vw, 48vh) scale(3) rotate(180deg); }
         header .header__top .colorToggle.initial.rotate {

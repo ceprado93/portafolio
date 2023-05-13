@@ -122,7 +122,7 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
     let endPops = 5 * index;
     gsap.fromTo(
       t,
-      { opacity: 0.2 },
+      { opacity: 0.45 },
       {
         scrollTrigger: {
           trigger: t,
