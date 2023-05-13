@@ -366,6 +366,8 @@ const projects = [
       "./assets/img/aps/aps-iphone.webp",
       "./assets/img/aps/aps-macbook1.webp",
       "./assets/img/aps/aps-iphone1.webp",
+      "./assets/img/aps/aps-macbook1.webp",
+      "./assets/img/aps/aps-ipad2.webp",
     ],
     landing: "./assets/img/apsRacing.webp",
     size: "big",
