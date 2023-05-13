@@ -1,34 +1,21 @@
-//INITIAL ANIMATION
-
+let container = document.querySelector(".container");
 let header = document.querySelector("header");
 let portfolio__grid = document.querySelector(".portfolio__grid");
-let current__intro = document.querySelector(".current__intro");
 let portfolio__horizontal = document.querySelector(".portfolio__horizontal");
-let footer = document.querySelector("footer");
 let colorToggle = document.querySelector(".colorToggle");
 let colorToggleBlock = document.querySelector(".topnav__p--color");
 
-let container = document.querySelector(".container");
 let debounceTimeout;
 
+gsap.registerPlugin(ScrollTrigger);
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
-
-let textSpan = document.querySelectorAll(".currenttext__wrap p span");
 const currentInnerWrap = document.querySelector(".current__wrap--inner");
 const currentWrapHeight = window.innerHeight;
 let effect = document.querySelectorAll(".effect");
-
-let articles = document.querySelectorAll("article");
-let modal = document.querySelector(".modal");
-let modalContainer = document.querySelector(".modal__container");
-let modalTitle = document.querySelector(".modal__title");
-let modalDescription = document.querySelector(".modal__description");
-let modalImg = document.querySelector(".modal__img");
-let modallandingImg = document.querySelector(".modal__landingImg");
-let closeButtons = document.querySelectorAll(".close_button");
-
-gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
+
+let modal = document.querySelector(".modal");
+let closeButtons = document.querySelectorAll(".close_button");
 
 const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
@@ -38,53 +25,41 @@ const loadingAnimation = () => {
   } else {
     setTimeout(() => {
       colorToggle?.classList.remove("initial");
-    }, 800);
+      setTimeout(() => {
+        container?.classList.remove("initial");
+        scrollHorizontall(sections);
 
-    setTimeout(() => {
-      container?.classList.remove("initial");
-      scrollHorizontall(sections);
-
-      // GSAP INITIAL
-      var tl = new TimelineMax();
-      if (window.innerWidth > 768) {
-        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.7, delay: 0.6 });
-        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
-        tl.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.3 });
-        tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
-        tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
-      } else {
-        // gsap.from(".header__top", { y: -20, opacity: 0, duration: 0.6 });
-        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".header__info h3", { y: 30, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
-      }
-    }, 1000);
+        let tl = new TimelineMax();
+        if (window.innerWidth > 768) {
+          gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
+          tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
+          tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
+          tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
+        } else {
+          gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+          gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
+          gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+          gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
+        }
+      }, 650);
+    }, 600);
   }
 };
 
-const toogleColor = (elm) => {
-  if (elm.classList.contains("light")) {
-    elm.classList.remove("light");
-    container.classList.add("dark");
-  } else {
-    elm.classList.add("light");
-    container.classList.remove("dark");
-  }
-};
+const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
 const loadGsap = (gridArticle, currentInnerWrap, effect) => {
   ScrollTrigger.create({
-    trigger: ".header",
+    trigger: header,
     // markers: true,
     id: "top",
     start: "top top",
     end: "+=" + 0.2 * window.innerHeight + "px",
     pin: true,
   });
-  gsap.to(".header", {
+  gsap.to(header, {
     scrollTrigger: {
-      trigger: ".portfolio__grid",
+      trigger: portfolio__grid,
       // markers: true,
       id: "topdos",
       toggleActions: "restart none reverse pause",
@@ -144,7 +119,6 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
       scrub: !0,
       pin: ".current__wrap--inner",
     },
-    // y: "-5%",
     ease: "none",
   });
   if (!navigator.userAgent.includes("Chrome-Lighthouse")) {
@@ -171,33 +145,31 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
   }
 };
 const handleClose = () => {
-  closeButtons = document.querySelectorAll(".close_button");
-  closeButtons?.forEach((closeButton) => {
+  const closeButtons = document.querySelectorAll(".close_button");
+  closeButtons.forEach((closeButton) => {
     closeButton.addEventListener("click", () => {
-      console.log(modal);
-      modal?.classList.add("ligth");
+      modal.classList.add("light");
       handleModal();
-      setTimeout(() => {
-        handleHtml(false);
-      }, 1000);
+      setTimeout(() => handleHtml(false), 1000);
     });
   });
 };
+
 window.addEventListener("DOMContentLoaded", () => {
   loadingAnimation();
   loadGsap(gridArticle, currentInnerWrap, effect);
   portfolio__grid?.addEventListener("click", handleGridClick);
   portfolio__horizontal?.addEventListener("click", handleGridClick);
-  colorToggleBlock?.addEventListener("click", () => {
-    toogleColor(colorToggle);
-  });
+  colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
 
   if (window.innerWidth > 768) {
-    document.addEventListener("mousemove", function (event) {
+    document.addEventListener("mousemove", (event) => {
       clearTimeout(debounceTimeout);
-      moveTitle(event);
+      debounceTimeout = setTimeout(() => {
+        moveTitle(event);
+      }, 10);
     });
-    window.addEventListener("mousemove", function (event) {
+    window.addEventListener("mousemove", (event) => {
       target.x = event.clientX;
       target.y = event.clientY;
     });
@@ -207,17 +179,19 @@ window.addEventListener("DOMContentLoaded", () => {
   handleClose();
   window.onbeforeunload = () => window.scrollTo(0, 0);
 });
+
 const moveTitle = (event) => {
-  debounceTimeout = setTimeout(function () {
-    let text = document.getElementById("title");
+  let text = document.getElementById("title");
+  if (text) {
     let width = event.clientX || window.innerWidth / 2;
     let hexp = interpolate(event.clientX, 0, window.innerWidth, 0, 50) || 25;
     text.style.fontVariationSettings = `"wght" ${width}, "HEXP" ${hexp}`;
-  }, 10);
+  }
 };
 const interpolate = (value, inMin, inMax, outMin, outMax) => {
   return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };
+
 const cursor = document.getElementById("cursor");
 const { offsetWidth: elWidth, offsetHeight: elHeight } = cursor;
 const { innerWidth: width, innerHeight: height } = window;
@@ -246,12 +220,10 @@ function scrollHorizontall(horizontalSections) {
   gsap.to(horizontalSections, {
     xPercent: -100 * (horizontalSections.length - 1),
     ease: "none",
-    // markers: true,
     scrollTrigger: {
-      trigger: "#portfolio__horizontal",
+      trigger: portfolio__horizontal,
       pin: true,
       scrub: 1,
-      // snap: 1 / (horizontalSections.length - 1),
       end: "bottom top",
     },
   });
@@ -260,19 +232,13 @@ function scrollHorizontall(horizontalSections) {
 const handleGridClick = (event) => {
   const target = event.target.closest("article");
   if (!target) return;
-  const projectId = target.id;
-  const project = projects.find((p) => p.id === projectId);
-  if (!project) {
-    return;
-  }
 
-  if (project.id % 2 === 0) modal.classList.add("ligth");
-  else modal.classList.remove("ligth");
+  const project = projects.find((p) => p.id === target.id);
+  if (!project) return;
 
+  modal.classList.toggle("ligth", project.id % 2 === 0);
   handleModal();
-  setTimeout(() => {
-    handleHtml(project);
-  }, 1000);
+  setTimeout(() => handleHtml(project), 1000);
 };
 
 const handleModal = () => {
@@ -305,7 +271,7 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html");
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
