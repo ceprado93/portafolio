@@ -24,6 +24,17 @@
         max-width: 100%;
         width: 100%;
         overscroll-behavior: none;
+        &.initial{
+            height: 100dvh;
+            overflow: hidden;
+            max-height: 100vh;
+            header {
+                color: white !important;
+                a, .lang--disabled {
+                    color: white !important;
+                }
+            }
+        }
     &.dark{
         background: black;
         color: white;

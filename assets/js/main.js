@@ -34,22 +34,14 @@ const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
   if (navigator.userAgent.includes("Chrome-Lighthouse")) {
     colorToggle?.classList.remove("initial");
-    header?.classList.remove("initial");
-    portfolio__grid?.classList.remove("initial");
-    current__intro?.classList.remove("initial");
-    portfolio__horizontal?.classList.remove("initial");
-    footer?.classList.remove("initial");
+    container?.classList.remove("initial");
   } else {
     setTimeout(() => {
       colorToggle?.classList.remove("initial");
     }, 800);
 
     setTimeout(() => {
-      header?.classList.remove("initial");
-      portfolio__grid?.classList.remove("initial");
-      current__intro?.classList.remove("initial");
-      portfolio__horizontal?.classList.remove("initial");
-      footer?.classList.remove("initial");
+      container?.classList.remove("initial");
       scrollHorizontall(sections);
 
       // GSAP INITIAL
@@ -72,7 +64,6 @@ const loadingAnimation = () => {
 };
 
 const toogleColor = (elm) => {
-  console.log("toggle", elm);
   if (elm.classList.contains("light")) {
     elm.classList.remove("light");
     container.classList.add("dark");
@@ -314,14 +305,16 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html");
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
     })
     .then(function (html) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, "text/html");
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(html, "text/html");
+      let docContainer = doc.querySelector(".container");
+
       if (project) {
         let projectImg = doc.querySelector(".project__img");
         let proj__img = doc.querySelectorAll(".proj__img");
@@ -351,13 +344,9 @@ const handleHtml = (project) => {
         projectImg.id = "projectImg" + project.id;
       } else {
         doc.querySelector(".colorToggle").classList.remove("initial");
-        doc.querySelector("header").classList.remove("initial");
-        doc.querySelector(".portfolio__grid").classList.remove("initial");
-        doc.querySelector(".current__intro").classList.remove("initial");
-        doc.querySelector(".portfolio__horizontal").classList.remove("initial");
-        doc.querySelector("footer").classList.remove("initial");
+        docContainer.classList.remove("initial");
       }
-      var docBody = doc.querySelector(".container").innerHTML;
+      let docBody = docContainer.innerHTML;
 
       document.querySelector(".container").innerHTML = docBody;
       modal.classList.remove("show");
@@ -408,6 +397,7 @@ const projects = [
       "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
+    projImgs: ["./assets/img/aps/aps-macbook.png"],
     landing: "./assets/img/apsRacing.webp",
     size: "big",
     row: "row1",

@@ -961,6 +961,14 @@ section.current__intro {
   max-width: 100%;
   width: 100%;
   overscroll-behavior: none; }
+  .container.initial {
+    height: 100dvh;
+    overflow: hidden;
+    max-height: 100vh; }
+    .container.initial header {
+      color: white !important; }
+      .container.initial header a, .container.initial header .lang--disabled {
+        color: white !important; }
   .container.dark {
     background: black;
     color: white; }
