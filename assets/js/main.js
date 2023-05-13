@@ -19,31 +19,27 @@ let closeButtons = document.querySelectorAll(".close_button");
 
 const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
-  if (navigator.userAgent.includes("Chrome-Lighthouse")) {
-    colorToggle?.classList.remove("initial");
-    container?.classList.remove("initial");
-  } else {
-    setTimeout(() => {
-      colorToggle?.classList.remove("initial");
-      setTimeout(() => {
-        container?.classList.remove("initial");
-        scrollHorizontall(sections);
 
-        let tl = new TimelineMax();
-        if (window.innerWidth > 768) {
-          gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
-          tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
-          tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
-          tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
-        } else {
-          gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-          gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
-          gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-          gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
-        }
-      }, 650);
-    }, 600);
-  }
+  setTimeout(() => {
+    colorToggle?.classList.remove("initial");
+    setTimeout(() => {
+      container?.classList.remove("initial");
+      scrollHorizontall(sections);
+
+      let tl = new TimelineMax();
+      if (window.innerWidth > 768) {
+        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
+        tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
+        tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
+        tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
+      } else {
+        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
+      }
+    }, 650);
+  }, 600);
 };
 
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
@@ -121,28 +117,26 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
     },
     ease: "none",
   });
-  if (!navigator.userAgent.includes("Chrome-Lighthouse")) {
-    effect.forEach((t, index) => {
-      let startPops = 60 * index + 200;
-      let endPops = 5 * index;
-      gsap.fromTo(
-        t,
-        { opacity: 0.2 },
-        {
-          scrollTrigger: {
-            trigger: t,
-            id: "effect",
-            start: "top bottom-=" + startPops + "px",
-            // markers: true,
-            end: "top top-=" + endPops + "px",
-            scrub: !0,
-          },
-          opacity: 1,
-          ease: "none",
-        }
-      );
-    });
-  }
+  effect.forEach((t, index) => {
+    let startPops = 60 * index + 200;
+    let endPops = 5 * index;
+    gsap.fromTo(
+      t,
+      { opacity: 0.2 },
+      {
+        scrollTrigger: {
+          trigger: t,
+          id: "effect",
+          start: "top bottom-=" + startPops + "px",
+          // markers: true,
+          end: "top top-=" + endPops + "px",
+          scrub: !0,
+        },
+        opacity: 1,
+        ease: "none",
+      }
+    );
+  });
 };
 const handleClose = () => {
   const closeButtons = document.querySelectorAll(".close_button");
