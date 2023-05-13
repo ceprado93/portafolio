@@ -305,7 +305,7 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  history.replaceState({ page: type }, type, "/" + type + ".html");
+  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
   fetch(type + ".html")
     .then(function (response) {
       return response.text();
