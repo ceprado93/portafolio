@@ -298,6 +298,7 @@ const handleHtml = (project) => {
           proj__img.forEach((elm, idx) => {
             elm.src = project.projImgs[idx];
           });
+          if (project.projImgs.length < 8) doc.querySelector(".project__row-sixth").style.display = "none";
         }
 
         let tags = doc.querySelectorAll(".project__info p");
@@ -360,14 +361,14 @@ const projects = [
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
     projImgs: [
-      "./assets/img/aps/aps-macbook.webp",
-      "./assets/img/aps/aps-ipad.webp",
-      "./assets/img/aps/aps-ipad1.webp",
-      "./assets/img/aps/aps-iphone.webp",
-      "./assets/img/aps/aps-macbook1.webp",
-      "./assets/img/aps/aps-iphone1.webp",
-      "./assets/img/aps/aps-macbook1.webp",
-      "./assets/img/aps/aps-ipad2.webp",
+      "./assets/img/aps/aps_hero-laptop.png",
+      "./assets/img/aps/aps_media-laptop.png",
+      "./assets/img/aps/aps_video-iphone.png",
+      "./assets/img/aps/aps_video-ipad.png",
+      "./assets/img/aps/aps_hero-iphone.png",
+      "./assets/img/aps/aps_news-ipad.png",
+      "./assets/img/aps/aps_media-iphone.png",
+      "./assets/img/aps/aps_hero-ipad.png",
     ],
     landing: "./assets/img/apsRacing.webp",
     size: "big",
@@ -383,6 +384,16 @@ const projects = [
     tags: ["Madrid", "Web", "Atlas", "2021"],
     img: "./assets/img/wavemaps.webp",
     landing: "./assets/img/wm-home.webp",
+    projImgs: [
+      "./assets/img/wavemaps/wm_hero-laptop.png",
+      "./assets/img/wavemaps/wm_wave-laptop.png",
+      "./assets/img/wavemaps/wm_america-ipad.png",
+      "./assets/img/wavemaps/wm_aus-laptop.png",
+      "./assets/img/wavemaps/wm_africa-ipad.png",
+      "./assets/img/wavemaps/wm_login-laptop.png",
+      "./assets/img/wavemaps/wm_profile-laptop.png",
+      "./assets/img/wavemaps/wm_asia-iphone.png",
+    ],
     size: "small",
     row: "row3",
     column: "column2",
@@ -396,6 +407,13 @@ const projects = [
     tags: ["Bilbao", "Web", "Portfolio", "2021"],
     img: "./assets/img/cpzfondo.webp",
     landing: "./assets/img/celia_landing.webp",
+    projImgs: [
+      "./assets/img/celiaprerezart/celia_hero-laptop.png",
+      "./assets/img/celiaprerezart/celia_hero-iphone.png",
+      "./assets/img/celiaprerezart/celia_works-laptop.png",
+      "./assets/img/celiaprerezart/celia_workextend-laptop.png",
+      "./assets/img/celiaprerezart/celia_works-iphone.png",
+    ],
     size: "small",
     row: "row4",
     column: "column2",
