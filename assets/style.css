@@ -1221,6 +1221,9 @@ section.current__intro {
           margin-top: 15px;
           font-size: 66px;
           line-height: 60px; }
+          .project .project__container .project__row-first h1.project__title.project__title-mobile {
+            font-size: 60px;
+            line-height: 56px; }
       .project .project__container .project__row-second {
         flex-wrap: wrap;
         margin-bottom: 30px; }

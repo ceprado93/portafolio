@@ -265,8 +265,8 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  // history.replaceState({ page: type }, type, "/" + type + ".html");
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html");
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
 
   fetch(type + ".html")
     .then(function (response) {
@@ -283,7 +283,13 @@ const handleHtml = (project) => {
         let proj = doc.querySelector(".project");
         if (project.id % 2 === 0) proj.classList.add("ligth");
         else proj.classList.remove("ligth");
-        doc.querySelector(".project__title").innerHTML = project.title;
+        let docTitle = doc.querySelector(".project__title");
+        docTitle.innerHTML = project.title;
+        console.log(project.id);
+        if (project.id === "6" || project.id === "9") {
+          console.log("aaass");
+          docTitle.classList.add("project__title-mobile");
+        }
         doc.querySelector(".project__description").innerHTML = project.description;
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
         if (project.id !== "11") {
