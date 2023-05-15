@@ -24,7 +24,7 @@ const loadingAnimation = () => {
     colorToggle?.classList.remove("initial");
     setTimeout(() => {
       container?.classList.remove("initial");
-      scrollHorizontall(sections);
+      scrollHorizontall(sections, portfolio__horizontal);
 
       let tl = new TimelineMax();
       if (window.innerWidth > 768) {
@@ -122,7 +122,7 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
     let endPops = 5 * index;
     gsap.fromTo(
       t,
-      { opacity: 0.45 },
+      { opacity: 0.2 },
       {
         scrollTrigger: {
           trigger: t,
@@ -210,12 +210,12 @@ const update = () => {
   requestAnimationFrame(update);
 };
 
-function scrollHorizontall(horizontalSections) {
+function scrollHorizontall(horizontalSections, portfolioHorizontal) {
   gsap.to(horizontalSections, {
     xPercent: -100 * (horizontalSections.length - 1),
     ease: "none",
     scrollTrigger: {
-      trigger: portfolio__horizontal,
+      trigger: portfolioHorizontal,
       pin: true,
       scrub: 1,
       end: "bottom top",
@@ -334,13 +334,15 @@ const handleHtml = (project) => {
         let newgridArticle = gsap.utils.toArray(".portfolio__grid .article");
         let newcurrentInnerWrap = document.querySelector(".current__wrap--inner");
         let neweffect = document.querySelectorAll(".effect");
+        let horPortfolio = document.querySelector(".portfolio__horizontal");
+
         let newCol = document.querySelector(".colorToggle");
         let colBlock = document.querySelector(".topnav__p--color");
 
-        scrollHorizontall(newSections);
+        scrollHorizontall(newSections, horPortfolio);
         loadGsap(newgridArticle, newcurrentInnerWrap, neweffect);
         document.querySelector(".portfolio__grid")?.addEventListener("click", handleGridClick);
-        document.querySelector(".portfolio__horizontal")?.addEventListener("click", handleGridClick);
+        horPortfolio?.addEventListener("click", handleGridClick);
         colBlock?.addEventListener("click", () => {
           toogleColor(newCol);
         });
@@ -493,6 +495,13 @@ const projects = [
     tags: ["Bilbao", "Web", "Agencia", "2022"],
     img: "./assets/img/zq.webp",
     landing: "./assets/img/zorraquino_landing.webp",
+    projImgs: [
+      "./assets/img/zq/zq_hero-laptop.png",
+      "./assets/img/zq/zq_section-laptop.png",
+      "./assets/img/zq/zq_team-ipad.png",
+      "./assets/img/zq/zq_session-iphone.png",
+      "./assets/img/zq/zq_hero-iphone.png",
+    ],
     size: "big",
     row: "row1",
     column: "column2",
@@ -507,19 +516,33 @@ const projects = [
     tags: ["Bilbao", "App", "Ios & Android", "2023"],
     img: "./assets/img/sdiq_app.webp",
     landing: "./assets/img/sdiq_landing.webp",
+    projImgs: [
+      "./assets/img/sdiq/iq_hero-ios.png",
+      "./assets/img/sdiq/iq_consume-ios.png",
+      "./assets/img/sdiq/iq_mode-ios.png",
+      "./assets/img/sdiq/iq_offer-ios.png",
+      "./assets/img/sdiq/iq_regulate-ios.png",
+    ],
     size: "medium",
     row: "row3",
     column: "column4",
   },
   {
     id: "8",
-    title: "Whitehole",
+    title: "White hole",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/whitehole.webp",
     landing: "./assets/img/whitehole_landing.webp",
+    projImgs: [
+      "./assets/img/wh/wh_hero-laptop.png",
+      "./assets/img/wh/wh_section-iphone.png",
+      "./assets/img/wh/wh_section-ipad.png",
+      "./assets/img/wh/wh_card-iphone.png",
+      "./assets/img/wh/wh_hero-iphone.png",
+    ],
     size: "small",
     row: "row3",
     column: "column3",
@@ -534,6 +557,13 @@ const projects = [
     tags: ["Bilbao", "Web", "Portal", "2022"],
     img: "./assets/img/kutxabank.webp",
     landing: "./assets/img/clientes_landing.webp",
+    projImgs: [
+      "./assets/img/kb/kb_simrapido-laptop.png",
+      "./assets/img/kb/kb_hero-iphone.png",
+      "./assets/img/kb/kb_max-ipad.png",
+      "./assets/img/kb/kb_bonif-ipad.png",
+      "./assets/img/kb/kb_prestamo-iphone.png",
+    ],
     size: "big",
     row: "row3",
     column: "column1",
@@ -541,13 +571,20 @@ const projects = [
   },
   {
     id: "10",
-    title: "IntalXpert Saunier Duval",
+    title: "Intal Xpert Saunier Duval",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
+    projImgs: [
+      "./assets/img/ix/ix_aerotermia-laptop.png",
+      "./assets/img/ix/ix_section-ipad.png",
+      "./assets/img/ix/ix_section-iphone.png",
+      "./assets/img/ix/ix_calderas-iphone.png",
+      "./assets/img/ix/ix_aerotermia-iphone.png",
+    ],
     size: "small",
     row: "row2",
     column: "column4",
