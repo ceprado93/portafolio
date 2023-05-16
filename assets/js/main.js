@@ -171,7 +171,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   handleClose();
-  window.onbeforeunload = () => window.scrollTo(0, 0);
+  // window.onbeforeunload = () => window.scrollTo(0, 0);
 });
 
 const moveTitle = (event) => {

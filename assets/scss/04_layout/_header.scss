@@ -8,8 +8,8 @@
 
 header {
     // margin-bottom: 120px;
-    height: calc(100dvh - 20px);
-    max-height: calc(100dvh - 20px) !important;
+    height: calc(100dvh);
+    max-height: calc(100dvh) !important;
     &.initial{
         color: white !important;
         a{
@@ -93,7 +93,7 @@ header {
                 }
     }
     .header__main{
-        height: calc(100% - 30px);
+        height: calc(100% - 43px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
