@@ -369,7 +369,7 @@ const projects = [
     subtitle: "MERN app para rally media.",
     description: "APS es una web de media de rallys, la idea era crear una web para que el canal de legolas pudiese juntar todo el contenido que iba creando, videos, fotos y noticias",
     description1:
-      "Hice el diseno del front, el front y el back. El front esta hechoi con react, sass para darle estilo , utilizando la api de wordpress como cms y la api de yputube para los videos. El back lo hiuce con express js y una base de datos de mongodb",
+      "Hice el diseno, el front y el back. El front esta hechoi con react, sass para darle estilo , utilizando la api de wordpress como cms y la api de youtube para los videos. El back lo hice con express js y una base de datos de mongodb",
     description2: "Para la version movil busque un diseno mas simple e intuitivo, para que el usuario pueda acceder mas rapido a los videos",
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
@@ -443,10 +443,10 @@ const projects = [
     id: "3",
     title: "La Bamba",
     subtitle: "MERN web para una empresa de eventos de Madrid.",
-    description:
-      "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
-    description1: "",
-    description2: "",
+    description: "Descripcion de la bamba:... <br><br> la diseno rodrigo ramirez, contenido tuyo y programacion mia.",
+    description1: "Hice el front con react, redux y sass para darle estilo. El back lo hice con xpress y con base de datos no relacional, conectando back y front con ajax",
+    description2:
+      "Programe un area de usuarios donde el tt podia aceptar artistas, modificar la info que ponian y publicarlos si le parecia correcto, y los usuarios podian darse de alta , gestionar su info y hablar con el tt",
     tags: ["Madrid", "Web", "Business", "2021"],
     img: "./assets/img/bardot.webp",
     landing: "./assets/img/bamba/bamba_movil.png",
@@ -469,9 +469,10 @@ const projects = [
     title: "Oir 10",
     subtitle: "React y Sass web.",
     description:
-      "Página web informativa de los audífonos Nemeson One está creada con React, Redux y Sass. Ofrece detalles sobre características técnicas, diseño y confort. Es una experiencia interactiva y visualmente atractiva para explorar todas las bondades de los audífonos.",
-    description1: "",
-    description2: "",
+      "Por si te sirve esta es la descripcion  que me dieron. Oir10 nace para dar respuesta a los problemas auditivos de una forma sencilla y rápida gracias al avance tecnológico en el sector de la audiología, siendo la empresa comercializadora online exclusiva de Nemeson One, dispositivo inteligente para la recuperación auditiva de la última generación.",
+    description1: "La pagina tenia front, que lo cree con react, con sass para el estilo, y utilice el context de react para crear el ecomeerce de forma global en toda la web. ",
+    description2:
+      "Para gestionar los productos en venta, la pasarela de pago y tener feedback de como funcionaban los clientes en las paginas de la web,  utilice la api de shopify, es decir , use shopify como back y como pasarela de pago, y para el front programe la pagina ",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/manos.webp",
     landing: "./assets/img/nemesonone_landing.webp",
@@ -492,9 +493,10 @@ const projects = [
     title: "Procorlab",
     subtitle: "E-commerce y plataforma de reservas para tests medicos.",
     description:
-      "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
-    description1: "",
-    description2: "",
+      "Procor se creo en la pandema para vender tests a lo loco. La web la disenaron Rodrigo Ramirez y Chicote Guijarro y programacion de Daniel Urchegui y mia.<br><br> La web era un ecomerce, plataforma de reserva de citas, con area privada para que los clientes pudiesen descargarse los resultados de sus tests, y blog",
+    description1:
+      "El front estaba hecho con react, con redux, con el context de react y con shopify como gestor del ecomerce (conectado via api) y con sass para darle estilo. El back lo hicimos con php y utilizaba una base de datos relacional MySql. El blog utilizaba la api de wordpress para poder gestionar y subir contenido nuevo",
+    description2: "Creamos una de las mayores tiendas de test covid y sistemas de reservas de pruebas de madrid",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/procor.webp",
     landing: "./assets/img/procorlab_landing.webp",
