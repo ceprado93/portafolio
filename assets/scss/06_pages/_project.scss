@@ -108,7 +108,7 @@
                 text-align: left;
             }
 
-            .project__description {
+            .project__description, .project__description1 {
                 width: calc(0.2 * var(--columns-width));
                 margin-right: 30px;
             }
@@ -180,7 +180,7 @@
                         object-position: 100% 20%;
                     }
             }
-            .project__description {
+            .project__description2 {
                 width: calc(0.2 * var(--columns-width));
                 margin-left: 30px;
             }
@@ -374,7 +374,7 @@
                     text-align: left;
                 }
         
-                .project__description {
+                .project__description, .project__description1 {
                     width:100%;
                     margin-right: 30px;
                     &:nth-child(3){

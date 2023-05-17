@@ -265,8 +265,8 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  // history.replaceState({ page: type }, type, "/" + type + ".html");
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html");
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
 
   fetch(type + ".html")
     .then(function (response) {
@@ -291,6 +291,9 @@ const handleHtml = (project) => {
           docTitle.classList.add("project__title-mobile");
         }
         doc.querySelector(".project__description").innerHTML = project.description;
+        doc.querySelector(".project__description1").innerHTML = project.description1;
+        doc.querySelector(".project__description2").innerHTML = project.description2;
+
         doc.querySelector(".project__index").innerHTML = "[" + project.id + "]";
         if (project.id !== "11") {
           doc.querySelector(".link__next").id = parseInt(project.id) + 1;
@@ -364,8 +367,10 @@ const projects = [
     id: "0",
     title: "APS Racing",
     subtitle: "MERN app para rally media.",
-    description:
-      "Página web de media de rallys hecha con React, Node.js, Express y MongoDB. Incluye noticias, resultados, calendario, perfiles de pilotos y equipos, galería de fotos y un foro de discusión. Es escalable, robusta y eficiente.",
+    description: "APS es una web de media de rallys, la idea era crear una web para que el canal de legolas pudiese juntar todo el contenido que iba creando, videos, fotos y noticias",
+    description1:
+      "Hice el diseno del front, el front y el back. El front esta hechoi con react, sass para darle estilo , utilizando la api de wordpress como cms y la api de yputube para los videos. El back lo hiuce con express js y una base de datos de mongodb",
+    description2: "Para la version movil busque un diseno mas simple e intuitivo, para que el usuario pueda acceder mas rapido a los videos",
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
     projImgs: [
@@ -388,7 +393,11 @@ const projects = [
     title: "Wave Maps",
     subtitle: "Atlas de Surf y Olas MERN .",
     description:
-      "Wave Maps es una página web de atlas de olas construida con React, Node.js, Express y MongoDB. Proporciona información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas. Es una herramienta avanzada y completa para los entusiastas del surf y deportes acuáticos.",
+      "Wave Maps es una página web de atlas de olas, la hice justo con Eva Virseda, otra programadora de madrid. La web tiene información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas.<br><br> Ahora hay webs con mucha info de olas pero no son visualmene atractivas, la idea era crear una web donde estuviese recogido toda la info de las olas pero que a la vez fuese facil de navegar y atractiva.",
+    description1:
+      "Hicimos el diseno, el font y el back.La idea del diseno era crear una interfaz simple y que pusiese el foco en el contenido visual. Hicimos el front con react y sass, y para que se pudiese escalar facilmente, el back lo montamos con express y una baswe de datos no relacional de mongo db. conectando ambos con axios",
+    description2:
+      "Para que este proyecto pudiese crecer con los usuarios, creamos un area privada donde los usuarios podian darse de alta con un cms propio podian gestionar la info de cada spot, anadir mas spots y poner comentarios en otras olas",
     tags: ["Madrid", "Web", "Atlas", "2021"],
     img: "./assets/img/wavemaps.webp",
     landing: "./assets/img/wm-home.webp",
@@ -411,7 +420,11 @@ const projects = [
     title: "Celia Perez Art",
     subtitle: "React y Sass portafolio de una artista y diseñadora.",
     description:
-      "El portfolio en línea de Celia Perez, diseñadora, está construido con React y Sass. Ofrece una vista completa de su trabajo, habilidades y experiencia, en una interfaz interactiva y visualmente atractiva. Es una solución moderna y profesional para promocionar el trabajo de un diseñador.",
+      "El portfolio de Celia , la idea era crear una web donde pudiese juntar los cruadros que iba pintando y la gente le pudiese contactar. <br><br> Ella se encargo del diseno y yo de la programacion. La idea del diseno era crear una web que fuese en linea con las obras que pintaba celia y que reprensentase su identidad",
+    description1:
+      "En la primera fase del proyecto solo programe el front, creado con react y con sass para darle estilo. Para poder crear mas contenido use wordpress como cms , conectandolo a la web via api",
+    description2:
+      "Esta es la descripcion que me dio ella por si te ayuda. Su principal fuente de inspiración son los colores y las texturas de la naturaleza, que abstrae para dar vida a sus obras. Trabaja la técnica mixta sobre lienzo a través de la exploración de diferentes materiales de construcción, por lo tanto, sus obras están en constante desarrollo.",
     tags: ["Bilbao", "Web", "Portfolio", "2021"],
     img: "./assets/img/cpzfondo.webp",
     landing: "./assets/img/celia_landing.webp",
@@ -432,6 +445,8 @@ const projects = [
     subtitle: "MERN web para una empresa de eventos de Madrid.",
     description:
       "La Bamba es una página web de eventos y conciertos construida con React, Node.js, Express y MongoDB. Ofrece información sobre artistas, fechas y lugares, venta de entradas y un calendario interactivo. Es una herramienta poderosa y escalable para los amantes de la música en vivo.",
+    description1: "",
+    description2: "",
     tags: ["Madrid", "Web", "Business", "2021"],
     img: "./assets/img/bardot.webp",
     landing: "./assets/img/bamba/bamba_movil.png",
@@ -455,6 +470,8 @@ const projects = [
     subtitle: "React y Sass web.",
     description:
       "Página web informativa de los audífonos Nemeson One está creada con React, Redux y Sass. Ofrece detalles sobre características técnicas, diseño y confort. Es una experiencia interactiva y visualmente atractiva para explorar todas las bondades de los audífonos.",
+    description1: "",
+    description2: "",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/manos.webp",
     landing: "./assets/img/nemesonone_landing.webp",
@@ -476,6 +493,8 @@ const projects = [
     subtitle: "E-commerce y plataforma de reservas para tests medicos.",
     description:
       "La página web de la clínica Procorlab, un eccomerce de reserva de citas, está creada con React, Redux, Sass, PHP y MySQL. Ofrece una experiencia interactiva y visualmente atractiva, donde los usuarios pueden programar citas, comprar productos y acceder a información detallada sobre los servicios de la clínica.",
+    description1: "",
+    description2: "",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/procor.webp",
     landing: "./assets/img/procorlab_landing.webp",
@@ -498,6 +517,8 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
+    description1: "",
+    description2: "",
     tags: ["Bilbao", "Web", "Agencia", "2022"],
     img: "./assets/img/zq.webp",
     landing: "./assets/img/zorraquino_landing.webp",

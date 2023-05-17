@@ -1070,7 +1070,7 @@ section.current__intro {
         flex-direction: column;
         align-items: flex-start;
         text-align: left; }
-      .project .project__container .project__row-second .project__description {
+      .project .project__container .project__row-second .project__description, .project .project__container .project__row-second .project__description1 {
         width: calc(0.2 * var(--columns-width));
         margin-right: 30px; }
     .project .project__container .project__row-third {
@@ -1119,7 +1119,7 @@ section.current__intro {
           background-color: #ededed; }
         .project .project__container .project__row-fifth .project__img#projectImg8 {
           object-position: 100% 20%; }
-      .project .project__container .project__row-fifth .project__description {
+      .project .project__container .project__row-fifth .project__description2 {
         width: calc(0.2 * var(--columns-width));
         margin-left: 30px; }
   .project .project__row-sixth {
@@ -1241,10 +1241,10 @@ section.current__intro {
           flex-direction: column;
           align-items: flex-start;
           text-align: left; }
-        .project .project__container .project__row-second .project__description {
+        .project .project__container .project__row-second .project__description, .project .project__container .project__row-second .project__description1 {
           width: 100%;
           margin-right: 30px; }
-          .project .project__container .project__row-second .project__description:nth-child(3) {
+          .project .project__container .project__row-second .project__description:nth-child(3), .project .project__container .project__row-second .project__description1:nth-child(3) {
             margin-bottom: 20px; }
       .project .project__container .project__row-third {
         width: 100%;
