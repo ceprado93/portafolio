@@ -44,7 +44,8 @@ const loadingAnimation = () => {
 
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
-const loadGsap = (gridArticle, currentInnerWrap, effect) => {
+const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect) => {
+  console.log("aaa");
   ScrollTrigger.create({
     trigger: header,
     // markers: true,
@@ -103,6 +104,7 @@ const loadGsap = (gridArticle, currentInnerWrap, effect) => {
       );
     }
   });
+  console.log("eeee");
 
   if (currentInnerWrap) currentInnerWrap.style.height = `${currentWrapHeight}px`;
   gsap.to(".currenttext__wrap", {
@@ -150,10 +152,12 @@ const handleClose = () => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  loadingAnimation();
-  loadGsap(gridArticle, currentInnerWrap, effect);
-  portfolio__grid?.addEventListener("click", handleGridClick);
-  portfolio__horizontal?.addEventListener("click", handleGridClick);
+  if (header) {
+    loadingAnimation();
+    loadGsap(header, portfolio__grid, gridArticle, currentInnerWrap, effect);
+    portfolio__grid?.addEventListener("click", handleGridClick);
+    portfolio__horizontal?.addEventListener("click", handleGridClick);
+  }
   colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
 
   if (window.innerWidth > 768) {
@@ -341,16 +345,18 @@ const handleHtml = (project) => {
       } else {
         let newSections = gsap.utils.toArray(".grid__wrap--horizontal article");
         let newgridArticle = gsap.utils.toArray(".portfolio__grid .article");
+        let newHeader = document.querySelector(".header");
+
         let newcurrentInnerWrap = document.querySelector(".current__wrap--inner");
         let neweffect = document.querySelectorAll(".effect");
         let horPortfolio = document.querySelector(".portfolio__horizontal");
-
+        let portfolioGrid = document.querySelector(".portfolio__grid");
         let newCol = document.querySelector(".colorToggle");
         let colBlock = document.querySelector(".topnav__p--color");
 
         scrollHorizontall(newSections, horPortfolio);
-        loadGsap(newgridArticle, newcurrentInnerWrap, neweffect);
-        document.querySelector(".portfolio__grid")?.addEventListener("click", handleGridClick);
+        loadGsap(newHeader, portfolioGrid, newgridArticle, newcurrentInnerWrap, neweffect);
+        portfolioGrid?.addEventListener("click", handleGridClick);
         horPortfolio?.addEventListener("click", handleGridClick);
         colBlock?.addEventListener("click", () => {
           toogleColor(newCol);
