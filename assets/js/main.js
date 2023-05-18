@@ -17,6 +17,8 @@ let sections = gsap.utils.toArray(".grid__wrap--horizontal article");
 let modal = document.querySelector(".modal");
 let closeButtons = document.querySelectorAll(".close_button");
 
+let project = document.querySelector(".project");
+
 const loadingAnimation = () => {
   colorToggle?.classList.remove("rotate");
 
@@ -158,6 +160,12 @@ window.addEventListener("DOMContentLoaded", () => {
     portfolio__grid?.addEventListener("click", handleGridClick);
     portfolio__horizontal?.addEventListener("click", handleGridClick);
   }
+  if (project) {
+    let param = window.location.search.replace("?", "");
+    let project = projects.find((project) => project.qs === param);
+    handleModal();
+    setTimeout(() => handleHtml(project), 1000);
+  }
   colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
 
   if (window.innerWidth > 768) {
@@ -269,8 +277,9 @@ const handleHtml = (project) => {
     indexPos = document.querySelector(".project__index").innerHTML.replace("[", "").replace("]", "");
   }
   let type = project ? "project" : "index";
-  // history.replaceState({ page: type }, type, "/" + type + ".html");
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  let qS = project ? "?" + project.qs : "";
+  history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
 
   fetch(type + ".html")
     .then(function (response) {
@@ -323,8 +332,10 @@ const handleHtml = (project) => {
         docContainer.classList.remove("initial");
       }
       let docBody = docContainer.innerHTML;
+      let newContainer = document.querySelector(".container");
+      newContainer.innerHTML = docBody;
+      newContainer.classList.remove("initial");
 
-      document.querySelector(".container").innerHTML = docBody;
       modal.classList.remove("show");
       modal.classList.remove("fadeIn");
       if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
@@ -372,6 +383,7 @@ const projects = [
   {
     id: "0",
     title: "APS Racing",
+    qs: "aps",
     subtitle: "MERN app para rally media.",
     description: "APS es una web de media de rallys, la idea era crear una web para que el canal de legolas pudiese juntar todo el contenido que iba creando, videos, fotos y noticias",
     description1:
@@ -397,6 +409,7 @@ const projects = [
   {
     id: "1",
     title: "Wave Maps",
+    qs: "wm",
     subtitle: "Atlas de Surf y Olas MERN .",
     description:
       "Wave Maps es una página web de atlas de olas, la hice justo con Eva Virseda, otra programadora de madrid. La web tiene información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas.<br><br> Ahora hay webs con mucha info de olas pero no son visualmene atractivas, la idea era crear una web donde estuviese recogido toda la info de las olas pero que a la vez fuese facil de navegar y atractiva.",
@@ -424,6 +437,7 @@ const projects = [
   {
     id: "2",
     title: "Celia Perez Art",
+    qs: "cpa",
     subtitle: "React y Sass portafolio de una artista y diseñadora.",
     description:
       "El portfolio de Celia , la idea era crear una web donde pudiese juntar los cruadros que iba pintando y la gente le pudiese contactar. <br><br> Ella se encargo del diseno y yo de la programacion. La idea del diseno era crear una web que fuese en linea con las obras que pintaba celia y que reprensentase su identidad",
@@ -448,6 +462,7 @@ const projects = [
   {
     id: "3",
     title: "La Bamba",
+    qs: "lb",
     subtitle: "MERN web para una empresa de eventos de Madrid.",
     description: "Descripcion de la bamba:... <br><br> la diseno rodrigo ramirez, contenido tuyo y programacion mia.",
     description1: "Hice el front con react, redux y sass para darle estilo. El back lo hice con xpress y con base de datos no relacional, conectando back y front con ajax",
@@ -473,6 +488,7 @@ const projects = [
   {
     id: "4",
     title: "Oir 10",
+    qs: "o10",
     subtitle: "React y Sass web.",
     description:
       "Por si te sirve esta es la descripcion  que me dieron. Oir10 nace para dar respuesta a los problemas auditivos de una forma sencilla y rápida gracias al avance tecnológico en el sector de la audiología, siendo la empresa comercializadora online exclusiva de Nemeson One, dispositivo inteligente para la recuperación auditiva de la última generación.",
@@ -497,6 +513,7 @@ const projects = [
   {
     id: "5",
     title: "Procorlab",
+    qs: "pl",
     subtitle: "E-commerce y plataforma de reservas para tests medicos.",
     description:
       "Procor se creo en la pandema para vender tests a lo loco. La web la disenaron Rodrigo Ramirez y Chicote Guijarro y programacion de Daniel Urchegui y mia.<br><br> La web era un ecomerce, plataforma de reserva de citas, con area privada para que los clientes pudiesen descargarse los resultados de sus tests, y blog",
@@ -522,6 +539,7 @@ const projects = [
   {
     id: "6",
     title: "Zorraquino",
+    qs: "zq",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
@@ -545,6 +563,7 @@ const projects = [
   {
     id: "7",
     title: "Saunier Duval IQ app",
+    qs: "iq",
     subtitle: "App para Ios y Android con Ionic y Vue.",
     description:
       "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
@@ -565,6 +584,7 @@ const projects = [
   {
     id: "8",
     title: "White hole",
+    qs: "wh",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
@@ -586,6 +606,7 @@ const projects = [
   {
     id: "9",
     title: "Clientes Kutxabank",
+    qs: "kb",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
@@ -607,6 +628,7 @@ const projects = [
   {
     id: "10",
     title: "Intal Xpert Saunier Duval",
+    qs: "ix",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
@@ -628,6 +650,7 @@ const projects = [
   {
     id: "11",
     title: "Enkartur",
+    qs: "en",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",

@@ -971,6 +971,8 @@ section.current__intro {
       color: white !important; }
       .container.initial header a, .container.initial header .lang--disabled {
         color: white !important; }
+    .container.initial .project {
+      visibility: hidden; }
   .container.dark {
     background: black;
     color: white; }
