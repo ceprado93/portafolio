@@ -6,6 +6,7 @@ let colorToggle = document.querySelector(".colorToggle");
 let colorToggleBlock = document.querySelector(".topnav__p--color");
 
 let debounceTimeout;
+let projectId;
 
 gsap.registerPlugin(ScrollTrigger);
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
@@ -47,7 +48,6 @@ const loadingAnimation = () => {
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
 const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect) => {
-  console.log("aaa");
   ScrollTrigger.create({
     trigger: header,
     // markers: true,
@@ -106,7 +106,6 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
       );
     }
   });
-  console.log("eeee");
 
   if (currentInnerWrap) currentInnerWrap.style.height = `${currentWrapHeight}px`;
   gsap.to(".currenttext__wrap", {
@@ -163,6 +162,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (project) {
     let param = window.location.search.replace("?", "");
     let project = projects.find((project) => project.qs === param);
+    projectId = project.id;
     handleModal();
     setTimeout(() => handleHtml(project), 1000);
   }
@@ -298,9 +298,7 @@ const handleHtml = (project) => {
         else proj.classList.remove("ligth");
         let docTitle = doc.querySelector(".project__title");
         docTitle.innerHTML = project.title;
-        console.log(project.id);
         if (project.id === "6" || project.id === "9") {
-          console.log("aaass");
           docTitle.classList.add("project__title-mobile");
         }
         doc.querySelector(".project__description").innerHTML = project.description;
@@ -342,6 +340,8 @@ const handleHtml = (project) => {
     })
     .then(() => {
       if (project) {
+        projectId = project.id;
+
         closeButtons = document.querySelectorAll(".close_button");
         closeButtons.forEach((closeButton) => {
           closeButton.addEventListener("click", () => {
@@ -372,6 +372,15 @@ const handleHtml = (project) => {
         colBlock?.addEventListener("click", () => {
           toogleColor(newCol);
         });
+        if (projectId) {
+          const element = document.getElementById(projectId);
+          if (element) {
+            setTimeout(function () {
+              element.scrollIntoView({ behavior: "smooth" });
+            }, 0);
+          }
+          projectId = null;
+        }
       }
     })
     .catch(function (err) {
