@@ -278,8 +278,8 @@ const handleHtml = (project) => {
   }
   let type = project ? "project" : "index";
   let qS = project ? "?" + project.qs : "";
-  // history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
 
   fetch(type + ".html")
     .then(function (response) {
@@ -562,11 +562,15 @@ const projects = [
   },
   {
     id: "7",
-    title: "Saunier Duval IQ app",
+    title: "Mi Saunier Duval",
     qs: "iq",
     subtitle: "App para Ios y Android con Ionic y Vue.",
     description:
-      "La aplicación Mi Saunier Duval, desarrollada con Ionic Vue y Sass, está disponible en Android e iOS. Controla tu caldera, conoce tu consumo y contacta con el servicio de mantenimiento de manera fácil y rápida. Mantén tu hogar cálido y seguro con solo unos toques en tu móvil",
+      "La app de Mi Saunier duval es una aplicacion movil de ios y android hecha para los clientes de Saunier duval.<br><br> Los objetivos de la aplicacion son tres: que los clientes tengan una herramienta para saber los consumos que han tenido con su caldera en el pasado, que puedan ajustar la caldera en tiempo real para controlar su consumo, y que puedan contactar con el servicio tecnico oficial comodamente",
+    description1:
+      "Yo he programado el front, conectando via api con el back hecho por la empresa Kaytek.Fue disenada por el equipo de diseno de Zorraquino. La aplicacion esta hecha con Ionic vue, con Capacitor, con Cordova y con Sass para darle estilo",
+    description2:
+      "El mayor reto de esta aplicacion ha sido disenar y programar una app que fuese faxcil de entender, pero que a la vez transmitiese toda la info importante y que se ajuste a los distintos perfiles que pueden llegar a usarla",
     tags: ["Bilbao", "App", "Ios & Android", "2023"],
     img: "./assets/img/sdiq_app.webp",
     landing: "./assets/img/sdiq_landing.webp",
@@ -588,6 +592,8 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
+    description1: "",
+    description2: "",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/whitehole.webp",
     landing: "./assets/img/whitehole_landing.webp",
@@ -610,6 +616,8 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
+    description1: "",
+    description2: "",
     tags: ["Bilbao", "Web", "Portal", "2022"],
     img: "./assets/img/kutxabank.webp",
     landing: "./assets/img/clientes_landing.webp",
@@ -632,6 +640,8 @@ const projects = [
     subtitle: "PHP y CRM de Zorraquino.",
     description:
       "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
+    description1: "",
+    description2: "",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
@@ -652,8 +662,10 @@ const projects = [
     title: "Enkartur",
     qs: "en",
     subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "La página web de venta de entradas y eccomerce de Enkartur está construida con PHP, JS y SASS, y utiliza el CMS de la agencia Zorraquino. Permite a los usuarios comprar entradas para eventos y reservar experiencias turísticas en el País Vasco. Es una solución moderna y fácil de usar para la planificación de viajes.",
+    description: "Digital Signage de Enkartur es una web informativa para la agencia de turismo de las encartaciones. La web se va a utilizar en dos formatos concretos, ipad y television tactil",
+    description1: " Programe la webn en Js y en PHP, utilizando el cms propio de zorraquino para el back , le di estilo con el prepocesador de css, sass",
+    description2:
+      "el mayor reto de esta web fue disenar una interfaz que se ajustase tanto a ipad con al formato de tele grande,pero que hiciese los dos comodos de navegar  utiles para los turistas de las encartaciones",
     tags: ["Bilbao", "Web", "Entertainment", "2023"],
     img: "./assets/img/Enkarterri.webp",
     projImgs: [
