@@ -278,8 +278,8 @@ const handleHtml = (project) => {
   }
   let type = project ? "project" : "index";
   let qS = project ? "?" + project.qs : "";
-  history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
-  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
+  // history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
+  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html");
 
   fetch(type + ".html")
     .then(function (response) {
