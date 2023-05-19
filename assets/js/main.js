@@ -8,7 +8,7 @@ let colorToggleBlock = document.querySelector(".topnav__p--color");
 let debounceTimeout;
 let projectId;
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
 const currentInnerWrap = document.querySelector(".current__wrap--inner");
 const currentWrapHeight = window.innerHeight;
@@ -48,29 +48,27 @@ const loadingAnimation = () => {
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
 const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect) => {
-  if (window.innerWidth > 768) {
-    ScrollTrigger.create({
-      trigger: header,
-      markers: true,
-      id: "top",
-      start: "top top",
-      end: "+=" + 0.2 * window.innerHeight + "px",
-      pin: true,
-    });
-    gsap.to(header, {
-      scrollTrigger: {
-        trigger: portfolio__grid,
-        markers: true,
-        id: "topdos",
-        toggleActions: "restart none reverse pause",
-        start: "top top+=" + 0.8 * window.innerHeight + "px",
-        end: "+=" + 0.4 * window.innerHeight + "px",
-        scrub: !0,
-      },
-      opacity: 0,
-      ease: "none",
-    });
-  }
+  ScrollTrigger.create({
+    trigger: header,
+    // markers: true,
+    id: "top",
+    start: "top top",
+    end: "+=" + 0.2 * window.innerHeight + "px",
+    pin: true,
+  });
+  gsap.to(header, {
+    scrollTrigger: {
+      trigger: portfolio__grid,
+      // markers: true,
+      id: "topdos",
+      toggleActions: "restart none reverse pause",
+      start: "top top+=" + 0.8 * window.innerHeight + "px",
+      end: "+=" + 0.4 * window.innerHeight + "px",
+      scrub: !0,
+    },
+    opacity: 0,
+    ease: "none",
+  });
 
   gridArticle.forEach((gridArt, index) => {
     if (window.innerWidth > 768) {
@@ -157,9 +155,7 @@ const handleClose = () => {
 window.addEventListener("DOMContentLoaded", () => {
   if (header) {
     loadingAnimation();
-    if (window.innerWidth > 768) {
-      loadGsap(header, portfolio__grid, gridArticle, currentInnerWrap, effect);
-    }
+    loadGsap(header, portfolio__grid, gridArticle, currentInnerWrap, effect);
     portfolio__grid?.addEventListener("click", handleGridClick);
     portfolio__horizontal?.addEventListener("click", handleGridClick);
   }
