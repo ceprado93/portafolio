@@ -8,7 +8,7 @@ let colorToggleBlock = document.querySelector(".topnav__p--color");
 let debounceTimeout;
 let projectId;
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 const gridArticle = gsap.utils.toArray(".portfolio__grid .article");
 const currentInnerWrap = document.querySelector(".current__wrap--inner");
 const currentWrapHeight = window.innerHeight;
