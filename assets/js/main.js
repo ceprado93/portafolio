@@ -156,8 +156,8 @@ const handleClose = () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   if (header) {
-    loadingAnimation();
     if (window.innerWidth > 768) {
+      loadingAnimation();
       loadGsap(header, portfolio__grid, gridArticle, currentInnerWrap, effect);
     }
     portfolio__grid?.addEventListener("click", handleGridClick);
