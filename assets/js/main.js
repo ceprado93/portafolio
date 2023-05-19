@@ -182,6 +182,10 @@ window.addEventListener("DOMContentLoaded", () => {
       target.y = event.clientY;
     });
     update();
+  } else {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
   }
 
   handleClose();
