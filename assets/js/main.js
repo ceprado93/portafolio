@@ -27,19 +27,19 @@ const loadingAnimation = () => {
     colorToggle?.classList.remove("initial");
     setTimeout(() => {
       container?.classList.remove("initial");
+      scrollHorizontall(sections, portfolio__horizontal);
 
       let tl = new TimelineMax();
       if (window.innerWidth > 768) {
-        scrollHorizontall(sections, portfolio__horizontal);
         gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
         tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
         tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
         tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
       } else {
-        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
+        // gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        // gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
+        // gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        // gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
       }
     }, 650);
   }, 600);
@@ -48,27 +48,29 @@ const loadingAnimation = () => {
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
 const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect) => {
-  ScrollTrigger.create({
-    trigger: header,
-    // markers: true,
-    id: "top",
-    start: "top top",
-    end: "+=" + 0.2 * window.innerHeight + "px",
-    pin: true,
-  });
-  gsap.to(header, {
-    scrollTrigger: {
-      trigger: portfolio__grid,
+  if (window.innerWidth > 768) {
+    ScrollTrigger.create({
+      trigger: header,
       // markers: true,
-      id: "topdos",
-      toggleActions: "restart none reverse pause",
-      start: "top top+=" + 0.8 * window.innerHeight + "px",
-      end: "+=" + 0.4 * window.innerHeight + "px",
-      scrub: !0,
-    },
-    opacity: 0,
-    ease: "none",
-  });
+      id: "top",
+      start: "top top",
+      end: "+=" + 0.2 * window.innerHeight + "px",
+      pin: true,
+    });
+    gsap.to(header, {
+      scrollTrigger: {
+        trigger: portfolio__grid,
+        // markers: true,
+        id: "topdos",
+        toggleActions: "restart none reverse pause",
+        start: "top top+=" + 0.8 * window.innerHeight + "px",
+        end: "+=" + 0.4 * window.innerHeight + "px",
+        scrub: !0,
+      },
+      opacity: 0,
+      ease: "none",
+    });
+  }
 
   gridArticle.forEach((gridArt, index) => {
     if (window.innerWidth > 768) {
