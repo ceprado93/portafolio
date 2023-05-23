@@ -284,8 +284,8 @@ const handleHtml = (project) => {
   }
   let type = project ? "project" : "index";
   let qS = project ? "?" + project.qs : "";
-  // history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html" + qS);
+  history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html" + qS);
 
   fetch(type + ".html")
     .then(function (response) {
@@ -557,7 +557,7 @@ const projects = [
     qs: "zq",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "La página web de la agencia de diseño Zorraquino está creada con PHP, JS y SASS, y utiliza el CMS propio de la agencia. Ofrece una amplia variedad de servicios de diseño gráfico, web y publicidad, y muestra su cartera de proyectos. Es una herramienta moderna y atractiva para la promoción de la marca y los servicios de la agencia.",
+      "En Zorraquino trabajamos desde la triple perspectiva del diseño, la tecnología y el negocio para implantar experiencias de marca y productos digitales vivos. Somos un equipo multidisciplinar, formado por personas humanistas, tecnólogas, creadoras y creativas que trabajan juntas para el diseño de soluciones competitivas. Entre nuestros clientes destacan: Kutxabank, EITB, IMQ, Saunier Duval, Goiko o Vidrala, entre otros.",
     description1: "",
     description2: "",
     tags: ["Bilbao", "Web", "Agencia", "2022"],
@@ -606,9 +606,9 @@ const projects = [
     qs: "wh",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "Whitehole es un fondo de inversión del grupo Velatia. Su página web, desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino, permite a los usuarios conocer sus servicios, filosofía y estrategias de inversión.",
-    description1: "",
-    description2: "",
+      "Whitehole es un fondo de inversión del grupo Velatia. En 2022 zorraquino hizo un diseno estrategico de su marca, creando una nueva imagen y dentro de este proyecto, hicimos su nueva web. ",
+    description1: " Su página web, esta desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino",
+    description2: "La mejor parte de esta web fue que para mejoprar la usabiidad y la experiencia de usuario, incluimos varias animaciones y transiciones bastante finas",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/whitehole.webp",
     landing: "./assets/img/whitehole_landing.webp",
@@ -630,9 +630,11 @@ const projects = [
     qs: "kb",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. Es una herramienta esencial para la gestión financiera en línea.",
-    description1: "",
-    description2: "",
+      "Es un monstruo, es la web mas grande en la que he trabajado. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. ",
+    description1:
+      "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Ultimamente he hecho varios simuladores de hipotecas dentro de esta web, paginas de prestamos, guias de seguros medicos etc.",
+    description2:
+      "Lo mas dificil de esta pagina es que tiene que ser super precisa, y que para poder publicar cualquier cosa, tiene que estar cada decimal clavado, teniendo que pasar por varios departamentos que den el ok.",
     tags: ["Bilbao", "Web", "Portal", "2022"],
     img: "./assets/img/kutxabank.webp",
     landing: "./assets/img/clientes_landing.webp",
@@ -654,9 +656,11 @@ const projects = [
     qs: "ix",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "La página web de Saunier Duval Instal Xpert, desarrollada con PHP, JS y SASS, utiliza el CMS de la agencia Zorraquino. Ayuda a encontrar la caldera o el sistema de aerotermia que se ajuste a tus necesidades. Ofrece una experiencia de usuario sencilla y fluida para facilitar la compra y la instalación de los productos.",
-    description1: "",
-    description2: "",
+      "La pagina web de instal xpert en una web para contratar calderas o sistemas de aerotermia de Saunier duval. Es una web en constante evolucion que tenemos que adaptar a cada campana de cada provincia de espana",
+    description1:
+      "La web esta programada en php principalmente, pero tambien tiene bastante logica con Js y usa sass para darle estilo. Ademas utiliza webpack para poder utilizar dependencias de javascript",
+    description2:
+      "El mayor reto de esta web es adaptarla a cada campana de cada provincia sin que estas afecten al resto, o sin que la info de calderas y de aerotermia se mezclen, y todo esto optimizandola para convertir el mayor numero posible de leads",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
