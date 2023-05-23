@@ -36,10 +36,10 @@ const loadingAnimation = () => {
         tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
         tl.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.3 });
       } else {
-        // gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        // gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
-        // gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
-        // gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
+        gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".text--bounce", { y: 0, x: -30, opacity: 0, duration: 0.6 });
+        gsap.from(".header__desc--text", { y: 30, x: 30, opacity: 0, duration: 0.6 });
       }
     }, 650);
   }, 600);
@@ -189,7 +189,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   handleClose();
-  // window.onbeforeunload = () => window.scrollTo(0, 0);
 });
 
 const moveTitle = (event) => {
