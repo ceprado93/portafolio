@@ -5,6 +5,11 @@ let portfolio__horizontal = document.querySelector(".portfolio__horizontal");
 let colorToggle = document.querySelector(".colorToggle");
 let colorToggleBlock = document.querySelector(".topnav__p--color");
 
+let nav__lang = document.querySelector(".nav__lang");
+let lang_es = document.querySelector(".lang--es");
+let lang_en = document.querySelector(".lang--en");
+
+document.querySelector(".lang--active");
 let debounceTimeout;
 let projectId;
 
@@ -143,6 +148,22 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
     );
   });
 };
+
+const loadProjectGsap = () => {
+  let projectImgs = gsap.utils.toArray(".project__img");
+  projectImgs.forEach((img, index) => {
+    gsap.from(img, {
+      scrollTrigger: {
+        start: "top bottom",
+        trigger: img,
+        onEnter: () => {
+          img.classList.add("display");
+        },
+      },
+    });
+  });
+};
+
 const handleClose = () => {
   const closeButtons = document.querySelectorAll(".close_button");
   closeButtons.forEach((closeButton) => {
@@ -169,6 +190,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => handleHtml(project), 1000);
   }
   colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
+  nav__lang?.addEventListener("click", () => handleLang());
 
   if (window.innerWidth > 768) {
     document.addEventListener("mousemove", (event) => {
@@ -190,6 +212,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   handleClose();
 });
+
+const handleLang = () => {
+  // let activeLang = document.querySelector(".lang--active").classList.remove("lang--active").add("lang--disabled");
+  // document.querySelector("lang--disabled").classList.remove("lang--disabled").add("lang--active");
+};
 
 const moveTitle = (event) => {
   let text = document.getElementById("title");
@@ -294,6 +321,10 @@ const handleHtml = (project) => {
       let parser = new DOMParser();
       let doc = parser.parseFromString(html, "text/html");
       let docContainer = doc.querySelector(".container");
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
 
       if (project) {
         let projectImg = doc.querySelector(".project__img");
@@ -338,7 +369,6 @@ const handleHtml = (project) => {
       let newContainer = document.querySelector(".container");
       newContainer.innerHTML = docBody;
       newContainer.classList.remove("initial");
-
       modal.classList.remove("show");
       modal.classList.remove("fadeIn");
       if (modal.classList.contains("ligth")) modal.classList.remove("ligth");
@@ -358,6 +388,7 @@ const handleHtml = (project) => {
           });
         });
         document.querySelector(".link__next").addEventListener("click", handleGridClick);
+        loadProjectGsap();
       } else {
         let newSections = gsap.utils.toArray(".grid__wrap--horizontal article");
         let newgridArticle = gsap.utils.toArray(".portfolio__grid .article");
@@ -700,3 +731,13 @@ const projects = [
     url: "https://www.visitenkarterri.com/",
   },
 ];
+
+const esTexts = {
+  description:
+    "Soy un desarrollador con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+};
+
+const enTexts = {
+  description:
+    "Soy un desarrollador con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+};

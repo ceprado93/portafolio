@@ -959,10 +959,8 @@ section.current__intro {
 .container {
   background: white;
   color: black;
-  overflow-x: hidden;
   max-width: 100%;
-  width: 100%;
-  overscroll-behavior: none; }
+  width: 100%; }
   .container.initial {
     height: 100dvh;
     overflow: hidden;
@@ -998,17 +996,14 @@ section.current__intro {
 
 .project {
   display: none;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   color: white;
   transform: translateY(100vh);
-  transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98);
-  overflow-y: scroll;
-  z-index: 50; }
+  transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98); }
   .project.show {
     display: block; }
     .project.show.fadeIn {
@@ -1039,6 +1034,13 @@ section.current__intro {
     transition: opacity 0.5s cubic-bezier(0.58, 0.02, 0.21, 0.98); }
     .project .project__container.display {
       opacity: 1; }
+    .project .project__container .project__img {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.6s ease; }
+      .project .project__container .project__img.display {
+        opacity: 1;
+        transform: scale(1); }
     .project .project__container .project__row-first {
       width: 100%;
       display: flex;
@@ -1210,9 +1212,15 @@ section.current__intro {
   .project {
     min-height: 100dvh;
     overflow-y: scroll; }
+    .project.ligth .project__top a.link-overlay {
+      color: white; }
     .project .project__top {
-      padding: 10px 10px 0 10px;
-      margin-bottom: 45px; }
+      position: sticky;
+      top: 10px;
+      padding: 0 10px;
+      margin-bottom: 45px;
+      mix-blend-mode: difference;
+      color: white; }
     .project .project__container {
       flex-direction: column; }
       .project .project__container .project__row-first {
@@ -1295,7 +1303,8 @@ section.current__intro {
           margin-bottom: 15px; }
       .project .project__container .project__row-sixth {
         flex-wrap: wrap;
-        margin-bottom: 30px; }
+        margin-bottom: 0;
+        margin-top: 15px; }
         .project .project__container .project__row-sixth .smallimages__wrap {
           width: 100%;
           margin-right: 0;
