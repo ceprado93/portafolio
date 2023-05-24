@@ -4,7 +4,6 @@
 
 .project {
     display: none;
-    // position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -13,8 +12,6 @@
     color: white;
     transform: translateY(100vh);
     transition: transform 0.9s cubic-bezier(0.58, 0.02, 0.21, 0.98);
-    // overflow-y: scroll;
-    // z-index: 50;
 
     &.show {
         display: block;
@@ -332,8 +329,6 @@
 @media(max-width: 768px) {
     .project {
         min-height: 100dvh;
-        overflow-y: scroll;
-
         &.ligth{
             .project__top{
                 a{

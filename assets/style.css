@@ -1210,8 +1210,7 @@ section.current__intro {
 
 @media (max-width: 768px) {
   .project {
-    min-height: 100dvh;
-    overflow-y: scroll; }
+    min-height: 100dvh; }
     .project.ligth .project__top a.link-overlay {
       color: white; }
     .project .project__top {
