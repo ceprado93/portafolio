@@ -915,7 +915,8 @@ section.current__intro {
 
 @media (max-width: 768px) {
   .portfolio__grid {
-    margin-top: 30px; }
+    margin-top: 30px;
+    overflow-x: hidden; }
     .portfolio__grid .grid__wrap {
       display: flex;
       flex-direction: column; }

@@ -153,6 +153,7 @@
 @media(max-width: 768px) {
     .portfolio__grid{
         margin-top: 30px;
+        overflow-x: hidden;
         .grid__wrap{
             display: flex;
             flex-direction: column;
