@@ -102,6 +102,9 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
         start: "top center",
         end: "bottom center",
       });
+      ScrollTrigger.config({
+        ignoreMobileResize: true,
+      });
       gsap.fromTo(
         article__wrap,
         { x },
