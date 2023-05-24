@@ -459,14 +459,10 @@ body {
   position: absolute;
   width: 1px; }
 
-html {
-  scroll-behavior: smooth; }
-
 body {
   margin: 0;
   padding: 0;
-  font-family: ReadexPro, Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth; }
+  font-family: ReadexPro, Arial, Helvetica, sans-serif; }
 
 #top {
   padding: 10px; }
