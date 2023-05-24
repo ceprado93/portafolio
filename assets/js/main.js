@@ -62,6 +62,9 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
       end: "+=" + 0.2 * window.innerHeight + "px",
       pin: true,
     });
+    ScrollTrigger.config({
+      ignoreMobileResize: true,
+    });
     gsap.to(header, {
       scrollTrigger: {
         trigger: portfolio__grid,
