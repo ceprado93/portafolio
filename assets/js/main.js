@@ -98,7 +98,6 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
       ScrollTrigger.create({
         trigger: article__media,
         toggleClass: "centered",
-        // markers: true,
         start: "top center",
         end: "bottom center",
       });
@@ -112,7 +111,6 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
           x: xEnd,
           scrollTrigger: {
             trigger: gridArt,
-            // markers: true,
             scrub: 0.5,
           },
         }
