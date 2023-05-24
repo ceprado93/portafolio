@@ -369,6 +369,7 @@ const handleHtml = (project) => {
       let newContainer = document.querySelector(".container");
       newContainer.innerHTML = docBody;
       newContainer.classList.remove("initial");
+      project ? newContainer.classList.remove("container--fullWidth") : newContainer.classList.add("container--fullWidth");
       modal.classList.remove("show");
       modal.classList.remove("fadeIn");
       if (modal.classList.contains("ligth")) modal.classList.remove("ligth");

@@ -815,6 +815,7 @@ section.current__intro {
   margin: 0;
   background: white;
   position: relative;
+  overflow-x: hidden;
   z-index: 2; }
   .portfolio__grid.initial {
     display: none; }
@@ -961,6 +962,9 @@ section.current__intro {
   color: black;
   max-width: 100%;
   width: 100%; }
+  .container .container--fullWidth {
+    overflow-x: hidden;
+    overscroll-behavior: none; }
   .container.initial {
     height: 100dvh;
     overflow: hidden;

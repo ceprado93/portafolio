@@ -22,6 +22,10 @@
     color: black;
     max-width: 100%;
     width: 100%;
+    .container--fullWidth{
+        overflow-x: hidden;
+        overscroll-behavior: none;
+    }
     &.initial{
         height: 100dvh;
         overflow: hidden;
