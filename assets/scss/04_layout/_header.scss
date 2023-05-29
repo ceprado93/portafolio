@@ -2,7 +2,7 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 #top{
-    padding: 10px;
+    padding: 15px;
 }
 
 
@@ -31,14 +31,20 @@ header {
                 display: flex;
                 gap: 6px;
                 font-size: 1.3rem;
-                    line-height: 1.3rem;
-                    font-family: ReadexPro, Arial, Helvetica, sans-serif;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: .05em;
-                    margin: 0;
+                line-height: 1.3rem;
+                font-family: ReadexPro, Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+                margin: 0;
+                &.topnav__p--color{
+                    cursor: pointer;
+                }
+                
                 .lang--disabled{
                     font-weight: 400;
+                    cursor: pointer;
+                    opacity: 0.9;
                 }
             }
         }
@@ -184,6 +190,10 @@ header {
 }
 
 @media(max-width: 768px) {
+    #top {
+        padding: 10px;
+    }
+
     header {
         opacity: 1 !important;
         transition: opacity 0.6s ease;

@@ -465,7 +465,7 @@ body {
   font-family: ReadexPro, Arial, Helvetica, sans-serif; }
 
 #top {
-  padding: 10px; }
+  padding: 15px; }
 
 header {
   height: calc(100dvh);
@@ -492,8 +492,12 @@ header {
       text-transform: uppercase;
       letter-spacing: .05em;
       margin: 0; }
+      header .header__top .header__top-nav .topnav__p.topnav__p--color {
+        cursor: pointer; }
       header .header__top .header__top-nav .topnav__p .lang--disabled {
-        font-weight: 400; }
+        font-weight: 400;
+        cursor: pointer;
+        opacity: 0.9; }
     header .header__top .colorToggle {
       width: 12px;
       height: 12px;
@@ -591,6 +595,8 @@ header {
     width: 38%; } }
 
 @media (max-width: 768px) {
+  #top {
+    padding: 10px; }
   header {
     opacity: 1 !important;
     transition: opacity 0.6s ease; }
@@ -815,7 +821,7 @@ section.current__intro {
   .portfolio__grid.initial {
     display: none; }
   .portfolio__grid .grid__wrap {
-    padding: 10px;
+    padding: 15px;
     display: grid;
     position: relative;
     grid-area: 1/1/-1/-1;
@@ -881,7 +887,7 @@ section.current__intro {
     font-size: 8vw;
     line-height: 8vw;
     margin-top: 60px;
-    padding-left: 10px; }
+    padding-left: 15px; }
   .portfolio__horizontal .grid__wrap--horizontal {
     height: calc(100% - 265px);
     margin-top: 30px;
@@ -915,7 +921,8 @@ section.current__intro {
     overflow-x: hidden; }
     .portfolio__grid .grid__wrap {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      padding: 10px; }
       .portfolio__grid .grid__wrap .article {
         width: 100%;
         aspect-ratio: 1/1;
@@ -932,7 +939,8 @@ section.current__intro {
     height: 100lvh; }
     .portfolio__horizontal .horizontal__title {
       font-size: 14vw;
-      line-height: 14vw; }
+      line-height: 14vw;
+      padding-left: 10px; }
     .portfolio__horizontal .grid__wrap--horizontal {
       height: calc(100% - 30px - 14vw); }
       .portfolio__horizontal .grid__wrap--horizontal article .article_wrap img.centered {
