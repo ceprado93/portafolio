@@ -928,14 +928,16 @@ section.current__intro {
         .portfolio__grid .grid__wrap .article img.centered, .portfolio__grid .grid__wrap .article video.centered {
           filter: grayscale(0);
           -webkit-transform: translateZ(0); }
-  .portfolio__horizontal .horizontal__title {
-    font-size: 14vw;
-    line-height: 14vw; }
-  .portfolio__horizontal .grid__wrap--horizontal {
-    height: calc(100% - 30px - 14vw); }
-    .portfolio__horizontal .grid__wrap--horizontal article .article_wrap img.centered {
-      filter: grayscale(0);
-      -webkit-transform: translateZ(0); } }
+  .portfolio__horizontal {
+    height: 100lvh; }
+    .portfolio__horizontal .horizontal__title {
+      font-size: 14vw;
+      line-height: 14vw; }
+    .portfolio__horizontal .grid__wrap--horizontal {
+      height: calc(100% - 30px - 14vw); }
+      .portfolio__horizontal .grid__wrap--horizontal article .article_wrap img.centered {
+        filter: grayscale(0);
+        -webkit-transform: translateZ(0); } }
 
 #cursor {
   position: fixed;

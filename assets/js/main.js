@@ -32,9 +32,9 @@ const loadingAnimation = () => {
     colorToggle?.classList.remove("initial");
     setTimeout(() => {
       container?.classList.remove("initial");
-      scrollHorizontall(sections, portfolio__horizontal);
 
       let tl = new TimelineMax();
+      scrollHorizontall(sections, portfolio__horizontal);
       if (window.innerWidth > 768) {
         gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
         tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
