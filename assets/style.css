@@ -369,7 +369,7 @@ a {
     font-size: 1.8rem;
     line-height: 2.2rem; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   h1 {
     margin-top: 30px;
     font-size: 21vw; }
@@ -594,7 +594,7 @@ header {
   .header__desc-wrap .header__desc--text {
     width: 38%; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #top {
     padding: 10px; }
   header {
@@ -705,7 +705,7 @@ footer {
   .footer-content-right {
     width: 50%; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer .footer-content h2.footer__title {
     font-size: 8vw; }
   footer .footer-content .footer__text-wrap p {
@@ -746,7 +746,7 @@ footer {
     .modal.ligth .modal__container .modal__col-second .modal__img_wrp a .modal__img#modalImg5 {
       background-color: black; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .modal {
     min-height: 100dvh;
     overflow-y: scroll; }
@@ -799,7 +799,12 @@ section.current__intro {
         font-size: 3vw;
         line-height: 2.8vw; }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  section.current__intro .current__wrap .current__wrap--inner p {
+    font-size: 5vw;
+    line-height: 4.6vw; } }
+
+@media (max-width: 767px) {
   section.current__intro .current__wrap {
     width: calc(100%); }
     section.current__intro .current__wrap .current__wrap--inner {
@@ -915,7 +920,7 @@ section.current__intro {
         .portfolio__horizontal .grid__wrap--horizontal article .article_wrap h3 {
           margin-top: 10px; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .portfolio__grid {
     margin-top: 30px;
     overflow-x: hidden; }
@@ -1219,7 +1224,7 @@ section.current__intro {
   .project_footer-content-right {
     width: 50%; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .project {
     min-height: 100dvh; }
     .project.ligth .project__top a.link-overlay {

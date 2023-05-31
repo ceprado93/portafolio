@@ -35,7 +35,7 @@ const loadingAnimation = () => {
 
       let tl = new TimelineMax();
       scrollHorizontall(sections, portfolio__horizontal);
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 767) {
         gsap.from("h1", { y: 0, x: -30, opacity: 0, duration: 0.6, delay: 0 });
         tl.from(".header__info", { y: 30, x: -30, opacity: 0, duration: 0.3 });
         tl.from(".text--bounce", { y: 30, x: 0, opacity: 0, duration: 0.3 });
@@ -53,7 +53,7 @@ const loadingAnimation = () => {
 const toogleColor = (elm) => (elm.classList.contains("light") ? (elm.classList.remove("light"), container.classList.add("dark")) : (elm.classList.add("light"), container.classList.remove("dark")));
 
 const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect) => {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 767) {
     ScrollTrigger.create({
       trigger: header,
       // markers: true,
@@ -81,10 +81,10 @@ const loadGsap = (header, portfolio__grid, gridArticle, currentInnerWrap, effect
   }
 
   gridArticle.forEach((gridArt, index) => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 767) {
       gsap.from(gridArt, {
         scrollTrigger: {
-          start: "top bottom",
+          start: "top 90%",
           end: "bottom top",
           trigger: gridArt,
           toggleClass: "display",
@@ -196,7 +196,7 @@ window.addEventListener("DOMContentLoaded", () => {
   colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
   nav__lang?.addEventListener("click", () => handleLang());
 
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 767) {
     document.addEventListener("mousemove", (event) => {
       clearTimeout(debounceTimeout);
       debounceTimeout = setTimeout(() => {

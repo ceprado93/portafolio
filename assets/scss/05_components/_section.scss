@@ -26,8 +26,23 @@ section{
         }
     }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    section {
+        &.current__intro {
+            .current__wrap {
 
-@media(max-width: 768px) {
+                .current__wrap--inner {
+                    p {
+                        font-size: 5vw;
+                        line-height: 4.6vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
     section{
         &.current__intro {
             .current__wrap {
