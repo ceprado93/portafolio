@@ -158,7 +158,7 @@ const loadProjectGsap = () => {
   projectImgs.forEach((img, index) => {
     gsap.from(img, {
       scrollTrigger: {
-        start: "top bottom",
+        start: "top 90%",
         trigger: img,
         onEnter: () => {
           img.classList.add("display");
@@ -314,8 +314,8 @@ const handleHtml = (project) => {
   }
   let type = project ? "project" : "index";
   let qS = project ? "?" + project.qs : "";
-  // history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
-  history.replaceState({ page: type }, type, "/portafolio/" + type + ".html" + qS);
+  history.replaceState({ page: type }, type, "/" + type + ".html" + qS);
+  // history.replaceState({ page: type }, type, "/portafolio/" + type + ".html" + qS);
 
   fetch(type + ".html")
     .then(function (response) {
