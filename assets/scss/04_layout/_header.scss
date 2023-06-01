@@ -37,14 +37,22 @@ header {
                 text-transform: uppercase;
                 letter-spacing: .05em;
                 margin: 0;
+                .colorToggle__text{
+                    font-size: 1.3rem;
+                    line-height: 1.3rem;
+                    font-family: ReadexPro, Arial, Helvetica, sans-serif;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: .05em;
+                    margin: 0;
+                }
                 &.topnav__p--color{
                     cursor: pointer;
                 }
                 
                 .lang--disabled{
-                    font-weight: 400;
                     cursor: pointer;
-                    opacity: 0.9;
+                    opacity: 0.45;
                 }
             }
         }

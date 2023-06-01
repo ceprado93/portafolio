@@ -194,7 +194,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => handleHtml(project), 1000);
   }
   colorToggleBlock?.addEventListener("click", () => toogleColor(colorToggle));
-  nav__lang?.addEventListener("click", () => handleLang());
+  nav__lang?.addEventListener("click", (e) => handleLang(e));
 
   if (window.innerWidth > 767) {
     document.addEventListener("mousemove", (event) => {
@@ -217,9 +217,16 @@ window.addEventListener("DOMContentLoaded", () => {
   handleClose();
 });
 
-const handleLang = () => {
-  // let activeLang = document.querySelector(".lang--active").classList.remove("lang--active").add("lang--disabled");
-  // document.querySelector("lang--disabled").classList.remove("lang--disabled").add("lang--active");
+const handleLang = (event) => {
+  let target = event.target;
+  let newLang = target.getAttribute("data-lang");
+  let activeLang = document.querySelector(".lang--active");
+  let disabledLang = document.querySelector(".lang--disabled");
+  activeLang.classList.replace("lang--active", "lang--disabled");
+  disabledLang.classList.replace("lang--disabled", "lang--active");
+
+  document.querySelector(".colorToggle__text").innerText = newLang === "esTexts" ? esTexts.theme : enTexts.theme;
+  document.querySelector(".header__desc--text").innerText = newLang === "esTexts" ? esTexts.description : enTexts.description;
 };
 
 const moveTitle = (event) => {
@@ -738,11 +745,13 @@ const projects = [
 ];
 
 const esTexts = {
+  theme: "Cambiar color",
   description:
     "Soy un desarrollador con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
 };
 
 const enTexts = {
+  theme: "Change theme",
   description:
-    "Soy un desarrollador con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+    "I am a creative developed based in Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
 };
