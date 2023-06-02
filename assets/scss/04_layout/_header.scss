@@ -191,7 +191,9 @@ header {
 @media(min-width: 1620px) {
     .header__desc-wrap{
         .header__desc--text {
-            width: 38%
+            width: 38%;
+            font-size: 1.4vw;
+            line-height: 1.4vw;
         }
     } 
 

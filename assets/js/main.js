@@ -694,16 +694,16 @@ const projects = [
   },
   {
     id: "10",
-    title: "Intal Xpert Saunier Duval",
+    title: "Instal Xpert Saunier Duval",
     qs: "ix",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "La pagina web de instal xpert en una web para contratar calderas o sistemas de aerotermia de Saunier duval. Es una web en constante evolucion que tenemos que adaptar a cada campana de cada provincia de espana",
+      "La pagina web de instal xpert en una web para contratar calderas o sistemas de aerotermia de Saunier duval. Dentro de esta web el ultimo trabajo que he hecho , ha sido un test a/b para probar dos landings, una con un formulario y otra con un asistente, y ver cual de las dos convierte mas leads.",
     description1:
       "La web esta programada en php principalmente, pero tambien tiene bastante logica con Js y usa sass para darle estilo. Ademas utiliza webpack para poder utilizar dependencias de javascript",
     description2:
-      "El mayor reto de esta web es adaptarla a cada campana de cada provincia sin que estas afecten al resto, o sin que la info de calderas y de aerotermia se mezclen, y todo esto optimizandola para convertir el mayor numero posible de leads",
-    tags: ["Bilbao", "Web", "Business", "2022"],
+      "El mayor reto de esta web ha estado en la landing del formulario. Cuando este se manda, en algunos casos sale un segundo formulario, y aunque el usuario no termine el segundo formulario, se tiene que guardar el lead. Para ello cree un proceso en segundo plano en el servidor, que duerma durante media hora y compruebe despues si se ha mando o no, crear este proceso en segundo plano y que el resrto de la web funcione como si nada es un jaleo.",
+    tags: ["Bilbao", "Web", "Test A/B", "2023"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
     projImgs: [
@@ -747,11 +747,11 @@ const projects = [
 const esTexts = {
   theme: "Cambiar color",
   description:
-    "Soy un desarrollador con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+    "Soy un desarrollador creativo con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
 };
 
 const enTexts = {
   theme: "Change theme",
   description:
-    "I am a creative developed based in Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+    "I am a creative developer based in Bilbao with more than three years of experience in web and mobile development. I have worked in design agencies, advertising agencies and multinational companies. I love creating unique and attractive user interfaces that are both functional and visually stunning. I look for the perfect balance between functionality and aesthetics to create an exceptional user experience.",
 };
