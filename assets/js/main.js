@@ -267,7 +267,7 @@ const update = () => {
 
 function scrollHorizontall(horizontalSections, portfolioHorizontal) {
   gsap.to(horizontalSections, {
-    xPercent: -65 * (horizontalSections.length - 1),
+    xPercent: -85 * (horizontalSections.length - 1),
     ease: "none",
     scrollTrigger: {
       trigger: portfolioHorizontal,
