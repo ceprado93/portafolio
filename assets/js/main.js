@@ -754,5 +754,5 @@ const esTexts = {
 const enTexts = {
   theme: "Change theme",
   description:
-    "I am a creative developer based in Bilbao with more than three years of experience in web and mobile development. I have worked in design agencies, advertising agencies and multinational companies. I love creating unique and attractive user interfaces that are both functional and visually stunning. I look for the perfect balance between functionality and aesthetics to create an exceptional user experience.",
+    "Let me introduce myself. I'm Carlos Prado, creative developer with more than three years of experience in web development and mobile apps. I have worked in design agencies, advertising agencies and multinational companies and I focus in creating navigable and attractive interfaces that stand out for being functional and visually stunning. My projects offer a friendly user experience thanks to the search for balance between functionality and aesthetics.",
 };
