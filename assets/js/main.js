@@ -442,10 +442,11 @@ const projects = [
     title: "APS Racing",
     qs: "aps",
     subtitle: "MERN app para rally media.",
-    description: "APS es una web de media de rallys, la idea era crear una web para que el canal de legolas pudiese juntar todo el contenido que iba creando, videos, fotos y noticias",
+    description:
+      "APS es una web de rallyes que ofrece contenido del sector en diferentes formatos como videos, fotografías y noticias. Para este proyecto realicé el diseño de la web, el desarrollo front end y back end.",
     description1:
-      "Hice el diseno, el front y el back. El front esta hechoi con react, sass para darle estilo , utilizando la api de wordpress como cms y la api de youtube para los videos. El back lo hice con express js y una base de datos de mongodb",
-    description2: "Para la version movil busque un diseno mas simple e intuitivo, para que el usuario pueda acceder mas rapido a los videos",
+      "Utilicé React para el front end y Sass para darle estilo, la API de Wordpress como CMS y la API de Youtube para el contenido de los videos. Para el backend me serví de Express.js y de una base de datos de MongoDB.",
+    description2: "Por otro lado, para la versión móvil creé un diseño más simple e intuitivo con el que el usuario pudiera acceder de forma más rápida y sencilla al contenido audiovisual.",
     tags: ["Madrid", "Web", "News", "2021"],
     img: "./assets/img/aps.webp",
     projImgs: [
@@ -469,11 +470,11 @@ const projects = [
     qs: "wm",
     subtitle: "Atlas de Surf y Olas MERN .",
     description:
-      "Wave Maps es una página web de atlas de olas, la hice justo con Eva Virseda, otra programadora de madrid. La web tiene información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas.<br><br> Ahora hay webs con mucha info de olas pero no son visualmene atractivas, la idea era crear una web donde estuviese recogido toda la info de las olas pero que a la vez fuese facil de navegar y atractiva.",
+      "Wave Maps es una página web de atlas de olas que elaboré en colaboración con la programadora Eva Virseda. La web ofrece información detallada sobre los spots de surf, incluyendo mapas interactivos y características de las olas. <br><br> El objetivo del proyecto fue crear una web que recogiera información práctica sobre las olas y que a su vez fuese visualmente atractiva y fácil de navegar.",
     description1:
-      "Hicimos el diseno, el font y el back.La idea del diseno era crear una interfaz simple y que pusiese el foco en el contenido visual. Hicimos el front con react y sass, y para que se pudiese escalar facilmente, el back lo montamos con express y una baswe de datos no relacional de mongo db. conectando ambos con axios",
+      "En este caso realizamos el diseño de la web, el front end y el backend a través de la creación de una interfaz simple con alto contenido visual. Para el desarrollo front end usamos React y Sass. Respecto al backend, lo elaboramos con Express y con una base de datos no relacional a partir de MongoDB, conectando ambas con Axios.",
     description2:
-      "Para que este proyecto pudiese crecer con los usuarios, creamos un area privada donde los usuarios podian darse de alta con un cms propio podian gestionar la info de cada spot, anadir mas spots y poner comentarios en otras olas",
+      "Con el objetivo de crear una web que fuese escalable, creamos un área privada para que los usuarios pudiesen darse de alta. Gracias al uso de un CMS propio, los visitantes podían gestionar la información de cada spot, añadir nuevas ubicaciones y escribir comentarios en otros espacios.",
     tags: ["Madrid", "Web", "Atlas", "2021"],
     img: "./assets/img/wavemaps.webp",
     landing: "./assets/img/wm-home.webp",
@@ -497,11 +498,11 @@ const projects = [
     qs: "cpa",
     subtitle: "React y Sass portafolio de una artista y diseñadora.",
     description:
-      "El portfolio de Celia , la idea era crear una web donde pudiese juntar los cruadros que iba pintando y la gente le pudiese contactar. <br><br> Ella se encargo del diseno y yo de la programacion. La idea del diseno era crear una web que fuese en linea con las obras que pintaba celia y que reprensentase su identidad",
+      "La web Celia Pérez Art es el escaparte de las obras y el espacio de contacto de la artista Celia Pérez.<br><br> Ella se encargó del diseño y yo de la programación y desarrollo web para crear una página que fuese en línea con el estilo y la identidad de las obras.",
     description1:
-      "En la primera fase del proyecto solo programe el front, creado con react y con sass para darle estilo. Para poder crear mas contenido use wordpress como cms , conectandolo a la web via api",
+      "Para ello, nos basamos en los colores y las texturas de la naturaleza, la principal fuente de inspiración de la artista, que reproduce a través de la técnica mixta sobre lienzo y el uso de diferentes materiales de construcción.",
     description2:
-      "Esta es la descripcion que me dio ella por si te ayuda. Su principal fuente de inspiración son los colores y las texturas de la naturaleza, que abstrae para dar vida a sus obras. Trabaja la técnica mixta sobre lienzo a través de la exploración de diferentes materiales de construcción, por lo tanto, sus obras están en constante desarrollo.",
+      "En la primera fase del proyecto programé el front end con React y le di estilo con Sass. Más adelante, para tener la opción de añadir más contenido a la página, usé el CMS de Wordpress y lo conecté a la web a través de la API.",
     tags: ["Bilbao", "Web", "Portfolio", "2021"],
     img: "./assets/img/cpzfondo.webp",
     landing: "./assets/img/celia_landing.webp",
@@ -521,10 +522,11 @@ const projects = [
     title: "La Bamba",
     qs: "lb",
     subtitle: "MERN web para una empresa de eventos de Madrid.",
-    description: "Descripcion de la bamba:... <br><br> la diseno rodrigo ramirez, contenido tuyo y programacion mia.",
-    description1: "Hice el front con react, redux y sass para darle estilo. El back lo hice con xpress y con base de datos no relacional, conectando back y front con ajax",
+    description:
+      "La Bamba es el proyecto de diseño de una página web de eventos, para el cual me encargué del desarrollo front end y el backend. Respecto al diseño front end usé React y Redux y me apoyé en Sass para dar estilo al contenido. El backend lo creé con Express a través de una base de datos no relacional y conecté ambas interfaces con Ajax.",
+    description1: "",
     description2:
-      "Programe un area de usuarios donde el tt podia aceptar artistas, modificar la info que ponian y publicarlos si le parecia correcto, y los usuarios podian darse de alta , gestionar su info y hablar con el tt",
+      "Con el objetivo de desarrollar una web interactiva, programé un área de usuarios en la que el administrador pudiera aceptar artistas, modificar contenido y validar la información. Del mismo modo, los usuarios podían darse de alta, gestionar su documentación y comunicarse con el administrador.",
     tags: ["Madrid", "Web", "Business", "2021"],
     img: "./assets/img/bardot.webp",
     landing: "./assets/img/bamba/bamba_movil.png",
@@ -547,11 +549,11 @@ const projects = [
     title: "Oir 10",
     qs: "o10",
     subtitle: "React y Sass web.",
-    description:
-      "Por si te sirve esta es la descripcion  que me dieron. Oir10 nace para dar respuesta a los problemas auditivos de una forma sencilla y rápida gracias al avance tecnológico en el sector de la audiología, siendo la empresa comercializadora online exclusiva de Nemeson One, dispositivo inteligente para la recuperación auditiva de la última generación.",
-    description1: "La pagina tenia front, que lo cree con react, con sass para el estilo, y utilice el context de react para crear el ecomeerce de forma global en toda la web. ",
+    description: "Oir10 es el proyecto web de la comercializadora online Nemeson One, empresa dedicada a la venta de dispositivos inteligentes para la recuperación auditiva.",
+    description1:
+      "Para que el diseño de la página contara con un desarrollo de ecommerce, utilicé el contexto de React a nivel global en toda la web. También hice uso de React para el front end y escogí Sass para dar estilo a todo el espacio.",
     description2:
-      "Para gestionar los productos en venta, la pasarela de pago y tener feedback de como funcionaban los clientes en las paginas de la web,  utilice la api de shopify, es decir , use shopify como back y como pasarela de pago, y para el front programe la pagina ",
+      "Para gestionar los productos en venta, la pasarela de pago y el feedback de los clientes en las diferentes páginas, utilicé la API de Shopify como backend y para el procesamiento de las compras y los pagos.",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/manos.webp",
     landing: "./assets/img/nemesonone_landing.webp",
@@ -573,10 +575,11 @@ const projects = [
     qs: "pl",
     subtitle: "E-commerce y plataforma de reservas para tests medicos.",
     description:
-      "Procor se creo en la pandema para vender tests a lo loco. La web la disenaron Rodrigo Ramirez y Chicote Guijarro y programacion de Daniel Urchegui y mia.<br><br> La web era un ecomerce, plataforma de reserva de citas, con area privada para que los clientes pudiesen descargarse los resultados de sus tests, y blog",
+      "Procorlab es la página web de Procor, empresa fundada en la pandemia con el fin de suministrar tests COVID y de ofrecer un sistema de reserva de pruebas en Madrid. <br><br>Para ello, la programación de la web incluyó el diseño de un ecommerce, de una plataforma de reserva de citas, de un área privada que alojara la información de los clientes y de la creación de un blog.",
     description1:
-      "El front estaba hecho con react, con redux, con el context de react y con shopify como gestor del ecomerce (conectado via api) y con sass para darle estilo. El back lo hicimos con php y utilizaba una base de datos relacional MySql. El blog utilizaba la api de wordpress para poder gestionar y subir contenido nuevo",
-    description2: "Creamos una de las mayores tiendas de test covid y sistemas de reservas de pruebas de madrid",
+      "El desarrollo front end lo realicé con React y Redux y me serví del contexto de React para ello. A su vez, usé Shopify como gestor de la tienda online (conectado vía API) y con Sass para darle estilo.",
+    description2:
+      "Para el desarrollo backend programé la página web en PHP y utilicé una base de datos relacional a través de MySQL. Respecto al blog, utilicé la API de Wordpress con el fin de que el usuario pudiera alimentar el contenido y actualizarlo de manera sencilla.",
     tags: ["Madrid", "Web", "E-commerce", "2021"],
     img: "./assets/img/procor.webp",
     landing: "./assets/img/procorlab_landing.webp",
@@ -598,10 +601,10 @@ const projects = [
     title: "Zorraquino",
     qs: "zq",
     subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "En Zorraquino trabajamos desde la triple perspectiva del diseño, la tecnología y el negocio para implantar experiencias de marca y productos digitales vivos. Somos un equipo multidisciplinar, formado por personas humanistas, tecnólogas, creadoras y creativas que trabajan juntas para el diseño de soluciones competitivas. Entre nuestros clientes destacan: Kutxabank, EITB, IMQ, Saunier Duval, Goiko o Vidrala, entre otros.",
-    description1: "",
-    description2: "",
+    description: "En la agencia Zorraquino trabajamos desde la triple perspectiva del diseño, la tecnología y el negocio para implantar experiencias de marca y productos digitales vivos.",
+    description1: "Somos un equipo multidisciplinar, formado por personas humanistas, tecnólogas, creadoras y creativas que trabajan juntas para el diseño de soluciones competitivas.",
+    description2:
+      "Entre nuestros clientes destacan nombres como Kutxabank, EITB, IMQ, Saunier Duval, Goiko o Vidrala, entre otros, para los que llevamos a cabo proyectos que van desde el diseño de páginas web de todo tipo hasta la creación de apps móviles con múltiples funcionalidades.",
     tags: ["Bilbao", "Web", "Agencia", "2022"],
     img: "./assets/img/zq.webp",
     landing: "./assets/img/zorraquino_landing.webp",
@@ -623,11 +626,11 @@ const projects = [
     qs: "iq",
     subtitle: "App para Ios y Android con Ionic y Vue.",
     description:
-      "La app de Mi Saunier duval es una aplicacion movil de ios y android hecha para los clientes de Saunier duval.<br><br> Los objetivos de la aplicacion son tres: que los clientes tengan una herramienta para saber los consumos que han tenido con su caldera en el pasado, que puedan ajustar la caldera en tiempo real para controlar su consumo, y que puedan contactar con el servicio tecnico oficial comodamente",
+      "La app Mi Saunier Duval es una aplicación móvil para iOS y Android diseñada para los clientes de Saunier Duval.<br><br> Los objetivos de crear esta app móvil fueron tres: alojar información sobre los consumos de los clientes, ofrecer la posibilidad de ajustar la caldera en tiempo real y conectar a los usuarios con el servicio técnico oficial.",
     description1:
-      "Yo he programado el front, conectando via api con el back hecho por la empresa Kaytek.Fue disenada por el equipo de diseno de Zorraquino. La aplicacion esta hecha con Ionic vue, con Capacitor, con Cordova y con Sass para darle estilo",
+      "Del diseño de la app se encargó el equipo especializado de Zorraquino. Mi misión fue programar el front end con herramientas como Ionic Vue, Capacitor, Cordova y Sass para darle estilo, y conectarlo vía API con el backend desarrollado por la empresa Kaytek.",
     description2:
-      "El mayor reto de esta aplicacion ha sido disenar y programar una app que fuese faxcil de entender, pero que a la vez transmitiese toda la info importante y que se ajuste a los distintos perfiles que pueden llegar a usarla",
+      "El mayor reto de crear esta aplicación fue diseñar y programar una app desde cero que fuese fácil de entender y que a su vez transmitiese toda la información relevante y se ajustase a los perfiles de los diferentes usuarios.",
     tags: ["Bilbao", "App", "Ios & Android", "2023"],
     img: "./assets/img/sdiq_app.webp",
     landing: "./assets/img/sdiq_landing.webp",
@@ -647,10 +650,10 @@ const projects = [
     title: "White hole",
     qs: "wh",
     subtitle: "PHP y CRM de Zorraquino.",
-    description:
-      "Whitehole es un fondo de inversión del grupo Velatia. En 2022 zorraquino hizo un diseno estrategico de su marca, creando una nueva imagen y dentro de este proyecto, hicimos su nueva web. ",
-    description1: " Su página web, esta desarrollada con PHP, JS, SASS y el CMS de la agencia Zorraquino",
-    description2: "La mejor parte de esta web fue que para mejoprar la usabiidad y la experiencia de usuario, incluimos varias animaciones y transiciones bastante finas",
+    description: "Whitehole es un fondo de inversión del grupo Velatia para el que Zorraquino hizo un diseño estratégico de su marca, lo que incluyó el desarrollo de su página web.",
+    description1: "En este caso, realicé el desarrollo web con PHP, JavaScript y Sass y utilicé el CMS creado en Zorraquino para alojar todo el contenido.",
+    description2:
+      "Con el objetivo de mejorar la usabilidad de la web y de ofrecer una experiencia de usuario única, incluimos una serie de animaciones y transiciones que dotaron de exclusividad y atractivo a toda la página.",
     tags: ["Bilbao", "Web", "Business", "2022"],
     img: "./assets/img/whitehole.webp",
     landing: "./assets/img/whitehole_landing.webp",
@@ -672,11 +675,11 @@ const projects = [
     qs: "kb",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "Es un monstruo, es la web mas grande en la que he trabajado. Proporciona a los clientes acceso a una amplia variedad de servicios financieros, como cuentas corrientes, tarjetas de crédito, préstamos, hipotecas, seguros y fondos de inversión. ",
+      "Kutxabank dispone de una página web que proporciona a los clientes acceso a una amplia variedad de servicios financieros. Está construida con PHP, JS y CSS y utiliza el CMS diseñado por la agencia Zorraquino.",
     description1:
-      "La página web de clientes del banco Kutxabank está construida con PHP, JS y CSS, y utiliza el CMS de la agencia Zorraquino. Ultimamente he hecho varios simuladores de hipotecas dentro de esta web, paginas de prestamos, guias de seguros medicos etc.",
+      "De cara a ofrecer la mejor experiencia a los usuarios, mi trabajó consistió en desarrollar varios simuladores de hipotecas, páginas de préstamos y guías de seguros médicos, entre otros.",
     description2:
-      "Lo mas dificil de esta pagina es que tiene que ser super precisa, y que para poder publicar cualquier cosa, tiene que estar cada decimal clavado, teniendo que pasar por varios departamentos que den el ok.",
+      "El desarrollo de esta página web representa el proyecto más retador de mi portfolio debido a su tamaño y a su precisión, ya que la publicación de cada contenido está sujeta al proceso de validación de varios departamentos.",
     tags: ["Bilbao", "Web", "Portal", "2022"],
     img: "./assets/img/kutxabank.webp",
     landing: "./assets/img/clientes_landing.webp",
@@ -698,11 +701,9 @@ const projects = [
     qs: "ix",
     subtitle: "PHP y CRM de Zorraquino.",
     description:
-      "La pagina web de instal xpert en una web para contratar calderas o sistemas de aerotermia de Saunier duval. Dentro de esta web el ultimo trabajo que he hecho , ha sido un test a/b para probar dos landings, una con un formulario y otra con un asistente, y ver cual de las dos convierte mas leads.",
-    description1:
-      "La web esta programada en php principalmente, pero tambien tiene bastante logica con Js y usa sass para darle estilo. Ademas utiliza webpack para poder utilizar dependencias de javascript",
-    description2:
-      "El mayor reto de esta web ha estado en la landing del formulario. Cuando este se manda, en algunos casos sale un segundo formulario, y aunque el usuario no termine el segundo formulario, se tiene que guardar el lead. Para ello cree un proceso en segundo plano en el servidor, que duerma durante media hora y compruebe despues si se ha mando o no, crear este proceso en segundo plano y que el resrto de la web funcione como si nada es un jaleo.",
+      "La página de Instal Xpert se creó para llevar a cabo la contratación de calderas o sistemas de aerotermia de Saunier Duval desde la web. Dentro de este proyecto, mi trabajo consistió en realizar un test A/B para probar la conversión de leads de dos landings, una con un formulario y otra con un asistente.",
+    description1: "La web esta programada en php principalmente, pero tambien tiene bastante logica con Js y usa SASS para darle estilo.",
+    description2: "",
     tags: ["Bilbao", "Web", "Test A/B", "2023"],
     img: "./assets/img/saunier.webp",
     landing: "./assets/img/instalxpert_landing.webp",
@@ -723,10 +724,10 @@ const projects = [
     title: "Enkartur",
     qs: "en",
     subtitle: "PHP y CRM de Zorraquino.",
-    description: "Digital Signage de Enkartur es una web informativa para la agencia de turismo de las encartaciones. La web se va a utilizar en dos formatos concretos, ipad y television tactil",
-    description1: " Programe la webn en Js y en PHP, utilizando el cms propio de zorraquino para el back , le di estilo con el prepocesador de css, sass",
+    description: "Digital Signage de Enkartur es una web informativa desarrollada para la agencia de turismo de las encartaciones, disponible en formato iPad y otros dispositivos táctiles.",
+    description1: "Para ello, me encargué de programar la web en JavaScript y en PHP. Utilicé el CMS propio de Zorraquino para el desarrollo backend y le di estilo con el programador CSS y con Sass.",
     description2:
-      "el mayor reto de esta web fue disenar una interfaz que se ajustase tanto a ipad con al formato de tele grande,pero que hiciese los dos comodos de navegar  utiles para los turistas de las encartaciones",
+      "El mayor reto de este proyecto fue diseñar una interfaz que se ajustase tanto a las dimensiones del IPad como a las de un televisor grande, de manera que ambos fuesen cómodos de navegar y útiles para los usuarios.",
     tags: ["Bilbao", "Web", "Entertainment", "2023"],
     img: "./assets/img/Enkarterri.webp",
     projImgs: [
@@ -747,7 +748,7 @@ const projects = [
 const esTexts = {
   theme: "Cambiar color",
   description:
-    "Soy un desarrollador creativo con sede en Bilbao con más de tres años de experiencia en el desarrollo web y móvil. He trabajado en agencias de diseño, en agencias de publicidad y en empresas multinacionales. Me encanta crear interfaces de usuario únicas y atractivas que sean tanto funcionales como visualmente impactantes. Busco el equilibrio perfecto entre funcionalidad y estética para crear una experiencia de usuario excepcional.",
+    "Me presento. Soy Carlos Prado, programador web con más de tres años de experiencia en el desarrollo web y aplicaciones móviles. He trabajado en agencias de diseño, agencias de publicidad y empresas multinacionales y estoy especializado en la creación de interfaces navegables y atractivas que destacan por ser funcionales y visualmente impactantes. Mis proyectos ofrecen una experiencia de usuario amigable gracias a la búsqueda del equilibrio entre funcionalidad y estética.",
 };
 
 const enTexts = {
